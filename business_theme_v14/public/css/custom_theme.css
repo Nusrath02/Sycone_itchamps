@@ -2830,14 +2830,14 @@ header * {
 /* Reduce height of shortcut widget containers */
 .widget.shortcut-widget-box {
     min-height: 20px !important;   /* adjust as needed */
-    padding: 6px 8px !important;  /* reduce internal spacing */
+    padding: 3px 5px !important;  /* reduce internal spacing */
 }
 
 /* Optional: also control text alignment inside */
 /* Keep your container sizing */
 .widget.shortcut-widget-box {
-    min-height: 40px !important;
-    padding: 6px 8px !important;
+    min-height: 30px !important;
+    padding: 4px 6px !important;
 }
 
 /* Align title and subtitle in the same line */
