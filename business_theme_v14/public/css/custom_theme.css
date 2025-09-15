@@ -1,12 +1,4 @@
 /* ==================== ITCHAMPS DASHBOARD THEME ==================== */
-/* New CSS file for recreating the blue dashboard design */
-/* Preserves ITChamps branding while achieving Image 1 layout */
-
-/* background color */
-
-
-
-/* background color end */
 
 /* ==================== NAVBAR STYLING ==================== */
 /* Top navigation bar with ITChamps logo */
@@ -386,7 +378,7 @@
 
 /* Search bar styling */
 header .form-control {
-    background-color: #f9fafb !important;
+   background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
     border: 1px solid #d1d5db !important;
     color: #374151 !important;
     z-index: 10 !important;
@@ -418,7 +410,7 @@ header .form-control:focus {
 .layout-side-section,
 .sidebar-section,
 .desk-sidebar {
-    background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%) !important;
+    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
     padding: 20px 15px !important;
     border-radius: 0 !important;
     margin-left: 0 !important;
@@ -454,7 +446,7 @@ header .form-control:focus {
 .layout-side-section .sidebar-menu li a,
 .layout-side-section .standard-sidebar li a,
 .standard-sidebar-item {
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 8px !important;
     margin-bottom: 4px !important;
