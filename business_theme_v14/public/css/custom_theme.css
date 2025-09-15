@@ -2229,7 +2229,7 @@ body {
 header.navbar,
 .sticky-top {
     background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
-    background-color: #87ceeb !important; /* Fallback */
+    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
 }
@@ -2275,7 +2275,7 @@ nav[data-original-title],
 
 /* Search bar in navbar */
 .navbar .form-control {
-    background-color: rgba(255, 255, 255, 0.9) !important;
+    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
     border: 1px solid rgba(255, 255, 255, 0.5) !important;
     color: #1f2937 !important;
 }
@@ -2310,7 +2310,7 @@ nav[data-original-title],
 /* Force override any conflicting styles */
 body .navbar,
 html .navbar {
-    background: linear-gradient(90deg, #87ceeb 0%, #87ceeb 25%, #6bb6ff 50%, #4da6ff 75%, #2196f3 100%) !important;
+    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
 }
 
 /* Mobile responsive navbar */
