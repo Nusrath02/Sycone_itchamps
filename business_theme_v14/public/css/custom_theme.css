@@ -2229,8 +2229,8 @@ body {
 .navbar-expand,
 header.navbar,
 .sticky-top {
-background: linear-gradient(90deg, rgb(237, 28, 36) 0%, rgb(237, 28, 36) 25%, rgb(220, 24, 32) 50%, rgb(210, 22, 31) 75%, rgb(200, 20, 30) 100%) !important;
-background-color: rgb(237, 28, 36) !important; /* Fallback */
+background: #f04f54;
+background: radial-gradient(circle, rgba(240, 79, 84, 1) 0%, rgba(237, 57, 57, 1) 50%, rgba(237, 28, 36, 1) 100%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
 }
