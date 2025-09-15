@@ -2151,7 +2151,7 @@ header .form-control:focus {
     position: fixed;
     top: 20px;
     right: 30px;
-    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
+    background: linear-gradient(180deg, #ed1c24 0%, #c8141e 100%) !important;
     backdrop-filter: blur(10px) !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 25px !important;
