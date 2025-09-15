@@ -1732,8 +1732,8 @@ header .form-control:focus {
     background: white !important;
     border: none !important;
     border-radius: 12px !important;
-    padding: 25px !important;
-    margin-bottom: 25px !important;
+/*     padding: 25px !important; */
+/*     margin-bottom: 25px !important; */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1) !important;
     transition: all 0.3s ease !important;
 }
@@ -1762,9 +1762,9 @@ header .form-control:focus {
     color: #1f2937 !important;
     font-size: 18px !important;
     font-weight: 600 !important;
-    margin-bottom: 0px !important;
+/*     margin-bottom: 0px !important; */
     border-bottom: none !important;
-    padding-bottom: 5px !important;
+/*     padding-bottom: 5px !important; */
     text-decoration:none !important;
 }
 
@@ -1806,7 +1806,7 @@ header .form-control:focus {
     color: #3b82f6 !important;
     font-size: 32px !important;
     font-weight: 700 !important;
-    margin: 1px 0 !important;
+/*     margin: 1px 0 !important; */
     display: block !important;
     display:!important;
 }
@@ -3023,3 +3023,12 @@ header * {
   height: 14px;
 }
 /* ---------------------------------------------------------------------------- */
+
+
+
+@media (max-width: 768px) {
+    .layout-main-section .widget {
+        /* padding: 20px !important; */
+        /* margin-bottom: 20px !important; */
+    }
+}
