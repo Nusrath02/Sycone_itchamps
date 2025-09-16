@@ -3464,7 +3464,7 @@ div.page-title::before,
 .col-xs-7.page-title::before {
     font-size: 28px !important;
     margin-right: 12px !important;
-    content: "📊" !important;
+    content: "🏠" !important;
     display: inline-block !important;
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
     vertical-align: middle !important;
@@ -3630,7 +3630,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Remove existing icon
         pageTitle.style.setProperty('--icon', 'none');
         
-        let icon = '📊'; // default
+        let icon = '🏠'; // default
         
         if (currentPath.includes('/app/stock') || currentRoute.includes('stock')) {
             icon = '📦';
