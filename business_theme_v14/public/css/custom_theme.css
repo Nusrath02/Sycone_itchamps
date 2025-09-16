@@ -8,13 +8,40 @@
     display: none !important;
 }
 
-/* ITChamps logo styling */
-. .-brand {
+/* ITChamps logo styling - FIXED */
+.navbar-brand {
     background: url("/assets/business_theme_v14/images/sycone_logo.png") no-repeat left center;
     background-size: contain;
     width: 160px;
     height: 40px;
+    text-indent: -9999px; /* Hide any text content */
+    overflow: hidden;
 }
+
+/* Alternative selectors in case the above doesn't work */
+.navbar .navbar-brand,
+.navbar-header .navbar-brand {
+    background: url("/assets/business_theme_v14/images/sycone_logo.png") no-repeat left center !important;
+    background-size: contain !important;
+    width: 160px !important;
+    height: 40px !important;
+    text-indent: -9999px !important;
+    overflow: hidden !important;
+}
+
+/* If ERPNext uses a different class structure */
+.app-logo,
+.navbar .app-logo {
+    background: url("/assets/business_theme_v14/images/sycone_logo.png") no-repeat left center !important;
+    background-size: contain !important;
+    width: 160px !important;
+    height: 40px !important;
+    text-indent: -9999px !important;
+    overflow: hidden !important;
+    display: block !important; /* Override the display: none */
+}
+
+/* ------------------- */
 
 /* Navbar background - clean white */
 .navbar,
