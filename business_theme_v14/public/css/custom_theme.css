@@ -3140,6 +3140,51 @@ element.style {
 
 /* main content icons */
 
+
+/* ==================== FIXED ICON SYSTEM ==================== */
+
+/* Base styling for page title icons */
+.page-title::before,
+div.page-title::before {
+    font-size: 24px !important;
+    margin-right: 8px !important;
+    content: "📊" !important; /* Default icon */
+    display: inline-block !important;
+}
+
+/* HR Module */
+body[data-route*="hr"] .page-title::before,
+body[data-pathname*="/app/hr"] .page-title::before {
+    content: "👥" !important;
+}
+
+/* Accounting */
+body[data-route*="accounting"] .page-title::before,
+body[data-pathname*="/app/accounting"] .page-title::before {
+    content: "💰" !important;
+}
+
+/* Stock */
+body[data-route*="stock"] .page-title::before,
+body[data-pathname*="/app/stock"] .page-title::before {
+    content: "📦" !important;
+}
+
+/* Add other modules following the same pattern... */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* Remove the default dashboard icon */
 .layout-main-section h1::before,
 .page-title::before {
