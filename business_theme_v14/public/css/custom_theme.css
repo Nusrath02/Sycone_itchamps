@@ -21,25 +21,13 @@
 /* /* Alternative selectors in case the above doesn't work */
 .navbar .navbar-brand,
 .navbar-header .navbar-brand {
-    background: url("/assets/business_theme_v14/images/sycone_logo.png") no-repeat left center !important;
+/*     background: url("/assets/business_theme_v14/images/sycone_logo.png") no-repeat left center !important;
     background-size: contain !important;
     width: 160px !important;
     height: 40px !important;
     text-indent: -9999px !important;
-    overflow: hidden !important;
-} */
-
-/* /* If ERPNext uses a different class structure */
-.app-logo,
-.navbar .app-logo {
-    background: url("/assets/business_theme_v14/images/sycone_logo.png") no-repeat left center !important;
-    background-size: contain !important;
-    width: 160px !important;
-    height: 40px !important;
-    text-indent: -9999px !important;
-    overflow: hidden !important;
-    display: block !important; /* Override the display: none */
-} */
+    overflow: hidden !important; */
+}
 
 /* ------------------- */
 
@@ -2259,7 +2247,7 @@ body {
 .navbar-expand,
 header.navbar,
 .sticky-top {
-linear-gradient(180deg, rgb(240 220 221) 0%, rgb(243 24 36) 100%) !important
+background: linear-gradient(180deg, rgb(240 220 221) 0%, rgb(243 24 36) 100%) !important
     border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
