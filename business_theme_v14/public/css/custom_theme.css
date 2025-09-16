@@ -3069,3 +3069,60 @@ header * {
         /* margin-bottom: 20px !important; */
     }
 }
+
+
+
+
+/* sidebar tag */
+
+.dropdown-menu {
+    padding: 4px;
+    font-size: var(--text-base);
+    font-weight: var(--weight-regular);
+    letter-spacing: .02em;
+    max-height: 500px;
+    overflow: auto;
+    border: 1px solid var(--subtle-accent);
+}
+
+.dropdown-menu.show {
+    display: block;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 200px;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: .75rem;
+    color: var(--text-color);
+    text-align: left;
+    list-style: none;
+    background-color: var(--fg-color);
+    background-clip: padding-box;
+    border: 1px solid var(--border-color);
+    border-radius: .375rem;
+    box-shadow: 0 .5rem 1rem #0000002d;
+}
+
+ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+element.style {
+    position: absolute;
+    transform: translate3d(15px, 195px, 0px);
+    top: 0px;
+    t: 0px;
+}
+/* side bar tag end */
