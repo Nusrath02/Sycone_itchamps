@@ -2233,8 +2233,7 @@ background-color: rgb(237, 28, 36) !important; /* Fallback */
 /* Target the specific page container div */
 #page-Workspaces,
 .content.page-container {
-    background: #FECACA;
-background: radial-gradient(circle, rgba(254, 202, 202, 1) 0%, rgba(252, 165, 165, 1) 25%, rgba(248, 113, 113, 1) 50%, rgba(244, 157, 157, 1) 70%, rgba(239, 68, 68, 1) 86%, rgba(220, 38, 38, 1) 100%);
+   background: linear-gradient(135deg, #fecaca 0%, #fca5a5 25%, #f87171 50%, #ef4444 75%, #dc2626 100%) !important;
     min-height: 100vh !important;
 }
 
