@@ -2229,8 +2229,8 @@ body {
 .navbar-expand,
 header.navbar,
 .sticky-top {
-background: #FF0000;
-background: radial-gradient(circle, rgba(255, 0, 0, 1) 0%, rgba(214, 64, 64, 1) 19%, rgba(255, 82, 82, 1) 100%);
+background: #e62727;
+background: radial-gradient(circle, rgba(230, 39, 39, 1) 0%, rgba(237, 225, 225, 1) 100%);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
 }
@@ -2253,8 +2253,7 @@ background: radial-gradient(circle, rgba(255, 0, 0, 1) 0%, rgba(214, 64, 64, 1) 
 nav[data-original-title],
 .navbar.navbar-light,
 .navbar.navbar-expand-lg {
-background: #FF0000;
-background: radial-gradient(circle, rgba(255, 0, 0, 1) 0%, rgba(214, 64, 64, 1) 19%, rgba(255, 82, 82, 1) 100%);
+background: linear-gradient(90deg, #87ceeb 0%, #87ceeb 25%, #6bb6ff 50%, #4da6ff 75%, #2196f3 100%) !important;
 }
 
 /* ITChamps logo area */
