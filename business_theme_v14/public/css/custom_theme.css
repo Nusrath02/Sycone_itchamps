@@ -2233,19 +2233,19 @@ background-color: rgb(237, 28, 36) !important; /* Fallback */
 /* Target the specific page container div */
 #page-Workspaces,
 .content.page-container {
-   background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
+    background: linear-gradient(135deg, #fecaca 0%, #fca5a5 25%, #f87171 50%, #ef4444 75%, #dc2626 100%) !important;
     min-height: 100vh !important;
 }
 
 /* Alternative broader targeting if the above doesn't work */
 div[data-page-route="workspaces"] {
-    background: linear-gradient(135deg, #e0f2fe 0%, #81d4fa 25%, #42a5f5 50%, #2196f3 75%, #1976d2 100%) !important;
+    background: linear-gradient(135deg, #fecaca 0%, #fca5a5 25%, #f87171 50%, #ef4444 75%, #dc2626 100%) !important;
     min-height: 100vh !important;
 }
 
 /* Ensure the body also has the gradient as fallback */
 body {
-    background: linear-gradient(135deg, #e0f2fe 0%, #81d4fa 25%, #42a5f5 50%, #2196f3 75%, #1976d2 100%) !important;
+    background: linear-gradient(135deg, #fecaca 0%, #fca5a5 25%, #f87171 50%, #ef4444 75%, #dc2626 100%) !important;
     min-height: 100vh !important;
 }
 
