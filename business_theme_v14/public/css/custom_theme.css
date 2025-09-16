@@ -2310,12 +2310,26 @@ linear-gradient(180deg, rgb(240 220 221) 0%, rgb(243 24 36) 100%) !important
 }
 
 /* Search bar in navbar */
-.navbar .form-control {
+/* .navbar .form-control {
 /*     background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important; */
     background: linear-gradient(180deg, rgb(133 99 101) 0%, rgb(191 12 21) 100%) !important;
     border: 1px solid rgba(255, 255, 255, 0.5) !important;
 /*     color: #1f2937 !important; */
     color: #e31e1e !important;
+} */
+
+
+/* Search bar in navbar */
+.navbar .form-control {
+    background: linear-gradient(180deg, rgb(219, 59, 68) 0%, rgb(177, 6, 14) 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    color: white !important;
+}
+
+/* Placeholder text styling */
+.navbar .form-control::placeholder {
+    color: white !important;
+    opacity: 0.8 !important;
 }
 
 .navbar .form-control:focus {
