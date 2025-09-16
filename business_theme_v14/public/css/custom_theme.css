@@ -440,7 +440,7 @@ header .form-control:focus {
 .layout-side-section,
 .sidebar-section,
 .desk-sidebar {
-    background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%) !important;
+    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
     padding: 20px 15px !important;
     border-radius: 0 !important;
     margin-left: 0 !important;
