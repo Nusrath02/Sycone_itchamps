@@ -3456,7 +3456,7 @@ header .form-control:focus {
     content: "" !important;
 }
 
-/* Base icon styling for page titles */
+/* Base icon styling - DEFAULT for all pages */
 .page-title::before,
 div.page-title::before,
 .col-md-4.page-title::before,
@@ -3469,11 +3469,22 @@ div.page-title::before,
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
     vertical-align: middle !important;
 }
-/* Home/Dashboard pages */
+
+/* Home page ONLY - more specific selectors */
 body[data-route*="home"] .page-title::before,
-body[data-route*="dashboard"] .page-title::before,
-[data-page-route*="home"] .page-title::before {
+body[data-route*="Home"] .page-title::before,
+body[data-pathname*="/app/home"] .page-title::before,
+body[data-pathname="/app"] .page-title::before,
+[data-page-route*="home"] .page-title::before,
+.page-title:contains("Home")::before {
     content: "🏠" !important;
+}
+
+/* Dashboard pages (if different from Home) */
+body[data-route*="dashboard"] .page-title::before,
+body[data-route*="Dashboard"] .page-title::before,
+[data-page-route*="dashboard"] .page-title::before {
+    content: "📊" !important;
 }
 
 /* Stock Module - Multiple targeting approaches for maximum compatibility */
