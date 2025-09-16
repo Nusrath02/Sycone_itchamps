@@ -9,7 +9,7 @@
 }
 
 /* ITChamps logo styling */
-.navbar .navbar-brand {
+. .-brand {
     background: url("/assets/business_theme_v14/images/sycone_logo.png") no-repeat left center;
     background-size: contain;
     width: 160px;
@@ -2253,8 +2253,8 @@ background: radial-gradient(circle, rgba(255, 0, 0, 1) 0%, rgba(214, 64, 64, 1) 
 nav[data-original-title],
 .navbar.navbar-light,
 .navbar.navbar-expand-lg {
-   background: #f04f54;
-background: radial-gradient(circle, rgba(240, 79, 84, 1) 0%, rgba(237, 57, 57, 1) 50%, rgba(237, 28, 36, 1) 100%);
+background: #FF0000;
+background: radial-gradient(circle, rgba(255, 0, 0, 1) 0%, rgba(214, 64, 64, 1) 19%, rgba(255, 82, 82, 1) 100%);
 }
 
 /* ITChamps logo area */
