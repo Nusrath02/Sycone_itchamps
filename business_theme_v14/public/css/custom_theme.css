@@ -3464,10 +3464,16 @@ div.page-title::before,
 .col-xs-7.page-title::before {
     font-size: 28px !important;
     margin-right: 12px !important;
-    content: "🏠" !important;
+    content: "📊" !important; /* Dashboard default */
     display: inline-block !important;
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
     vertical-align: middle !important;
+}
+/* Home/Dashboard pages */
+body[data-route*="home"] .page-title::before,
+body[data-route*="dashboard"] .page-title::before,
+[data-page-route*="home"] .page-title::before {
+    content: "🏠" !important;
 }
 
 /* Stock Module - Multiple targeting approaches for maximum compatibility */
