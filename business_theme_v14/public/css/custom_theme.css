@@ -3140,3 +3140,188 @@ element.style {
     t: 0px;
 }
 /* side bar tag end */
+
+
+
+
+
+
+
+
+
+
+/* main content icons */
+
+/* Remove the default dashboard icon */
+.layout-main-section h1::before,
+.page-title::before {
+    font-size: 24px;
+    margin-right: 8px;
+    /* Remove the fixed content */
+}
+
+/* Dynamic icons based on page content - using attribute selectors and title matching */
+
+/* Home/Dashboard */
+body[data-route*="home"] .layout-main-section h1::before,
+body[data-route*="dashboard"] .layout-main-section h1::before,
+.layout-main-section h1[title*="Home"]::before,
+.page-title[title*="Home"]::before {
+    content: "🏠";
+}
+
+/* Accounting */
+body[data-route*="accounting"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Accounting")) h1::before,
+[data-page-title*="Accounting"] .layout-main-section h1::before {
+    content: "💰";
+}
+
+/* Buying */
+body[data-route*="buying"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Buying")) h1::before,
+[data-page-title*="Buying"] .layout-main-section h1::before {
+    content: "🛒";
+}
+
+/* Selling */
+body[data-route*="selling"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Selling")) h1::before,
+[data-page-title*="Selling"] .layout-main-section h1::before {
+    content: "🏪";
+}
+
+/* Stock */
+body[data-route*="stock"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Stock")) h1::before,
+[data-page-title*="Stock"] .layout-main-section h1::before {
+    content: "📦";
+}
+
+/* Assets */
+body[data-route*="assets"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Assets")) h1::before,
+[data-page-title*="Assets"] .layout-main-section h1::before {
+    content: "🏢";
+}
+
+/* HR */
+body[data-route*="hr"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("HR")) h1::before,
+[data-page-title*="HR"] .layout-main-section h1::before {
+    content: "👥";
+}
+
+/* Manufacturing */
+body[data-route*="manufacturing"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Manufacturing")) h1::before,
+[data-page-title*="Manufacturing"] .layout-main-section h1::before {
+    content: "🏭";
+}
+
+/* Quality */
+body[data-route*="quality"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Quality")) h1::before,
+[data-page-title*="Quality"] .layout-main-section h1::before {
+    content: "✅";
+}
+
+/* Projects */
+body[data-route*="projects"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Projects")) h1::before,
+[data-page-title*="Projects"] .layout-main-section h1::before {
+    content: "📊";
+}
+
+/* Support */
+body[data-route*="support"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Support")) h1::before,
+[data-page-title*="Support"] .layout-main-section h1::before {
+    content: "🎧";
+}
+
+/* Users */
+body[data-route*="users"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Users")) h1::before,
+[data-page-title*="Users"] .layout-main-section h1::before {
+    content: "👤";
+}
+
+/* Website */
+body[data-route*="website"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Website")) h1::before,
+[data-page-title*="Website"] .layout-main-section h1::before {
+    content: "🌐";
+}
+
+/* Payroll */
+body[data-route*="payroll"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Payroll")) h1::before,
+[data-page-title*="Payroll"] .layout-main-section h1::before {
+    content: "💵";
+}
+
+/* CRM */
+body[data-route*="crm"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("CRM")) h1::before,
+[data-page-title*="CRM"] .layout-main-section h1::before {
+    content: "🤝";
+}
+
+/* Tools */
+body[data-route*="tools"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Tools")) h1::before,
+[data-page-title*="Tools"] .layout-main-section h1::before {
+    content: "🔧";
+}
+
+/* ERPNext Settings */
+body[data-route*="settings"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Settings")) h1::before,
+.layout-main-section:has(h1:contains("ERPNext Settings")) h1::before,
+[data-page-title*="Settings"] .layout-main-section h1::before {
+    content: "⚙️";
+}
+
+/* Integrations */
+body[data-route*="integrations"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Integrations")) h1::before,
+.layout-main-section:has(h1:contains("ERPNext Integration")) h1::before,
+[data-page-title*="Integrations"] .layout-main-section h1::before {
+    content: "🔗";
+}
+
+/* Build */
+body[data-route*="build"] .layout-main-section h1::before,
+.layout-main-section:has(h1:contains("Build")) h1::before,
+[data-page-title*="Build"] .layout-main-section h1::before {
+    content: "🔨";
+}
+
+/* Default fallback icon for any unmatched pages */
+.layout-main-section h1::before,
+.page-title::before {
+    content: "📊";
+}
+
+/* Alternative approach using URL-based matching if ERPNext uses specific URL patterns */
+body[data-pathname*="/app/accounting"] .layout-main-section h1::before { content: "💰"; }
+body[data-pathname*="/app/buying"] .layout-main-section h1::before { content: "🛒"; }
+body[data-pathname*="/app/selling"] .layout-main-section h1::before { content: "🏪"; }
+body[data-pathname*="/app/stock"] .layout-main-section h1::before { content: "📦"; }
+body[data-pathname*="/app/assets"] .layout-main-section h1::before { content: "🏢"; }
+body[data-pathname*="/app/hr"] .layout-main-section h1::before { content: "👥"; }
+body[data-pathname*="/app/manufacturing"] .layout-main-section h1::before { content: "🏭"; }
+body[data-pathname*="/app/quality"] .layout-main-section h1::before { content: "✅"; }
+body[data-pathname*="/app/projects"] .layout-main-section h1::before { content: "📊"; }
+body[data-pathname*="/app/support"] .layout-main-section h1::before { content: "🎧"; }
+body[data-pathname*="/app/users"] .layout-main-section h1::before { content: "👤"; }
+body[data-pathname*="/app/website"] .layout-main-section h1::before { content: "🌐"; }
+body[data-pathname*="/app/payroll"] .layout-main-section h1::before { content: "💵"; }
+body[data-pathname*="/app/crm"] .layout-main-section h1::before { content: "🤝"; }
+body[data-pathname*="/app/tools"] .layout-main-section h1::before { content: "🔧"; }
+body[data-pathname*="/app/settings"] .layout-main-section h1::before { content: "⚙️"; }
+body[data-pathname*="/app/integrations"] .layout-main-section h1::before { content: "🔗"; }
+body[data-pathname*="/app/build"] .layout-main-section h1::before { content: "🔨"; }
+
+/* main content icons  */
