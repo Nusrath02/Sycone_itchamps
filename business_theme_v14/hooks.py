@@ -25,7 +25,7 @@ app_include_css = [
 ]
 
 # app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
-# app_include_js = "/assets/business_theme_v14/js/icons_home.js"
+app_include_js = "/assets/business_theme_v14/js/icons_home.js"
 
 
 
