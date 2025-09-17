@@ -2247,7 +2247,7 @@ body {
 .navbar-expand,
 header.navbar,
 .sticky-top {
-background: linear-gradient(180deg, rgb(233 197 199) 0%, rgb(255 0 15) 100%) !important;
+background: linear-gradient(180deg, rgb(233, 197, 199) 0%, rgb(255, 0, 15) 100%) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3) !important;
@@ -2276,7 +2276,7 @@ background: linear-gradient(180deg, rgb(233 197 199) 0%, rgb(255 0 15) 100%) !im
 nav[data-original-title],
 .navbar.navbar-light,
 .navbar.navbar-expand-lg {
-background: linear-gradient(180deg, rgb(233 197 199) 0%, rgb(255 0 15) 100%) !important;
+background: linear-gradient(180deg, rgb(233, 197, 199) 0%, rgb(255, 0, 15) 100%) !important;
 }
 
 /* ITChamps logo area */
@@ -2350,7 +2350,7 @@ background: linear-gradient(180deg, rgb(233 197 199) 0%, rgb(255 0 15) 100%) !im
 /* Force override any conflicting styles */
 body .navbar,
 html .navbar {
-      background: linear-gradient(180deg, rgb(229, 15, 25) 0%, rgb(239, 202, 204) 100%) !important;
+       background: linear-gradient(180deg, rgb(233, 197, 199) 0%, rgb(255, 0, 15) 100%) !important;
 }
 
 /* Mobile responsive navbar */
