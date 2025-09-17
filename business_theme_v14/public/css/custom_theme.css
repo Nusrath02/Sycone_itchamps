@@ -2228,13 +2228,13 @@ background-color: rgb(237, 28, 36) !important; /* Fallback */
 /* ==================== PAGE CONTAINER BACKGROUND ==================== */
 /* Add blue gradient background to the main page container */
 /* ----------------------------------------------------------------- */
-/* /* Force main section background to override page containers */
+/* Force main section background to override page containers */
 .layout-main-section {
     background: #d5bf83 !important;
     padding: 30px !important;
     margin-left: 0 !important;
 }
- */
+
 /* Override any conflicting page container backgrounds */
 #page-Workspaces .layout-main-section,
 .content.page-container .layout-main-section {
@@ -2256,13 +2256,13 @@ div[data-page-route="workspaces"] {
     background: linear-gradient(135deg, #fecaca 0%, #fca5a5 25%, #f87171 50%, #ef4444 75%, #dc2626 100%) !important;
     min-height: 100vh !important;
 }
-
-/* Ensure the body also has the gradient as fallback */
+/* testing-------------------------------------------------- */
+/* /* Ensure the body also has the gradient as fallback */
 body {
     background: linear-gradient(135deg, #fecaca 0%, #fca5a5 25%, #f87171 50%, #ef4444 75%, #dc2626 100%) !important;
     min-height: 100vh !important;
-}
-
+} */
+/* testing-------------------------------------------------- */
 
 /* ==================== NAVBAR GRADIENT FIX ==================== */
 /* Updated CSS to match the blue gradient shown in your image */
