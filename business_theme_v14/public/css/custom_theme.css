@@ -2276,7 +2276,7 @@ background: linear-gradient(180deg, rgb(240 220 221) 0%, rgb(243 24 36) 100%) !i
 nav[data-original-title],
 .navbar.navbar-light,
 .navbar.navbar-expand-lg {
-linear-gradient(180deg, rgb(240 220 221) 0%, rgb(243 24 36) 100%) !important
+background: linear-gradient(180deg, rgb(233 197 199) 0%, rgb(255 0 15) 100%) !important;
 }
 
 /* ITChamps logo area */
