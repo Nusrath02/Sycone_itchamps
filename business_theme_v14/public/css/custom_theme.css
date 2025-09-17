@@ -2227,21 +2227,21 @@ background-color: rgb(237, 28, 36) !important; /* Fallback */
 
 /* ==================== PAGE CONTAINER BACKGROUND ==================== */
 /* Add blue gradient background to the main page container */
-
-/* Force main section background to override page containers */
+/* ----------------------------------------------------------------- */
+/* /* Force main section background to override page containers */
 .layout-main-section {
     background: #d5bf83 !important;
     padding: 30px !important;
     margin-left: 0 !important;
 }
-
+ */
 /* Override any conflicting page container backgrounds */
 #page-Workspaces .layout-main-section,
 .content.page-container .layout-main-section {
     background: #d5bf83 !important;
 }
 
-
+/* ----------------------------------------------------------------- */
 
 
 /* Target the specific page container div */
