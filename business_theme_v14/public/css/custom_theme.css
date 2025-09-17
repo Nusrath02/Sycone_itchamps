@@ -458,14 +458,16 @@ header .form-control:focus {
     opacity: 0.9 !important;
 }
 
-/* Individual navigation items like Home, Accounting, etc. */
+/* Individual navigation items with glass effect */
 .layout-side-section .sidebar-menu li,
 .layout-side-section .standard-sidebar li,
 .layout-side-section .sidebar-menu li a,
 .layout-side-section .standard-sidebar li a,
 .standard-sidebar-item {
-    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: linear-gradient(180deg, rgba(237, 28, 36, 0.7) 0%, rgba(200, 20, 30, 0.7) 100%) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
     border-radius: 8px !important;
     margin-bottom: 4px !important;
     padding: 8px 12px !important;
@@ -475,18 +477,21 @@ header .form-control:focus {
     display: flex !important;
     align-items: center !important;
     gap: 8px !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* Hover effects for navigation items */
+/* Hover effects for navigation items with enhanced glass effect */
 .layout-side-section .sidebar-menu li:hover,
 .layout-side-section .standard-sidebar li:hover,
 .layout-side-section .sidebar-menu li a:hover,
 .layout-side-section .standard-sidebar li a:hover,
 .standard-sidebar-item:hover {
-    background: rgba(255, 255, 255, 0.2) !important;
-    border-color: rgba(255, 255, 255, 0.4) !important;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, 0.2) 100%) !important;
+    backdrop-filter: blur(15px) !important;
+    -webkit-backdrop-filter: blur(15px) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
     transform: translateX(3px) !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
 }
 
 /* Navigation text styling */
