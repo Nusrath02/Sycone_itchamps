@@ -391,7 +391,7 @@
     content: none;
 }
 
-/* Search bar styling */
+/* /* Search bar styling */
 header .form-control {
     background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
     border: 1px solid #d1d5db !important;
@@ -423,7 +423,7 @@ header .form-control:focus {
     background: white !important;
     z-index: 25 !important;
     position: absolute !important;
-}
+} */
 
 /* ==================== SIDEBAR STYLING ==================== */
 /* Left sidebar with blue gradient and white text modules */
