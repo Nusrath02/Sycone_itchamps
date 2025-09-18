@@ -183,3 +183,40 @@ function frappeFriendlyScrollLogo() {
         });
     }
 }
+
+
+<script>
+// Use the first JavaScript implementation from above
+document.addEventListener('DOMContentLoaded', function() {
+    const scrollThreshold = 50;
+    const navbar = document.querySelector('.navbar, .navbar-expand, header.navbar');
+    
+    if (!navbar) return;
+    
+    let ticking = false;
+    
+    function updateNavbar() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > scrollThreshold) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        
+        ticking = false;
+    }
+    
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
+    }
+    
+    window.addEventListener('scroll', requestTick, { passive: true });
+    updateNavbar();
+});
+</script>
+
+
