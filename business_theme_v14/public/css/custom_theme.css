@@ -3099,6 +3099,111 @@ header * {
   width: 14px;
   height: 14px;
 }
+
+/* text color */
+/* Target only the Save Filter section items filteeeerrrrr */
+.sidebar-section.save-filter-section .list-filters.list-link:hover {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+ 
+/* Make "No Tags" plain text */
+.dropdown-menu.list-stats-dropdown.show .dropdown-item {
+    all: unset !important;           /* remove all default styles */
+    display: block !important;       /* keep it as block text */
+    font-size: 13px !important;
+    color: #111 !important;
+    padding: 2px 0 !important;       /* tiny spacing */
+    margin: 0 !important;
+    cursor: default !important;      /* no pointer hand */
+}
+/* filter sectin */
+ 
+/* 🎨 Change link text color ////container inside text color */
+.layout-main-section .widget .link-text {
+    color: #a67c28 !important;
+}
+/* Apply dark gold to ALL widget text */
+/* .layout-main-section .widget,
+.layout-main-section .widget * {
+    color: #a67c28 !important;  /* deep bold gold */
+} */
+ 
+.widget.links-widget-box .link-item .link-content{
+color: #a67c28 !important;
+}
+ 
+/* Force all clickable field texts inside widget body */
+.layout-main-section .widget .widget-body a,
+.layout-main-section .widget .widget-body span,
+.layout-main-section .widget .widget-body p {
+    color: #a67c28 !important;
+}
+span.link-content.ellipsis {
+      color: #a67c28 !important;
+}
+ 
+/* container inside text color */
+ 
+ 
+ 
+/* header red color */
+.ce-block.col-xs-12 .ce-header {
+    color: #c7290f !important;   /* deep red */
+    font-weight: bold;
+}
+ 
+.ce-block.col-xs-12 .ce-header,
+.ce-block.col-xs-12 .ce-header span {
+    color: #ff0000 !important;
+}
+/* o open */
+.indicator-pill.gray, .indicator-pill-right.gray, .indicator-pill-round.gray {
+    color: #ff7f7f !important;
+}
+/* o open */
+/* dta */
+ 
+.text-body, .text-muted, div#driver-popover-item .driver-popover-footer button.driver-close-btn {
+    color: #e14040 !important;
+}
+/* dta */
+ 
+/* viewlist */
+ 
+.widget.quick-list-widget-box .widget-footer .see-all {
+    width: 100%;
+    background-color: var(--btn-default-bg);
+    text-decoration: none;
+    color: #e14040 !important;
+}
+ 
+/* viewlist */
+ 
+/* side small line */
+ 
+.widget.onboarding-widget-box .widget-head .widget-subtitle {
+    color: #a67c28 !important
+}
+ 
+/* synk */
+ 
+.widget.dashboard-widget-box .widget-subtitle.widget.dashboard-widget-box .widget-subtitle{
+color: #e14040 !important;
+}
+/* chart of home h1 */
+.widget.onboarding-widget-box .widget-body .onboarding-step-preview h1{
+color: #e14040 !important;
+}
+ 
+/* synk */
+.widget.dashboard-widget-box .widget-subtitle {
+    font-size: 0.75rem;
+/*     color: #e14040 !important; */
+    color: #ff7f7f !important;
+    margin-top: var(--margin-xs);
+}
+/* text color */
 /* ---------------------------------------------------------------------------- */
 
 
