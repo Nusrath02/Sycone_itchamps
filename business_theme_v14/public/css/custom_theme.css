@@ -3776,23 +3776,6 @@ body[data-route*="Tools"] .page-title::before,
     content: "🔧" !important;
 }
 
-/* /* Tools */
-body[data-route*="tools"] .page-title::before,
-body[data-pathname*="/app/tools"] .page-title::before,
-body[data-route*="Tools"] .page-title::before,
-[data-page-route*="tools"] .page-title::before {
-    content: "" !important;
-    background-image: url('/assets/business_theme_v14/images/PUYDK-3.png') !important;
-    background-size: contain !important;
-    background-repeat: no-repeat !important;
-    background-position: center !important;
-    width: 28px !important;
-    height: 28px !important;
-    display: inline-block !important;
-}
- */
-
-
 /* Settings */
 body[data-route*="settings"] .page-title::before,
 body[data-pathname*="/app/settings"] .page-title::before,
