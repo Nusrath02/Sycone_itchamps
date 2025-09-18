@@ -1828,7 +1828,8 @@ li.nav-item.dropdown .dropdown-menu,
 .layout-main-section .widget .widget-body a,
 .layout-main-section .widget p,
 .layout-main-section .widget span {
-    color: #4b5563 !important;
+/*     color: #4b5563 !important; */
+    color:#ff7f7f !important;
     font-size: 14px !important;
     line-height: 1.6 !important;
 }
