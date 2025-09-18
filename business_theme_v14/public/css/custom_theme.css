@@ -3979,3 +3979,17 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 /* main content icons  */
+
+
+
+/* fontside of sidebar */
+
+.list-sidebar.overlay-sidebar .standard-sidebar-item, .list-sidebar.overlay-sidebar .sidebar-item, .list-sidebar .module-sidebar-item {
+    font-size: 14px !important;
+    padding: 2px 5px !important;
+    margin: 1px 0 !important;
+    line-height: 1 !important;
+    border-radius: 4px !important;
+}
+
+/* dontside of sidebar */
