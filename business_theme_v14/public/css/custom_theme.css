@@ -392,13 +392,6 @@
 }
 
 /* /* Search bar styling */
-header .form-control {
-    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
-    border: 1px solid #d1d5db !important;
-/*     color: #374151 !important; /* White text on red background */ */
-    z-index: 10 !important;
-    position: relative !important;
-}
 
 /* Placeholder text styling */
 header .form-control::placeholder {
@@ -2201,6 +2194,14 @@ background: linear-gradient(180deg, rgb(217 225 233) 0%, rgb(204 224 251) 100%) 
 }
 
 /* Search bar in navbar */
+header .form-control {
+    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
+    border: 1px solid #d1d5db !important;
+    color: #f4f4f4 !important;
+    z-index: 10 !important;
+    position: relative !important;
+}
+
 /* .navbar .form-control {
 /*     background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important; */
     background: linear-gradient(180deg, rgb(133 99 101) 0%, rgb(191 12 21) 100%) !important;
@@ -3496,13 +3497,6 @@ element.style {
 }
 
 /* Search bar styling */
-header .form-control {
-   background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
-    border: 1px solid #d1d5db !important;
-    color: #e31e1e !important;
-    z-index: 10 !important;
-    position: relative !important;
-}
 
 header .form-control:focus {
     background-color: white !important;
