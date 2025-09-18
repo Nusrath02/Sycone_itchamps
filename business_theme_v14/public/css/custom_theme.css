@@ -3634,7 +3634,7 @@ div.page-title::before,
     display: inline-block !important;
     font-family: "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji", sans-serif !important;
     vertical-align: middle !important;
-    filter: sepia(100%) saturate(150%) hue-rotate(25deg) brightness(0.8) !important;
+/*     filter: sepia(100%) saturate(150%) hue-rotate(25deg) brightness(0.8) !important; */
 }
 
 /* Home page ONLY - more specific selectors */
