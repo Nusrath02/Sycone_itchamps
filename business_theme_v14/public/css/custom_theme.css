@@ -429,13 +429,10 @@ header .form-control:focus {
 /*  notify list */
 
 /* Fix notification dropdown alignment */
-navbar-expand .navbar-nav .dropdown-menu
-Specificity: (0,3,0)
- {
-    position: absolute;
-    left: -235px;
+.navbar-expand .navbar-nav .dropdown-menu {
+    position: absolute !important;
+    left: -235px !important;
 }
-
 
 /* notify list */
 
