@@ -1762,7 +1762,7 @@ li.nav-item.dropdown .dropdown-menu,
 }
 
 .btn-primary:hover {
-    background: linear-gradient(135deg, #1d4ed8, #1e40af) !important;
+    background: #d5bf83 !important;
     transform: translateY(-1px) !important;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
 }
