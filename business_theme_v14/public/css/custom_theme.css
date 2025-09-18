@@ -395,7 +395,7 @@
 header .form-control {
     background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
     border: 1px solid #d1d5db !important;
-    color: #374151 !important; /* White text on red background */
+/*     color: #374151 !important; /* White text on red background */ */
     z-index: 10 !important;
     position: relative !important;
 }
@@ -411,7 +411,7 @@ header .form-control:focus {
     border-color: #3b82f6 !important;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
     z-index: 15 !important;
-    color: #374151 !important; /* Dark text when focused on white background */
+    /* No color specified here, so it falls back to browser default (black) */
 }
 
 /* Fix search dropdown layering */
