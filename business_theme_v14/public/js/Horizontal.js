@@ -1,219 +1,185 @@
-// // Frappe HR Horizontal Navigation Creator
-// // Creates modern navigation cards like the reference image
+/* ==================== SCROLL-RESPONSIVE LOGO JAVASCRIPT ==================== */
+/* Add this script to your HTML or include it in your theme's JS file */
 
-// (function() {
-//     'use strict';
+document.addEventListener('DOMContentLoaded', function() {
+    // Configuration
+    const scrollThreshold = 50; // Pixels scrolled before effect triggers
+    const scrollThresholdSmall = 150; // Pixels for "small" effect (optional)
     
-//     function initHorizontalNav() {
-//         // Remove existing navigation if it exists
-//         const existingNav = document.querySelector('.horizontal-nav-container');
-//         if (existingNav) {
-//             existingNav.remove();
-//         }
-        
-//         // Hide original Frappe onboarding content - comprehensive targeting
-//         const onboardingElements = document.querySelectorAll(
-//             '.onboarding-step, .onboarding-widget-box, .setup-wizard-slide, ' +
-//             '.onboarding-step.pending, .onboarding-step.pending.active, .module-onboarding, .onboarding-steps-wrapper, ' +
-//             '.onboarding-step-preview, .widget.onboarding-widget-box, ' +
-//             'div[data-doctype="Module Onboarding"], div[onboarding_name="Human Resource"], ' +
-//             'div[onboarding_name], .ce-block[onboarding_name], .widget[data-widget-name*="onboarding"]'
-//         );
-//         onboardingElements.forEach(el => {
-//             el.style.display = 'none';
-//             el.style.visibility = 'hidden';
-//         });
-        
-//         // Create horizontal navigation container
-//         const navContainer = document.createElement('div');
-//         navContainer.className = 'horizontal-nav-container';
-        
-//         // Define HR menu items based on your actual sidebar structure
-//         const hrMenuItems = [
-//             {
-//                 title: 'HR',
-//                 description: 'Human Resource management dashboard and overview.',
-//                 icon: '👥',
-//                 href: '/app/hr',
-//                 background: '#3b82f6'
-//             },
-//             {
-//                 title: 'Recruitment',
-//                 description: 'Plan and execute the recruitment of candidates till their joining.',
-//                 icon: '🎯',
-//                 href: '/app/recruitment',
-//                 background: '#10b981'
-//             },
-//             {
-//                 title: 'Employee Lifecycle',
-//                 description: 'Manage employee records, profiles, and career progression.',
-//                 icon: '👤',
-//                 href: '/app/employee-lifecycle',
-//                 background: '#8b5cf6'
-//             },
-//             {
-//                 title: 'Performance',
-//                 description: 'Track performance reviews and employee appraisals.',
-//                 icon: '⭐',
-//                 href: '/app/performance',
-//                 background: '#ef4444'
-//             },
-//             {
-//                 title: 'Shift & Attendance',
-//                 description: 'Monitor shift schedules and attendance tracking.',
-//                 icon: '⏰',
-//                 href: '/app/shift-%26-attendance',
-//                 background: '#06b6d4'
-//             },
-//             {
-//                 title: 'Expense Claims',
-//                 description: 'Process employee expense claims and reimbursements.',
-//                 icon: '💰',
-//                 href: '/app/expense-claims',
-//                 background: '#f97316'
-//             },
-//             {
-//                 title: 'Leaves',
-//                 description: 'Handle leave applications, approvals, and balance tracking.',
-//                 icon: '🏖️',
-//                 href: '/app/leaves',
-//                 background: '#84cc16'
-//             }
-//         ];
-        
-//         // Create navigation items
-//         hrMenuItems.forEach(item => {
-//             const navItem = document.createElement('a');
-//             navItem.className = 'nav-card-item';
-//             navItem.href = item.href;
-//             navItem.title = item.description;
-            
-//             // Create icon/image container
-//             const imageDiv = document.createElement('div');
-//             imageDiv.className = 'nav-card-image';
-//             imageDiv.style.background = item.background;
-//             imageDiv.textContent = item.icon;
-            
-//             // Create title
-//             const titleDiv = document.createElement('div');
-//             titleDiv.className = 'nav-card-title';
-//             titleDiv.textContent = item.title;
-            
-//             // Create description
-//             const descDiv = document.createElement('div');
-//             descDiv.className = 'nav-card-description';
-//             descDiv.textContent = item.description;
-            
-//             // Append elements
-//             navItem.appendChild(imageDiv);
-//             navItem.appendChild(titleDiv);
-//             navItem.appendChild(descDiv);
-//             navContainer.appendChild(navItem);
-//         });
-        
-//         // Insert navigation into page using better positioning
-//         insertNavigation(navContainer);
-//     }
+    // Get navbar element
+    const navbar = document.querySelector('.navbar, .navbar-expand, header.navbar');
     
-//     // Initialize when DOM is ready
-//     if (document.readyState === 'loading') {
-//         document.addEventListener('DOMContentLoaded', initHorizontalNav);
-//     } else {
-//         initHorizontalNav();
-//     }
-    
-//     // Re-initialize when navigating between pages
-//     if (window.frappe) {
-//         frappe.router.on('change', function() {
-//             setTimeout(initHorizontalNav, 100);
-//         });
-//     }
-    
-//     // Also listen for hash changes
-//     window.addEventListener('hashchange', function() {
-//         setTimeout(initHorizontalNav, 100);
-//     });
-    
-//     function insertNavigation(navContainer) {
-//         // Target the main content area directly from your HTML structure
-//         const layoutMainSection = document.querySelector('.layout-main-section');
-//         const deskPageContent = document.querySelector('.desk-page.page-main-content');
-//         const pageMainContent = document.querySelector('.page-main-content');
-        
-//         if (layoutMainSection) {
-//             // Insert at the very beginning of layout-main-section
-//             layoutMainSection.insertBefore(navContainer, layoutMainSection.firstChild);
-//         } else if (deskPageContent) {
-//             // Insert at the beginning of desk-page content
-//             deskPageContent.insertBefore(navContainer, deskPageContent.firstChild);
-//         } else if (pageMainContent) {
-//             // Insert at the beginning of page-main-content
-//             pageMainContent.insertBefore(navContainer, pageMainContent.firstChild);
-//         } else {
-//             // Fallback: try other selectors
-//             const pageHead = document.querySelector('.page-head');
-//             const pageContainer = document.querySelector('.page-container');
-//             const mainSection = document.querySelector('.main-section');
-            
-//             if (pageHead) {
-//                 pageHead.parentNode.insertBefore(navContainer, pageHead.nextSibling);
-//             } else if (pageContainer) {
-//                 pageContainer.insertBefore(navContainer, pageContainer.firstChild);
-//             } else if (mainSection) {
-//                 mainSection.insertBefore(navContainer, mainSection.firstChild);
-//             } else {
-//                 document.body.appendChild(navContainer);
-//             }
-//         }
-//     }
-    
-// })();
-
-
-// document.querySelectorAll('.list-sidebar.overlay-sidebar').forEach(el => {
-//     el.addEventListener('wheel', (e) => {
-//         e.preventDefault();
-//         el.scrollBy({
-//             top: e.deltaY < 0 ? -60 : 60, // adjust step (smaller = smoother, larger = faster)
-//             behavior: 'smooth'
-//         });
-//     }, { passive: false });
-// });
-
-
-
-
-frappe.ready(function() { let input = document.querySelector( '.save-filter-section .input-with-feedback' ); if (input) { input.addEventListener('input', function() { if (this.value.trim() !== "") { // show extra controls only when user types something document.querySelectorAll( '.save-filter-section .sidebar-action,' + '.save-filter-section .saved-filters-preview,' + '.save-filter-section .frappe-control[data-fieldtype="Check"]' ).forEach(el => { el.style.display = "block"; }); } }); } }); frappe.ready(function() { // Select the input and the hide saved section let filterInput = document.querySelector(".input-with-feedback.form-control.input-xs"); let hideSaved = document.querySelector(".save-filter-section .sidebar-action"); if (filterInput && hideSaved) { // Initially hide the section hideSaved.classList.add("hide-saved-hidden"); // Add event listener filterInput.addEventListener("input", function() { if (this.value.trim() === "") { hideSaved.classList.add("hide-saved-hidden"); } else { hideSaved.classList.remove("hide-saved-hidden"); } }); } });
-
-                                                                                                                                                                      
- const widgets = document.querySelectorAll('.widget-shortcut-widget-box');
-let jobOpeningWidget = null;
-widgets.forEach(widget => {
-    const titleElement = widget.querySelector('.widget-title .ellipsis');
-    if (titleElement && titleElement.textContent.trim() === 'Job Opening') {
-        jobOpeningWidget = widget.closest('.widget-shortcut-widget-box');
+    if (!navbar) {
+        console.warn('Navbar not found - scroll logo effect disabled');
+        return;
     }
+    
+    // Throttle scroll events for better performance
+    let ticking = false;
+    
+    function updateNavbar() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Remove existing scroll classes
+        navbar.classList.remove('scrolled', 'scrolled-small', 'scrolled-alt');
+        
+        if (scrollTop > scrollThresholdSmall) {
+            // Most scrolled state (smallest logo)
+            navbar.classList.add('scrolled-small');
+        } else if (scrollTop > scrollThreshold) {
+            // Medium scroll state
+            navbar.classList.add('scrolled');
+        }
+        // else: normal state (no classes added)
+        
+        ticking = false;
+    }
+    
+    function requestTick() {
+        if (!ticking) {
+            requestAnimationFrame(updateNavbar);
+            ticking = true;
+        }
+    }
+    
+    // Listen for scroll events
+    window.addEventListener('scroll', requestTick, { passive: true });
+    
+    // Initial check in case page loads already scrolled
+    updateNavbar();
 });
-if (jobOpeningWidget) {
-    const parent = jobOpeningWidget.parentElement;
-    parent.appendChild(jobOpeningWidget);
-    console.log('Job Opening widget moved to bottom');
-} else {
-    console.log('Job Opening widget not found');
-}   
 
-let el = document.querySelector('.sidebar-section.filter-section');
-if (!el) { console.log('filter-section not found'); }
-else {
-  let p = el;
-  while (p) {
-    const cs = getComputedStyle(p);
-    console.log(p.tagName.toLowerCase(), p.className, 'margin-bottom=', cs.marginBottom, 'padding-bottom=', cs.paddingBottom, 'height=', cs.height);
-    p = p.parentElement;
-    if (p.tagName.toLowerCase()==='body') break;
-  }
+/* ==================== ALTERNATIVE IMPLEMENTATIONS ==================== */
+
+/* Option 1: Simple version - just one scroll state */
+function simpleScrollLogo() {
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.navbar');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    });
 }
-document.querySelectorAll('.widget.spacer, .spacer, .flex-spacer').forEach(n=>n.style.display='none');
 
+/* Option 2: Smooth percentage-based scaling */
+function smoothScrollLogo() {
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.navbar');
+        const logo = document.querySelector('.navbar-brand');
+        const maxScroll = 200; // Maximum scroll distance for effect
+        
+        window.addEventListener('scroll', function() {
+            const scrollTop = Math.min(window.scrollY, maxScroll);
+            const scrollPercent = scrollTop / maxScroll;
+            
+            // Calculate logo size (160px to 100px)
+            const minWidth = 100;
+            const maxWidth = 160;
+            const minHeight = 25;
+            const maxHeight = 40;
+            
+            const currentWidth = maxWidth - (scrollPercent * (maxWidth - minWidth));
+            const currentHeight = maxHeight - (scrollPercent * (maxHeight - minHeight));
+            
+            logo.style.width = currentWidth + 'px';
+            logo.style.height = currentHeight + 'px';
+            
+            // Adjust navbar padding
+            const minPadding = 0.2;
+            const maxPadding = 0.5;
+            const currentPadding = maxPadding - (scrollPercent * (maxPadding - minPadding));
+            navbar.style.padding = currentPadding + 'rem 1rem';
+        });
+    });
+}
 
-    (() => {
+/* Option 3: With intersection observer for better performance */
+function observerScrollLogo() {
+    document.addEventListener('DOMContentLoaded', function() {
+        const navbar = document.querySelector('.navbar');
+        
+        // Create a trigger element at the top of the page
+        const trigger = document.createElement('div');
+        trigger.style.height = '50px';
+        trigger.style.position = 'absolute';
+        trigger.style.top = '0';
+        trigger.style.width = '100%';
+        trigger.style.pointerEvents = 'none';
+        document.body.insertBefore(trigger, document.body.firstChild);
+        
+        // Intersection Observer
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    navbar.classList.remove('scrolled');
+                } else {
+                    navbar.classList.add('scrolled');
+                }
+            });
+        }, {
+            threshold: 0,
+            rootMargin: '0px 0px 0px 0px'
+        });
+        
+        observer.observe(trigger);
+    });
+}
+
+/* ==================== FRAPPE/ERPNEXT INTEGRATION ==================== */
+/* Special integration for ERPNext/Frappe framework */
+function frappeFriendlyScrollLogo() {
+    // Wait for Frappe to load
+    function initScrollLogo() {
+        const navbar = document.querySelector('.navbar, header.navbar, .sticky-top');
+        
+        if (!navbar) {
+            // Try again after a delay if navbar not found
+            setTimeout(initScrollLogo, 500);
+            return;
+        }
+        
+        let scrollTimer = null;
+        
+        window.addEventListener('scroll', function() {
+            // Clear existing timer
+            if (scrollTimer) {
+                clearTimeout(scrollTimer);
+            }
+            
+            // Debounce scroll events
+            scrollTimer = setTimeout(function() {
+                const scrolled = window.scrollY > 50;
+                
+                if (scrolled) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            }, 10);
+        }, { passive: true });
+        
+        // Initial state
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        }
+    }
+    
+    // Try to initialize immediately
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initScrollLogo);
+    } else {
+        initScrollLogo();
+    }
+    
+    // Also try when Frappe is ready (if available)
+    if (typeof frappe !== 'undefined') {
+        frappe.ready(function() {
+            setTimeout(initScrollLogo, 100);
+        });
+    }
+}
