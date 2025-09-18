@@ -2704,6 +2704,7 @@ header * {
   padding: 6px 10px !important;
   color: #374151 !important;
   border-radius: 4px !important;
+
 }
 .dropdown-menu.group-by-dropdown .dropdown-item:hover,
 .dropdown-menu.group-by-dropdown .dropdown-item:focus {
@@ -2741,8 +2742,8 @@ header * {
   min-width: 160px !important;       /* compact popup */
   max-width: 220px !important;      
  max-height: 105px !important;      
-/*     height: 140px !important;  */
-/*   overflow-y: auto !important; */
+    height: 140px !important;  
+     overflow-y: auto !important;
     overflow: hidden !important;
   background: #ffffff !important;
   border: 1px solid #d1d5db !important;
