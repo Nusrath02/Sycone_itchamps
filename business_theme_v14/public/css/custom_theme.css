@@ -2354,7 +2354,6 @@ header * {
 .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar,
 .list-sidebar.overlay-sidebar {
     font-size: 14px !important;
-    
     min-height: 0 !important;
     height: auto !important;
     align-self: flex-start !important;
@@ -2433,7 +2432,7 @@ header * {
 .list-sidebar.overlay-sidebar .standard-sidebar-item:hover,
 .list-sidebar.overlay-sidebar .sidebar-item:hover,
 .list-sidebar .module-sidebar-item:hover {
-    background: #2563eb !important;    /* brighter hover color */
+    background: #9b8065 !important;    /* brighter hover color */
     color: #fff !important;
     transform: scale(1.02);
     border-radius: 10px !important;
