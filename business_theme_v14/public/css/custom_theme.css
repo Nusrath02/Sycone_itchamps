@@ -3769,14 +3769,14 @@ body[data-route*="Payroll"] .page-title::before,
 }
 
 /* Tools */
-/* body[data-route*="tools"] .page-title::before,
+body[data-route*="tools"] .page-title::before,
 body[data-pathname*="/app/tools"] .page-title::before,
 body[data-route*="Tools"] .page-title::before,
 [data-page-route*="tools"] .page-title::before {
     content: "🔧" !important;
-} */
+}
 
-/* Tools */
+/* /* Tools */
 body[data-route*="tools"] .page-title::before,
 body[data-pathname*="/app/tools"] .page-title::before,
 body[data-route*="Tools"] .page-title::before,
@@ -3790,7 +3790,7 @@ body[data-route*="Tools"] .page-title::before,
     height: 28px !important;
     display: inline-block !important;
 }
-
+ */
 
 
 /* Settings */
