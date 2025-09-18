@@ -2353,6 +2353,7 @@ header * {
 .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar,
 .list-sidebar.overlay-sidebar {
     font-size: 14px !important;
+    
     min-height: 0 !important;
     height: auto !important;
     align-self: flex-start !important;
