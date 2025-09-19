@@ -1,6 +1,10 @@
-
 // SYConE Custom Footer Implementation for ERPNext/Frappe
 // Add this script to your custom app or theme
+
+// Multiple initialization methods to ensure footer loads
+$(document).ready(function() {
+    createSyconEFooter();
+});
 
 frappe.ready(() => {
     createSyconEFooter();
@@ -9,6 +13,11 @@ frappe.ready(() => {
 // Also trigger on route changes for SPA navigation
 $(document).on('page-change', function() {
     setTimeout(createSyconEFooter, 100);
+});
+
+// Additional fallback for page loads
+window.addEventListener('load', function() {
+    setTimeout(createSyconEFooter, 200);
 });
 
 function createSyconEFooter() {
