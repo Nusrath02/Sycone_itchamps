@@ -115,7 +115,7 @@ function createSyconEFooter() {
     `;
     
     // Append footer to body
-    $('body').append(footerHTML);
+    $('.layout-main-section').after(footerHTML);
 }
 
 // Alternative method using frappe hooks if the above doesn't work
