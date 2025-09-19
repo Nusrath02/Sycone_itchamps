@@ -3998,7 +3998,7 @@ footer.footer,
 
 /* Create custom footer container */
 .sycone-custom-footer {
-    position: fixed;
+    position: relative !important; /* Changed from fixed */
     bottom: 0;
     left: 0;
     right: 0;
@@ -4007,6 +4007,7 @@ footer.footer,
     z-index: 1000;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
+     margin-top: 40px; /* Add some space above footer */
 }
 
 /* Footer content wrapper */
@@ -4141,7 +4142,7 @@ footer.footer,
 .layout-main-section,
 .main-section,
 .page-container {
-    padding-bottom: 120px !important;
+    padding-bottom: 80px !important; /* Reduced from 120px */
 }
 
 /* Responsive design */
@@ -4190,10 +4191,13 @@ footer.footer,
         height: 35px;
     }
     
+
+}
+@media (max-width: 768px) {
     .layout-main-section,
     .main-section,
     .page-container {
-        padding-bottom: 140px !important;
+        padding-bottom: 100px !important; /* Reduced from 140px */
     }
 }
 
