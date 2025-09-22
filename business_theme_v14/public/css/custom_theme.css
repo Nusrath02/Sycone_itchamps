@@ -3998,7 +3998,7 @@ footer.footer,
 
 /* Create custom footer container - positioned at bottom */
 .sycone-custom-footer {
-    position: fixed !important;
+    position: relative !important;
     bottom: 0;
     left: 0;
     right: 0;
