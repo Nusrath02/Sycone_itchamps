@@ -17,16 +17,17 @@ app_include_css = "/assets/business_theme_v14/css/custom_theme.css"
 # app_include_css = "/assets/business_theme_v14/css/business_theme_v14.css"
 
 import time
-
+ 
 app_version = str(int(time.time()))  # current timestamp, changes every deploy
-
-app_include_css = 
+ 
+app_include_css = [
     f"/assets/business_theme_v14/css/custom_theme.css?v={app_version}"
+]
 
 
 # app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
 app_include_js = "/assets/business_theme_v14/js/sycone_footer.js"
-app_include_js = "/assets/business_theme_v14/js/select_fix.js"
+
 
 
 
