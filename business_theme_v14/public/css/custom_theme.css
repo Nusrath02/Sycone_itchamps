@@ -1,5 +1,4 @@
 /* ==================== ITCHAMPS DASHBOARD THEME ==================== */
-
 /* ==================== NAVBAR STYLING ==================== */
 /* Top navigation bar with ITChamps logo */
 
@@ -1677,7 +1676,7 @@ li.nav-item.dropdown .dropdown-menu,
 .layout-main-section .widget p,
 .layout-main-section .widget span {
 /*     color: #4b5563 !important; */
-    color:#ff7f7f !important;
+    color:#21417b !important;
     font-size: 14px !important;
     line-height: 1.6 !important;
 }
@@ -1744,7 +1743,7 @@ li.nav-item.dropdown .dropdown-menu,
 /* Primary and secondary buttons */
 
 .btn-primary {
-    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
     border: none !important;
     border-radius: 8px !important;
     padding: 12px 24px !important;
@@ -1754,7 +1753,7 @@ li.nav-item.dropdown .dropdown-menu,
 }
 
 .btn-primary:hover {
-    background: #d5bf83 !important;
+    background: #2a5298 !important;
     transform: translateY(-1px) !important;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
 }
@@ -1872,7 +1871,7 @@ li.nav-item.dropdown .dropdown-menu,
         left: 280px !important;
         width: calc(100vw - 280px) !important;
         height: 100vh !important;
-        background: rgba(0, 0, 0, 0.5) !important;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
         z-index: -1 !important;
     }
 }
@@ -2101,7 +2100,7 @@ background-color: rgb(237, 28, 36) !important; /* Fallback */
 /* Override any conflicting page container backgrounds */
 #page-Workspaces .layout-main-section,
 .content.page-container .layout-main-section {
-    background: #d5bf83 !important;
+    background: #fff  !important;
 }
 
 /* ----------------------------------------------------------------- */
@@ -2110,7 +2109,7 @@ background-color: rgb(237, 28, 36) !important; /* Fallback */
 /* Target the specific page container div */
 #page-Workspaces,
 .content.page-container {
-    background: linear-gradient(135deg, #ffffff 0%, #ffffff 25%, #ffffff 50%, #ffffff 75%, #ffffff 100%) !important;
+    background: #fff  !important;
     min-height: 100vh !important;
 }
 
@@ -2187,7 +2186,7 @@ background: linear-gradient(180deg, rgb(217 225 233) 0%, rgb(204 224 251) 100%) 
 
 /* Search bar in navbar */
 header .form-control {
-    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
     border: 1px solid #d1d5db !important;
     color: #f4f4f4 !important;
     z-index: 10 !important;
@@ -2205,7 +2204,7 @@ header .form-control {
 
 /* Search bar in navbar */
 .navbar .form-control {
-    background: linear-gradient(180deg, rgb(219, 59, 68) 0%, rgb(177, 6, 14) 100%) !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
     border: 1px solid rgba(255, 255, 255, 0.5) !important;
     color: white !important;
 }
@@ -2423,10 +2422,38 @@ header * {
 .list-sidebar.overlay-sidebar .standard-sidebar-item:hover,
 .list-sidebar.overlay-sidebar .sidebar-item:hover,
 .list-sidebar .module-sidebar-item:hover {
-    background: #d5bf83 !important;    /* brighter hover color for sidebar menu item */
+    background: #2a5298 !important;    /* brighter hover color for sidebar menu item */
     color: #fff !important;
     transform: scale(1.02);
     border-radius: 10px !important;
+}
+
+.list-sidebar.overlay-sidebar .standard-sidebar-item, .list-sidebar.overlay-sidebar .sidebar-item, .list-sidebar .module-sidebar-item {
+    font-size: 14px !important;
+    padding: 2px 5px !important;
+    margin: 1px 0 !important;
+    line-height: 1 !important;
+    border-radius: 4px !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+    color: white !important;
+}
+
+
+.col-lg-2.layout-side-section, .col-lg-2.layout-side-section .list-sidebar.overlay-sidebar, .list-sidebar.overlay-sidebar {
+    font-size: 14px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    align-self: flex-start !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    padding: 8px !important;
+    padding-bottom: 0 !important;
+    border-radius: 15px !important;
+    background: #22437e !important;
 }
 
 /* ==================== FILTER SIDEBAR COMPACT GLASS THEME ==================== */
@@ -2478,12 +2505,12 @@ header * {
 .sidebar-section.save-filter-section select,
 .sidebar-section.filter-section input[type="text"],
 .sidebar-section.save-filter-section input[type="text"] {
-    background: #eceff5 !important;
-    border: none !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+    border: 1px solid #e0e3e8 !important;
     border-radius: 6px !important;
     padding: 6px 8px !important;   /* tighter padding */
     font-size: 12px !important;    /* smaller font */
-    color: #111827 !important;
+    color: #fff !important;
     margin-bottom: 8px !important;
 }
 
@@ -2492,7 +2519,7 @@ header * {
 .sidebar-section.save-filter-section .form-control:focus {
        border: none !important;
     box-shadow: none !important;
-    background: #fff !important;
+    background: #2a5298 !important;
 }
 
 /* Buttons */
@@ -2500,13 +2527,13 @@ header * {
 .sidebar-section.save-filter-section .btn,
 .sidebar-section.filter-section button,
 .sidebar-section.save-filter-section button {
-    background: #f3f4f6 !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
     border: 1px solid #d1d5db !important;
     border-radius: 6px !important;
     padding: 5px 8px !important;   /* smaller */
     font-size: 12px !important;    /* smaller */
     font-weight: 500 !important;
-    color: #111827 !important;
+    color: #fff !important;
     margin-bottom: 6px !important;
     width: 100% !important;
 }
@@ -3131,7 +3158,8 @@ color: #a67c28 !important;
 .layout-main-section .widget .widget-body a,
 .layout-main-section .widget .widget-body span,
 .layout-main-section .widget .widget-body p {
-    color: #a67c28 !important;
+    color: #21417b !important;
+    
 }
 span.link-content.ellipsis {
       color: #a67c28 !important;
@@ -3143,23 +3171,23 @@ span.link-content.ellipsis {
  
 /* header red color */
 .ce-block.col-xs-12 .ce-header {
-    color: #c7290f !important;   /* deep red */
+    color: #21417b !important;   /* deep red */
     font-weight: bold;
 }
  
 .ce-block.col-xs-12 .ce-header,
 .ce-block.col-xs-12 .ce-header span {
-    color: #ff0000 !important;
+    color: #21417b !important;
 }
 /* o open */
 .indicator-pill.gray, .indicator-pill-right.gray, .indicator-pill-round.gray {
-    color: #ff7f7f !important;
+    color: #21417b !important;
 }
 /* o open */
 /* dta */
  
 .text-body, .text-muted, div#driver-popover-item .driver-popover-footer button.driver-close-btn {
-    color: #e14040 !important;
+    color: #21417b !important;
 }
 /* dta */
  
@@ -3169,7 +3197,7 @@ span.link-content.ellipsis {
     width: 100%;
     background-color: var(--btn-default-bg);
     text-decoration: none;
-    color: #e14040 !important;
+    color: #21417b !important;
 }
  
 /* viewlist */
@@ -3177,24 +3205,24 @@ span.link-content.ellipsis {
 /* side small line */
  
 .widget.onboarding-widget-box .widget-head .widget-subtitle {
-    color: #a67c28 !important
+    color: #21417b !important
 }
  
 /* synk */
  
 .widget.dashboard-widget-box .widget-subtitle.widget.dashboard-widget-box .widget-subtitle{
-color: #e14040 !important;
+color: #21417b !important;
 }
 /* chart of home h1 */
 .widget.onboarding-widget-box .widget-body .onboarding-step-preview h1{
-color: #e14040 !important;
+color: #2a5298 !important;
 }
  
 /* synk */
 .widget.dashboard-widget-box .widget-subtitle {
     font-size: 0.75rem;
 /*     color: #e14040 !important; */
-    color: #ff7f7f !important;
+    color: #21417b !important;
     margin-top: var(--margin-xs);
 }
 /* text color */
@@ -3217,12 +3245,12 @@ color: #e14040 !important;
 /* === Make "Edit Filters" look exactly like other fields === */
 .sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action,
 .sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action * {
-    background: #f8f9fa !important;   /* same background as other fields */
-    border: 1px solid #ddd !important; /* same border as selects */
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;   /* same background as other fields */
+    border: 1px solid #e0e3e8 !important; /* same border as selects */
     border-radius: 4px !important;
     padding: 6px 10px !important;     /* same padding as selects */
     margin: 5px 0 !important;
-    color: #000 !important;
+    color: #fff !important;
     width: 100% !important;
     box-shadow: none !important;
     text-align: left !important;
@@ -3242,12 +3270,12 @@ color: #e14040 !important;
 .sidebar-section.filter-section .list-tags input,
 .sidebar-section.filter-section .list-tags button,
 .sidebar-section.filter-section .list-tags a {
-    background: #f8f9fa !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
     border: 1px solid #ddd !important;
     border-radius: 4px !important;
     padding: 6px 10px !important;
     margin: 5px 0 !important;
-    color: #000 !important;
+    color: #fff !important;
     width: 100% !important;
     box-shadow: none !important;
     text-align: left !important;
@@ -3262,7 +3290,7 @@ color: #e14040 !important;
 .sidebar-section.filter-section .list-tags select:hover,
 .sidebar-section.filter-section .list-tags input:hover {
     background: #f8f9fa !important;
-    border: 1px solid #ddd !important;
+    border: 1px solid #e0e3e8 !important;
     box-shadow: none !important;
     color: #000 !important;
 }
@@ -3362,12 +3390,12 @@ body .tt-menu {
 /* === Make "Edit Filters" look exactly like other fields === */
 .sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action,
 .sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action * {
-    background: #f8f9fa !important;   /* same background as other fields */
-    border: none !important; /* same border as selects */
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important !important;   /* same background as other fields */
+    border: 1px solid #e0e3e8 !important; /* same border as selects */
     border-radius: 6px !important;
     padding: 2px 5px !important;     /* same padding as selects */
     margin: 5px 0 !important;
-    color: #000 !important;
+    color: #fff !important;
     width: 100% !important;
     box-shadow: none !important;
     text-align: left !important;
@@ -3506,7 +3534,7 @@ body .tt-menu {
   box-shadow: none !important;
   font-weight: 600 !important;   /* bold */
   font-size: 12px !important;    /* increase size (adjust as needed) */
-  color: #111 !important;        /* readable dark color */
+  color: #fff !important;        /* readable dark color */
   padding: 2px 0 !important;     /* small vertical spacing */
   cursor: default !important;    /* make it behave like text */
 }
@@ -3556,6 +3584,25 @@ body .tt-menu {
 .sidebar-section.save-filter-section::before {
     display: none !important;
     content: none !important;
+}
+
+/* 3) Target your exact anchor class too (extra specificity) */
+.sidebar-section.filter-section .list-tags .dropdown-menu a.stat-link.dropdown-item,
+.sidebar-section.filter-section .list-tags .dropdown-menu a.stat-link.dropdown-item:hover,
+.sidebar-section.filter-section .list-tags .dropdown-menu a.stat-link.dropdown-item:focus {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  color: inherit !important;
+    cursor:pointer !important;
+    border:none !important;
+}
+
+/* Remove hover background for the input area */
+.sidebar-section.save-filter-section li.input-area input:hover {
+    background: transparent !important;
+    box-shadow: none !important;
 }
 
 /* -----------------------------Abhi ended----------------------------------------------- */
@@ -3853,7 +3900,7 @@ header .form-control:focus {
 .layout-side-section .sidebar-menu li a,
 .layout-side-section .standard-sidebar li a, */
 .standard-sidebar-item {
-    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
+    background: #2a5298 !important;
     border: 1px solid rgba(255, 255, 255, 0.2) !important;
     border-radius: 8px !important;
     margin-bottom: 4px !important;
@@ -4215,7 +4262,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 /* ==================== BUTTON STYLING ==================== */
 .btn-primary {
-    background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
     border: none !important;
     border-radius: 8px !important;
     padding: 12px 24px !important;
@@ -4225,7 +4272,7 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 
 .btn-primary:hover {
-    background: #d5bf83 !important;
+    background: #2a5298 !important;
     transform: translateY(-1px) !important;
     box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4) !important;
 }
@@ -4375,7 +4422,7 @@ footer.footer,
 
 /* Copyright text */
 .sycone-copyright {
-    color: #8b6914;
+    color: #21417b;
     font-size: 12px;
     display: flex;
     flex-wrap: wrap;
@@ -4386,7 +4433,7 @@ footer.footer,
 }
 
 .sycone-copyright a {
-    color: #8b6914;
+    color: #21417b;
     text-decoration: none;
     font-weight: 500;
 }
@@ -4503,23 +4550,13 @@ button .section-title span,
 
 /* test color end */
 
-.layout-side-section, .sidebar-section, .desk-sidebar {
-    /* background: linear-gradient(180deg, rgb(237, 28, 36) 0%, rgb(200, 20, 30) 100%) !important; */
-    /* padding: 20px 15px !important; */
-    /* border-radius: 0 !important; */
-    /* margin-left: 0 !important; */
-    /* min-height: 100vh !important; */
-    /* box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important; */
-}
-
-
 
 
 @media (max-width: 991px) {
     .layout-side-section .overlay-sidebar {
         margin-top: 0 !important;
         position: fixed;
-        background: #e21d1d;
+        background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
         top: 0;
         left: 0;
         transform: translate(-110%);
@@ -4550,18 +4587,21 @@ ease-in-out;
     border-radius: 15px !important;
     background-color: #dc0e0e;
 }
-/* sidebar color and text end */
 
+
+
+/* sidebar color and text end */
 /* main container text color */
 .widget.onboarding-widget-box .widget-body .onboarding-step-preview h3{
-    color: #ed1d1d !important;
+    color: #2a5298 !important;
 }
 text color
 /* main container text color end */
 
+
 /* HR SETTINGS */
 .btn.btn-primary, div#driver-popover-item .driver-popover-footer button.btn-primary, div#driver-popover-item .driver-popover-footer button.driver-next-btn {
-    background-color: #f72828;
+    background-color: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
     color: var(--neutral);
     white-space: nowrap;
     --icon-stroke: currentColor;
@@ -4572,7 +4612,122 @@ text color
 .btn.btn-primary:hover, 
 div#driver-popover-item .driver-popover-footer button.btn-primary:hover, 
 div#driver-popover-item .driver-popover-footer button.driver-next-btn:hover {
-    background-color: rgb(213, 191, 131) !important;
+    background-color: #2a5298 !important;
 }
 
 /* HR SETTINGS END */
+
+
+/* ==================== SIDEBAR BACKGROUND GRADIENT UPDATE ==================== */
+
+/* Main sidebar container - apply the navy blue gradient */
+.layout-side-section, 
+.sidebar-section, 
+.desk-sidebar {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+    padding: 20px 15px !important;
+    border-radius: 0 !important;
+    margin-left: 0 !important;
+    min-height: 100vh !important;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Overlay sidebar - also apply gradient */
+.col-lg-2.layout-side-section, 
+.col-lg-2.layout-side-section .list-sidebar.overlay-sidebar, 
+.list-sidebar.overlay-sidebar {
+    font-size: 14px !important;
+    min-height: 0 !important;
+    height: auto !important;
+    align-self: flex-start !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+    padding: 8px !important;
+    padding-bottom: 0 !important;
+    border-radius: 15px !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+}
+
+/* ==================== SIDEBAR ITEMS STYLING ==================== */
+
+/* Sidebar menu items - set background to #2a5298 */
+.standard-sidebar-item {
+    background: #2a5298 !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 8px !important;
+    margin-bottom: 4px !important;
+    padding: 8px 12px !important;
+    transition: all 0.3s ease !important;
+    color: white !important;
+    text-decoration: none !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+/* Compact sidebar items */
+.list-sidebar.overlay-sidebar .standard-sidebar-item,
+.list-sidebar.overlay-sidebar .sidebar-item,
+.list-sidebar .module-sidebar-item {
+    font-size: 14px !important;
+    padding: 2px 5px !important;
+    margin: 1px 0 !important;
+    line-height: 1 !important;
+    border-radius: 4px !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+    color: white !important;
+}
+
+/* ==================== HOVER EFFECTS ==================== */
+
+/* Main sidebar item hover */
+.layout-side-section .sidebar-menu li:hover,
+.layout-side-section .standard-sidebar li:hover,
+.layout-side-section .sidebar-menu li a:hover,
+.layout-side-section .standard-sidebar li a:hover,
+.standard-sidebar-item:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    transform: translateX(3px) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* Compact sidebar item hover */
+.list-sidebar.overlay-sidebar .standard-sidebar-item:hover,
+.list-sidebar.overlay-sidebar .sidebar-item:hover,
+.list-sidebar .module-sidebar-item:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: #fff !important;
+    transform: scale(1.02);
+    border-radius: 10px !important;
+}
+
+
+
+
+/* Stock sidebar text */
+
+a {
+    color: #000000;
+    cursor: pointer;
+}
+
+.form-sidebar .form-sidebar-stats li:first-child .form-follow {
+    color: #ffffff;
+}
+
+
+use.like-icon {
+    stroke: #ffffff;
+}
+
+.text-body, .text-muted, div#driver-popover-item .driver-popover-footer button.driver-close-btn {
+    color: #ffffff !important;
+}
+
+/*  Stock sidebar text end */
+
+
