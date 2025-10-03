@@ -1646,17 +1646,6 @@ li.nav-item.dropdown .dropdown-menu,
     transform: translateY(-2px) !important;
 }
 
-/* Widget headers */
-/* .layout-main-section .widget .widget-head,
-.layout-main-section .widget .widget-title,
-.widget-head h4 {
-    color: #1f2937 !important;
-    font-size: 18px !important;
-    font-weight: 600 !important;
-    margin-bottom: 20px !important;
-    border-bottom: 2px solid #f3f4f6 !important;
-    padding-bottom: 15px !important;
-} */
 .layout-main-section .widget .widget-head,
 .layout-main-section .widget .widget-title,
 .widget-head h4 {
@@ -1675,7 +1664,6 @@ li.nav-item.dropdown .dropdown-menu,
 .layout-main-section .widget .widget-body a,
 .layout-main-section .widget p,
 .layout-main-section .widget span {
-/*     color: #4b5563 !important; */
     color:#21417b !important;
     font-size: 14px !important;
     line-height: 1.6 !important;
@@ -1694,21 +1682,11 @@ li.nav-item.dropdown .dropdown-menu,
     text-decoration: underline !important;
 }
 
-/* Revenue metrics styling */
-/* .layout-main-section .widget .widget-body .number,
-.dashboard-number {
-    color: #3b82f6 !important;
-    font-size: 32px !important;
-    font-weight: 700 !important;
-    margin: 15px 0 !important;
-    display: block !important;
-} */
 .layout-main-section .widget .widget-body .number,
 .dashboard-number {
     color: #3b82f6 !important;
     font-size: 32px !important;
     font-weight: 700 !important;
-/*     margin: 1px 0 !important; */
     display: block !important;
     display:!important;
 }
@@ -4741,3 +4719,8 @@ use.like-icon {
     box-shadow: none !important;
 }
 
+
+body {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+    min-height: 100vh !important;
+}
