@@ -4732,3 +4732,12 @@ use.like-icon {
 /*  Stock sidebar text end */
 
 
+
+.sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action:hover,
+.sidebar-section.filter-section .list-group-by li.add-list-group-by.sidebar-action *:hover {
+    background: #2a5298 !important;
+    color: #fff !important;
+    border: 1px solid #e0e3e8 !important;
+    box-shadow: none !important;
+}
+
