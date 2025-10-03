@@ -4727,6 +4727,10 @@ body {
 
 
 /* Target only the Shift & Attendance icon */
-.sidebar-item[data-name="Shift & Attendance"] .icon {
-    color: white !important;
+.list-sidebar.overlay-sidebar .sidebar-item .icon, 
+.list-sidebar.overlay-sidebar .standard-sidebar-item .icon {
+    font-size: 8px !important;
+    margin-right: 3px !important;
+    min-width: 10px !important;
+    fill: white !important;
 }
