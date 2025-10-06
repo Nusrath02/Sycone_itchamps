@@ -3039,6 +3039,7 @@ header * {
     line-height: 25px !important; /* align text vertically */
     padding: 4px 8px !important;  /* adjust spacing */
     margin: 2px 0 !important;     /* reduce outer gap */
+    color:white !important;
 }
 
 .form-sidebar .form-follow.text-sm {
