@@ -3584,6 +3584,23 @@ body .tt-menu {
     box-shadow: none !important;
 }
 
+/* color */
+.ellipsis, .awesomplete>[role=listbox]>li, .awesomplete>[role=listbox]>[role=option], .widget.shortcut-widget-box .indicator-pill {
+ 
+    color: white !important;
+} 
+    body[data-route^=Form] .page-title .title-text {
+        color: black !important;
+        font-weight: bold !important;
+    }
+.page-title .title-area .title-text {
+color:black !important;
+}
+.d-flex {
+    display: flex !important;
+    color: white !important;
+}
+
 /* -----------------------------Abhi ended----------------------------------------------- */
 
 
