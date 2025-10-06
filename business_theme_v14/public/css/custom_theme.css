@@ -3039,7 +3039,6 @@ header * {
     line-height: 25px !important; /* align text vertically */
     padding: 4px 8px !important;  /* adjust spacing */
     margin: 2px 0 !important;     /* reduce outer gap */
-    color:white !important;
 }
 
 .form-sidebar .form-follow.text-sm {
@@ -3585,14 +3584,20 @@ body .tt-menu {
     box-shadow: none !important;
 }
 
-
-
-a.ellipsis{
+span.add-assignment-label{
     color:white !important;
 }
-span.ellipsis{
-    color: white !important;
+a.pill-label.ellipsis.explore-link{
+    color:white !important;
 }
+span.share-label{
+    color:white !important;
+}
+span.liked-by.like-action.d-flex.align-items-center.not-liked{
+    color:white !important;
+}
+
+
 
 /* -----------------------------Abhi ended----------------------------------------------- */
 
