@@ -30,7 +30,7 @@ function createSyconEFooter() {
             <div class="sycone-footer-content">
                 <!-- Copyright -->
                 <div class="sycone-copyright">
-                    <span>© 2025 SYConE CPMC Pvt Ltd. All Rights Reserved | Privacy Policy | Terms & Conditions </span>
+                    <span>© 2025 SYConE CPMC Pvt Ltd. All Rights Reserved | Design: ITChamps </span>
                 </div>
                 
                 <!-- SYConE Logo -->
