@@ -3672,7 +3672,31 @@ span.form-sidebar-items{
 span.text-muted{
    color:black !important;
 }
+ .sidebar-section.save-filter-section .input-area:hover,
+.sidebar-section.save-filter-section .list-link:hover {
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border-color: solid white !important;
+}
  
+/* === Make background transparent and border white === */
+.sidebar-section.save-filter-section input[type="text"],
+.sidebar-section.save-filter-section input[type="text"]:hover,
+.sidebar-section.save-filter-section input[type="text"]:focus {
+    background: transparent !important;
+    background-image: none !important;
+    border: 1px solid #fff !important; /* white border */
+    color: #fff !important;            /* white text inside input */
+    box-shadow: none !important;
+    outline: none !important;
+}
+.checkbox .label-area {
+    color: white !important;
+}
+.sidebar-section a, .control-value a, .data-row a {
+    color: white !important;
+}
 
 /* -----------------------------Abhi ended----------------------------------------------- */
 
