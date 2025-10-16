@@ -1705,6 +1705,14 @@ li.nav-item.dropdown .dropdown-menu,
     line-height: 1.6 !important;
 }
 
+.layout-main-section:first-of-type .widget .widget-body, 
+.layout-main-section:first-of-type .widget .widget-body a, 
+.layout-main-section:first-of-type .widget p, 
+.layout-main-section:first-of-type .widget span {
+    color: #ce040c !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+}
 /* Widget links */
 .layout-main-section .widget .widget-body a {
     color: #3b82f6 !important;
@@ -4854,43 +4862,5 @@ body {
 /* text color */
 
 /* First section - Red */
-/* Your Shortcuts section - Red */
-.layout-main-section:nth-child(1) .widget .widget-body,
-.layout-main-section:nth-child(1) .widget .widget-body a, 
-.layout-main-section:nth-child(1) .widget p, 
-.layout-main-section:nth-child(1) .widget span {
-    color: #ce040c !important;
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-}
 
-/* Accounting section - Red */
-.layout-main-section:nth-child(2) .widget:nth-child(1) .widget-body,
-.layout-main-section:nth-child(2) .widget:nth-child(1) .widget-body a,
-.layout-main-section:nth-child(2) .widget:nth-child(1) p,
-.layout-main-section:nth-child(2) .widget:nth-child(1) span {
-    color: #ce040c !important;
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-}
-
-/* Stock section - Blue */
-.layout-main-section:nth-child(2) .widget:nth-child(2) .widget-body,
-.layout-main-section:nth-child(2) .widget:nth-child(2) .widget-body a,
-.layout-main-section:nth-child(2) .widget:nth-child(2) p,
-.layout-main-section:nth-child(2) .widget:nth-child(2) span {
-    color: #21417b !important;
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-}
-
-/* CRM section - You can add another color here */
-.layout-main-section:nth-child(2) .widget:nth-child(3) .widget-body,
-.layout-main-section:nth-child(2) .widget:nth-child(3) .widget-body a,
-.layout-main-section:nth-child(2) .widget:nth-child(3) p,
-.layout-main-section:nth-child(2) .widget:nth-child(3) span {
-    color: #21417b !important;
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-}
 /* text color ended */
