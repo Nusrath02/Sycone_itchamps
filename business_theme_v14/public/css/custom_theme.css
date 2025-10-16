@@ -4848,3 +4848,20 @@ body {
     min-width: 10px !important;
     fill: white !important;
 }
+
+
+
+/* text color */
+
+/* First section */
+.layout-main-section:nth-of-type(1) .widget .widget-body,
+.layout-main-section:nth-of-type(1) .widget .widget-body a {
+    color: #052a67 !important;
+}
+
+/* Second section */
+.layout-main-section:nth-of-type(2) .widget .widget-body,
+.layout-main-section:nth-of-type(2) .widget .widget-body a {
+    color: #ce040c !important;
+}
+/* text color ended */
