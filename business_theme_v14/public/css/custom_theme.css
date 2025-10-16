@@ -4853,15 +4853,23 @@ body {
 
 /* text color */
 
-/* First section */
-.layout-main-section:nth-of-type(1) .widget .widget-body,
-.layout-main-section:nth-of-type(1) .widget .widget-body a {
-    color: #052a67 !important;
+/* First section - Red */
+.layout-main-section:first-of-type .widget .widget-body, 
+.layout-main-section:first-of-type .widget .widget-body a, 
+.layout-main-section:first-of-type .widget p, 
+.layout-main-section:first-of-type .widget span {
+    color: #ce040c !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
 }
 
-/* Second section */
-.layout-main-section:nth-of-type(2) .widget .widget-body,
-.layout-main-section:nth-of-type(2) .widget .widget-body a {
-    color: #ce040c !important;
+/* Second section - Blue */
+.layout-main-section:last-of-type .widget .widget-body, 
+.layout-main-section:last-of-type .widget .widget-body a, 
+.layout-main-section:last-of-type .widget p, 
+.layout-main-section:last-of-type .widget span {
+    color: #052a67 !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
 }
 /* text color ended */
