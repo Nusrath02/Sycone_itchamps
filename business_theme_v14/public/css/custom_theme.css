@@ -4721,7 +4721,7 @@ div#driver-popover-item .driver-popover-footer button.driver-next-btn:hover {
     padding: 20px 15px !important;
     border-radius: 0 !important;
     margin-left: 0 !important;
-    min-height: 100vh !important;
+    min-height: 10vh !important;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1) !important;
 }
 
