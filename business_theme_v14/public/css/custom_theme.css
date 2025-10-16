@@ -1705,14 +1705,7 @@ li.nav-item.dropdown .dropdown-menu,
     line-height: 1.6 !important;
 }
 
-.layout-main-section:first-of-type .widget .widget-body, 
-.layout-main-section:first-of-type .widget .widget-body a, 
-.layout-main-section:first-of-type .widget p, 
-.layout-main-section:first-of-type .widget span {
-    color: #ce040c !important;
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-}
+
 /* Widget links */
 .layout-main-section .widget .widget-body a {
     color: #3b82f6 !important;
