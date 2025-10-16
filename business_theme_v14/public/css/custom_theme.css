@@ -4854,23 +4854,5 @@ body {
 /* text color */
 
 /* First section - Red */
-/* First section - Red */
-.layout-main-section:first-child .widget .widget-body,
-.layout-main-section:first-child .widget .widget-body a,
-.layout-main-section:first-child .widget p,
-.layout-main-section:first-child .widget span {
-    color: #ce040c !important;
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-}
 
-/* Second section - Dark Blue */
-.layout-main-section:last-child .widget .widget-body,
-.layout-main-section:last-child .widget .widget-body a,
-.layout-main-section:last-child .widget p,
-.layout-main-section:last-child .widget span {
-    color: #052a67 !important;
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-}
 /* text color ended */
