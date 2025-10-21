@@ -45,7 +45,7 @@
 
 /* ITChamps logo styling - FIXED */
 .-brand {
-    background: url("/assets/business_theme_v14/images/SYConE_Final_Logo.jpg") no-repeat left center;
+    background: url("/assets/business_theme_v14/images/SYConE Final Logo1.png") no-repeat left center;
     background-size: contain;
     width: 160px;
     height: 40px;
@@ -56,7 +56,7 @@
 /* /* Alternative selectors in case the above doesn't work */
 .navbar .navbar-brand,
 .navbar-header .navbar-brand {
-/*     background: url("/assets/business_theme_v14/images/SYConE_Final_Logo.jpg") no-repeat left center !important;
+/*     background: url("/assets/business_theme_v14/images/SYConE Final Logo1.png") no-repeat left center !important;
     background-size: contain !important;
     width: 160px !important;
     height: 40px !important;
@@ -3789,7 +3789,7 @@ element.style {
 
 /* ITChamps logo styling - FIXED */
 .navbar-brand {
-    background: url("/assets/business_theme_v14/images/SYConE_Final_Logo.jpg") no-repeat left center;
+    background: url("/assets/business_theme_v14/images/SYConE Final Logo1.png") no-repeat left center;
     background-size: contain;
     width: 160px;
     height: 40px;
