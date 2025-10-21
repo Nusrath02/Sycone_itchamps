@@ -2260,7 +2260,7 @@ header .form-control {
 /* Force override any conflicting styles */
 body .navbar,
 html .navbar {
-       background: #052a67 !important;
+       background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
 }
 
 /* Mobile responsive navbar */
