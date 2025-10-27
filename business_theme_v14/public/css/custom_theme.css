@@ -4861,7 +4861,7 @@ body {
 
 /* Navbar dropdown */
 
-.es-icon.icon-sm {
+.navbar .es-icon.icon-sm {
   fill: white !important;
   stroke: white !important;
 }
