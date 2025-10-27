@@ -116,12 +116,12 @@
 #navbar-breadcrumbs > li:last-child > a,
 #navbar-breadcrumbs > li:last-child {
     font-weight: bold !important;
-    color: #374151 !important;
+    color: #ffffff !important;
 }
 
 #navbar-breadcrumbs > li > a::before {
     content: "\f105";
-    color: #6b7280;
+    color: #ffffff;
 }
 
 /* Dynamic icons for all ERPNext modules */
