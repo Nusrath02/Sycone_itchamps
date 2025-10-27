@@ -2191,7 +2191,7 @@ background: linear-gradient(180deg, rgb(217 225 233) 0%, rgb(204 224 251) 100%) 
 .navbar .navbar-nav .nav-link,
 .navbar .navbar-text,
 .navbar a {
-    color: #1e3a8a !important; /* Dark blue text for contrast */
+    color: #ffffff !important; /* Dark blue text for contrast */
     font-weight: 500 !important;
 }
 
