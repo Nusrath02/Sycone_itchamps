@@ -4858,8 +4858,8 @@ body {
 
 #awesomplete_list_1 {
   background:linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
-  color: #000000 !important; /* black text */
-  border-radius: 6px;
+  /* color: #000000 !important; /* black text */
+  /* border-radius: 6px; */ */
 }
 /*  */
 
