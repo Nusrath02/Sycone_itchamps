@@ -4855,18 +4855,7 @@ body {
 /* text color */
 
 /* Navbar dropdown */
-.dropdown-menu,
-.navbar .dropdown-menu {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
-}
 
-.dropdown-menu .dropdown-item {
-    color: #ffffff !important;
-}
-
-.dropdown-menu .dropdown-item:hover {
-    background: rgba(255, 255, 255, 0.1) !important;
-}
 .es-icon.icon-sm {
   fill: white !important;
   stroke: white !important;
