@@ -34,7 +34,7 @@ function createSyconEFooter() {
                 </div>
                 
                 <!-- SYConE Logo -->
-                <img src="/assets/business_theme_v14/images/sycone_logo.png" alt="SYConE Logo" class="sycone-footer-logo">
+                <img src="/assets/business_theme_v14/images/SYConE Final Logo1.png" alt="SYConE Logo" class="sycone-footer-logo">
             </div>
         </div>
     `;
