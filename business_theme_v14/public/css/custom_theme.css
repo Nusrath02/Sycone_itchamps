@@ -4867,4 +4867,8 @@ body {
 .dropdown-menu .dropdown-item:hover {
     background: rgba(255, 255, 255, 0.1) !important;
 }
+.es-icon.icon-sm {
+  fill: white !important;
+  stroke: white !important;
+}
 /* Navbar dropdown ended */
