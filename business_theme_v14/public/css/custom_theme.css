@@ -105,7 +105,7 @@
 /* Add slash separator between breadcrumb items - more specific targeting */
 #navbar-breadcrumbs li:not(:last-child)::after {
     content: " / " !important;
-    color: #ffffff !important;
+    color: #fcfdff !important;
     margin: 0 4px !important;
     font-weight: normal !important;
     display: inline !important;
