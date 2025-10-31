@@ -1682,17 +1682,6 @@ li.nav-item.dropdown .dropdown-menu,
     transform: translateY(-2px) !important;
 }
 
-.layout-main-section .widget .widget-head,
-.layout-main-section .widget .widget-title,
-.widget-head h4 {
-    color: #1f2937 !important;
-    font-size: 18px !important;
-    font-weight: 600 !important;
-/*     margin-bottom: 0px !important; */
-    border-bottom: none !important;
-/*     padding-bottom: 5px !important; */
-    text-decoration:none !important;
-}
 
 
 /* Widget content text */
@@ -3191,7 +3180,7 @@ span.link-content.ellipsis {
  
 .ce-block.col-xs-12 .ce-header,
 .ce-block.col-xs-12 .ce-header span {
-    color: #21417b !important;
+    color: #f22000 !important;
 }
 /* o open */
 .indicator-pill.gray, .indicator-pill-right.gray, .indicator-pill-round.gray {
@@ -3734,6 +3723,11 @@ span.text-muted{
   color: white !important; /* force black text */
 }
 
+.widget.links-widget-box .widget-head .widget-label .widget-title {
+       font-size: 14px !important;
+    line-height: 1.6 !important;
+     color: #e92f2f !important;
+}
 
 /* -----------------------------Abhi ended----------------------------------------------- */
 
@@ -4383,11 +4377,17 @@ document.addEventListener('DOMContentLoaded', function() {
 .layout-main-section .widget .widget-head,
 .layout-main-section .widget .widget-title,
 .widget-head h4 {
-    color: #1f2937 !important;
-    font-size: 18px !important;
+    color: #21417b !important;
+    font-size: 15px !important;
     font-weight: 600 !important;
     border-bottom: none !important;
     text-decoration: none !important;
+}
+
+.layout-main-section .widget .widget-head,
+.layout-main-section .widget .widget-title,
+.widget-head h4: hover{
+  background: #21417b !important;
 }
 
 /* ==================== BUTTON STYLING ==================== */
