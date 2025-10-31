@@ -3729,6 +3729,13 @@ span.text-muted{
      color: #e92f2f !important;
 }
 
+.layout-main-section .widget .widget-title {
+    color: #29599b !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+
+}
+ 
 /* -----------------------------Abhi ended----------------------------------------------- */
 
 
