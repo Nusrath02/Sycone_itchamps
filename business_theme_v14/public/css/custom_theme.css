@@ -3174,7 +3174,7 @@ span.link-content.ellipsis {
  
 /* header red color */
 .ce-block.col-xs-12 .ce-header {
-    color: #21417b !important;   /* deep red */
+    color: red !important;   /* deep red */
     font-weight: bold;
 }
  
