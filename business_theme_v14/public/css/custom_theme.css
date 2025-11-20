@@ -3734,7 +3734,49 @@ span.text-muted{
     font-weight: 600 !important;
 
 }
+
+/* Remove black hover from Save Filter label */
+.sidebar-section.save-filter-section li.sidebar-label,
+.sidebar-section.save-filter-section li.sidebar-label:hover {
+    background: transparent !important;
+    color: white !important;
+    box-shadow: none !important;
+}
  
+/* Filter By */
+/* remove hover color on Filter By label */
+.list-sidebar.overlay-sidebar .sidebar-menu li.sidebar-label:hover,
+.list-sidebar.overlay-sidebar .sidebar-menu li.sidebar-label:focus,
+.list-sidebar .sidebar-menu li.sidebar-label:hover,
+.list-sidebar .sidebar-menu li.sidebar-label:focus,
+.sidebar-section.filter-section li.sidebar-label:hover,
+.sidebar-section.filter-section li.sidebar-label:focus,
+li.sidebar-label:hover,
+li.sidebar-label:focus { 
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+li.add-list-group-by sidebar-action{
+  text-decoration:none !important;
+}
+
+.sidebar-section.filter-section li.add-list-group-by.sidebar-action a.add-group-by {
+    border: none !important;
+}
+ 
+/* Remove all hover effects from Edit Filters */
+.sidebar-section.filter-section li.add-list-group-by.sidebar-action,
+.sidebar-section.filter-section li.add-list-group-by.sidebar-action:hover,
+.sidebar-section.filter-section li.add-list-group-by.sidebar-action a.add-group-by,
+.sidebar-section.filter-section li.add-list-group-by.sidebar-action a.add-group-by:hover {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    outline: none !important;
+    cursor: pointer !important;
+}
+
 /* -----------------------------Abhi ended----------------------------------------------- */
 
 
