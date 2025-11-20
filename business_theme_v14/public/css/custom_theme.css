@@ -2540,12 +2540,12 @@ header * {
     margin-bottom: 6px !important;
     width: 100% !important;
 }
-.sidebar-section.filter-section .btn:hover,
+/* .sidebar-section.filter-section .btn:hover,
 .sidebar-section.save-filter-section .btn:hover {
-/*     background: #2563eb !important; */
+    background: #2563eb !important;
     color: #fff !important;
     border-color: #2563eb !important;
-}
+} */
 
 /* Dropdowns */
 /* ================== DROPDOWN POPUP ================== */
