@@ -3778,6 +3778,11 @@ li.add-list-group-by sidebar-action{
     cursor: pointer !important;
 }
 
+.navbar a {
+color: #191717 !important;
+font-weight: 500 !important;
+}
+
 /* -----------------------------Abhi ended----------------------------------------------- */
 
 
