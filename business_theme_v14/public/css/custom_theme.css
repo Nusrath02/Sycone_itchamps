@@ -3779,8 +3779,12 @@ li.add-list-group-by sidebar-action{
 }
 
 .navbar a {
-color: #191717 !important;
+color: #052a67 !important;
 font-weight: 500 !important;
+}
+
+.text-muted{
+color: #052a67 !important;
 }
 
 /* -----------------------------Abhi ended----------------------------------------------- */
