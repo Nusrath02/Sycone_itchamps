@@ -3792,6 +3792,12 @@ navbar-breadcrumbs  li:last-child  a {
    color: white !important;
 }
 
+#navbar-breadcrumbs > li:last-child > a,
+#navbar-breadcrumbs > li: last-child :hover{
+    color:#cbd4e3 !important;
+    font-weight: bold !important;
+}
+
 /* -----------------------------Abhi ended----------------------------------------------- */
 
 
