@@ -116,7 +116,7 @@
 #navbar-breadcrumbs > li:last-child > a,
 #navbar-breadcrumbs > li:last-child {
     font-weight: bold !important;
-    color: #ffffff !important;
+    color: #d4dff2 !important;
 }
 
 #navbar-breadcrumbs > li > a::before {
