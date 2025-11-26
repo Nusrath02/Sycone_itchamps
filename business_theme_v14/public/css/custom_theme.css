@@ -3787,6 +3787,11 @@ font-weight: 500 !important;
 color: #052a67 !important;
 }
 
+navbar-breadcrumbs  li:last-child  a {
+    font-weight: bold !important;
+   color: white !important;
+}
+
 /* -----------------------------Abhi ended----------------------------------------------- */
 
 
@@ -3914,7 +3919,7 @@ element.style {
 }
 
 #navbar-breadcrumbs > li > a {
-    color: #6b7280 !important;
+    color: white !important;
     display: flex !important;
     align-items: center !important;
     gap: 6px !important;
@@ -3924,7 +3929,7 @@ element.style {
 /* Add slash separator between breadcrumb items - more specific targeting */
 #navbar-breadcrumbs li:not(:last-child)::after {
     content: " / " !important;
-    color: #6b7280 !important;
+    color: white !important;
     margin: 0 4px !important;
     font-weight: normal !important;
     display: inline !important;
