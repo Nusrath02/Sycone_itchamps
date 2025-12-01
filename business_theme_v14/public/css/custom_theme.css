@@ -4937,25 +4937,10 @@ body {
 
 
 
-/* Semi-transparent overlay on top of gradient */
-#awesomplete_list_1::before {
-    content: "" !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    bottom: 0 !important;
-    background: rgba(255, 255, 255, 0.15) !important; /* Light white overlay */
-    border-radius: 6px !important;
-    pointer-events: none !important; /* Allow clicks through overlay */
-    z-index: 1 !important;
-}
-
-/* Keep text on top of overlay */
-#awesomplete_list_1 li,
-#awesomplete_list_1 li a,
-#awesomplete_list_1 span {
-    position: relative !important;
-    z-index: 2 !important;
-    color: white !important;
+.awesomplete>[role=listbox]>li:hover, 
+.awesomplete>[role=listbox]>li[aria-selected=true], 
+.awesomplete>[role=listbox]>[role=option]:hover, 
+.awesomplete>[role=listbox]>[role=option][aria-selected=true] {
+  background-color: #052a67;
+  color: #ffffff; /* or your preferred text color */
 }
