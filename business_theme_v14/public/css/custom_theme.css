@@ -4935,9 +4935,24 @@ body {
 }
 /* Navbar dropdown ended */
 
-/* Enhanced shadow for awesomplete dropdown - MORE VISIBLE */
+/* Enhanced shadow - ALWAYS VISIBLE when dropdown shows */
 .awesomplete > ul,
-#awesomplete_list_1 {
+#awesomplete_list_1,
+.awesomplete ul[role="listbox"],
+.awesomplete > ul[hidden] {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+                0 4px 12px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Remove the hidden attribute that might be blocking it */
+.awesomplete > ul[hidden] {
+    display: block !important;
+}
+
+/* Ensure it shows when typing */
+.awesomplete > ul:not([hidden]) {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
                 0 4px 12px rgba(0, 0, 0, 0.2),
                 0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
