@@ -3702,7 +3702,7 @@ span.text-muted{
  
 /* Remove always-on highlight from first item  */
 #awesomplete_list_1 li[aria-selected="true"] {
-   background-color: #d7e7f6 !important;
+   background-color: rgba(255, 255, 255, 0.15) !important;
 }
  
 /* Normal text */
