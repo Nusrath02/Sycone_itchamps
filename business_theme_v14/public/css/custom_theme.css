@@ -4935,28 +4935,22 @@ body {
 }
 /* Navbar dropdown ended */
 
-/* Shadow ONLY for navbar search dropdown */
-header .awesomplete > ul,
-header #awesomplete_list_1,
-.navbar .awesomplete > ul,
-.navbar #awesomplete_list_1 {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
-                0 4px 12px rgba(0, 0, 0, 0.2),
-                0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
-}
-/* Shadow for BOTH navbar search input AND dropdown */
+/* Shadow on search input - ALWAYS VISIBLE */
 header .form-control,
 .navbar .form-control,
 .navbar input#navbar-search,
-header .awesomplete > ul,
-header #awesomplete_list_1,
-.navbar .awesomplete > ul,
-.navbar #awesomplete_list_1 {
+header input[type="text"],
+.navbar input[type="text"] {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
                 0 4px 12px rgba(0, 0, 0, 0.2),
                 0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
-    border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
+/* Keep your existing dropdown styles */
+#awesomplete_list_1 {
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+                0 4px 12px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
+}
 
