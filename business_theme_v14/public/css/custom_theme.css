@@ -4935,11 +4935,25 @@ body {
 }
 /* Navbar dropdown ended */
 
-/* Comprehensive search dropdown styling */
-* [class*="search"] [class*="result"]:hover,
-* [class*="search"] [class*="result"]:first-child,
-* [class*="dropdown"] [class*="item"]:hover,
-* [class*="dropdown"] [class*="item"]:first-child {
+/* ==================== SEARCH DROPDOWN HOVER COLOR ==================== */
+
+/* Define CSS variables */
+:root {
+  --awesomplete-hover-bg: #052a67;
+  --text-color: #ffffff;
+}
+
+/* Override awesomplete dropdown styles */
+.awesomplete>[role=listbox]>li:hover, 
+.awesomplete>[role=listbox]>li[aria-selected=true], 
+.awesomplete>[role=listbox]>[role=option]:hover, 
+.awesomplete>[role=listbox]>[role=option][aria-selected=true] {
+  background-color: #052a67 !important;
+  color: #ffffff !important;
+}
+
+/* First item always highlighted */
+.awesomplete>[role=listbox]>li:first-child {
   background-color: #052a67 !important;
   color: #ffffff !important;
 }
