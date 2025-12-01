@@ -4926,10 +4926,7 @@ body {
     fill: white !important;
 }
 
-
-
 /* text color */
-
 /* Navbar dropdown */
 
 .navbar .es-icon.icon-sm {
@@ -4937,3 +4934,11 @@ body {
   stroke: white !important;
 }
 /* Navbar dropdown ended */
+
+/* Add shadow to awesomplete dropdown */
+.awesomplete > ul,
+#awesomplete_list_1 {
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+}
+
+
