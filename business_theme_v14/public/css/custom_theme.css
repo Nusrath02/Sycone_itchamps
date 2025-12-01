@@ -4935,13 +4935,11 @@ body {
 }
 /* Navbar dropdown ended */
 
-/* Override ALL dropdown hovers */
-.modal-body > div:hover,
-.modal-body > div:first-child,
-.search-results > *:hover,
-.search-results > *:first-child,
-[role="listbox"] > *:hover,
-[role="listbox"] > *:first-child {
+/* Comprehensive search dropdown styling */
+* [class*="search"] [class*="result"]:hover,
+* [class*="search"] [class*="result"]:first-child,
+* [class*="dropdown"] [class*="item"]:hover,
+* [class*="dropdown"] [class*="item"]:first-child {
   background-color: #052a67 !important;
   color: #ffffff !important;
 }
