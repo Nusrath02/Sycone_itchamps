@@ -4935,10 +4935,13 @@ body {
 }
 /* Navbar dropdown ended */
 
-/* Add shadow to awesomplete dropdown */
+/* Enhanced shadow for awesomplete dropdown - MORE VISIBLE */
 .awesomplete > ul,
 #awesomplete_list_1 {
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+                0 4px 12px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
 
 
