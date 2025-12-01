@@ -4945,6 +4945,18 @@ header #awesomplete_list_1,
                 0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
 }
-
+/* Shadow for BOTH navbar search input AND dropdown */
+header .form-control,
+.navbar .form-control,
+.navbar input#navbar-search,
+header .awesomplete > ul,
+header #awesomplete_list_1,
+.navbar .awesomplete > ul,
+.navbar #awesomplete_list_1 {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3),
+                0 4px 12px rgba(0, 0, 0, 0.2),
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
 
 
