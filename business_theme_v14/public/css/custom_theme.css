@@ -4937,23 +4937,32 @@ body {
 
 
 
-:root {
-  --awesomplete-hover-bg: #052a67;
-  --text-color: #ffffff;
-}
-
-/* Hover and selected state */
-.awesomplete>[role=listbox]>li:hover, 
-.awesomplete>[role=listbox]>li[aria-selected=true], 
-.awesomplete>[role=listbox]>[role=option]:hover, 
-.awesomplete>[role=listbox]>[role=option][aria-selected=true] {
+/* ERPNext Search Dialog Dropdown */
+.search-dialog .search-results .result-item:hover,
+.search-dialog .search-results .result-item:first-child,
+.modal .search-results .result:hover,
+.modal .search-results .result:first-child {
   background-color: #052a67 !important;
   color: #ffffff !important;
 }
 
-/* First item always highlighted */
-.awesomplete>[role=listbox]>li:first-child, 
-.awesomplete>[role=listbox]>[role=option]:first-child {
+/* Alternative selector for search dropdown */
+.search-dialog .modal-body .list-group-item:hover,
+.search-dialog .modal-body .list-group-item:first-child {
+  background-color: #052a67 !important;
+  color: #ffffff !important;
+}
+
+/* Another common ERPNext search selector */
+.awesomplete ul[role="listbox"] li:hover,
+.awesomplete ul[role="listbox"] li:first-child {
+  background-color: #052a67 !important;
+  color: #ffffff !important;
+}
+
+/* Global search bar results */
+header .search-bar .search-results > *:hover,
+header .search-bar .search-results > *:first-child {
   background-color: #052a67 !important;
   color: #ffffff !important;
 }
