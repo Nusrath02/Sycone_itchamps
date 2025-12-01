@@ -4937,10 +4937,23 @@ body {
 
 
 
+:root {
+  --awesomplete-hover-bg: #052a67;
+  --text-color: #ffffff;
+}
+
+/* Hover and selected state */
 .awesomplete>[role=listbox]>li:hover, 
 .awesomplete>[role=listbox]>li[aria-selected=true], 
 .awesomplete>[role=listbox]>[role=option]:hover, 
 .awesomplete>[role=listbox]>[role=option][aria-selected=true] {
-  background-color: #052a67;
-  color: #ffffff; /* or your preferred text color */
+  background-color: #052a67 !important;
+  color: #ffffff !important;
+}
+
+/* First item always highlighted */
+.awesomplete>[role=listbox]>li:first-child, 
+.awesomplete>[role=listbox]>[role=option]:first-child {
+  background-color: #052a67 !important;
+  color: #ffffff !important;
 }
