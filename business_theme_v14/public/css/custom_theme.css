@@ -4935,3 +4935,33 @@ body {
 }
 /* Navbar dropdown ended */
 
+/* === ORG CHART: REMOVE INNER SCROLL & CARD === */
+
+/* Target only Organizational Chart page */
+body[data-route="organizational-chart"] .layout-main-section.frappe-card {
+    min-height: calc(100vh - 120px) !important;
+    max-height: none !important;
+    height: auto !important;
+    overflow: visible !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}
+
+/* Remove inner scrolling wrapper */
+body[data-route="organizational-chart"] .layout-main-section-wrapper {
+    overflow: visible !important;
+    height: auto !important;
+}
+
+/* Let page body grow naturally */
+body[data-route="organizational-chart"] .page-body {
+    min-height: calc(100vh - 140px);
+    overflow: visible !important;
+}
+
+/* Ensure getOrgChart uses full available height */
+body[data-route="organizational-chart"] .get-org-chart {
+    min-height: calc(100vh - 160px);
+    height: auto !important;
+}
