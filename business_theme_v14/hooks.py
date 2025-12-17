@@ -33,6 +33,9 @@ page_js = {
     "organizational-chart": "public/js/orgchart_horizontal.js"
 }
 
+page_js = {
+    "organizational-chart": "public/js/orgchart_override.js"
+}
 
 
 # Favicon
