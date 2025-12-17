@@ -1,68 +1,57 @@
 frappe.after_ajax(() => {
-    // Run ONLY on organizational chart page
-    if (frappe.get_route_str() !== "organizational-chart") return;
+  if (frappe.get_route_str() !== "organizational-chart") return;
 
-    // Wait until ERPNext finishes rendering
-    setTimeout(() => {
-        const page = document.querySelector("#page-organizational-chart");
-        if (!page) return;
+  setTimeout(() => {
+    const container = document.querySelector(".get-org-chart");
+    if (!container || container.dataset.customized) return;
 
-        const body = page.querySelector(".page-body");
-        if (!body) return;
+    container.dataset.customized = "1";
 
-        // Remove default ERPNext chart
-        body.innerHTML = `
-            <div id="horizontal-orgchart"
-                 style="
-                    width: 100%;
-                    height: 80vh;
-                    overflow-x: auto;
-                    overflow-y: hidden;
-                    padding: 20px;
-                    background: #fff;
-                 ">
-            </div>
-        `;
+    frappe.call({
+      method: "frappe.client.get_list",
+      args: {
+        doctype: "Employee",
+        fields: [
+          "name",
+          "employee_name",
+          "reports_to",
+          "designation",
+          "image"
+        ],
+        limit_page_length: 1000
+      },
+      callback(r) {
+        const data = r.message.map(e => ({
+          id: e.name,
+          parentId: e.reports_to,
+          name: e.employee_name,
+          title: e.designation,
+          img: e.image
+        }));
 
-        // Fetch employee hierarchy
-        frappe.call({
-            method: "frappe.client.get_list",
-            args: {
-                doctype: "Employee",
-                fields: ["name", "employee_name", "reports_to"],
-                limit_page_length: 1000
-            },
-            callback: function (r) {
-                if (!r.message) return;
+        // Destroy old chart (important)
+        container.innerHTML = "";
 
-                const employees = r.message;
+        new getOrgChart(container, {
+          primaryFields: ["name", "title"],
+          photoFields: ["img"],
+          dataSource: data,
 
-                // Build hierarchy map
-                const map = {};
-                employees.forEach(e => {
-                    map[e.name] = { ...e, children: [] };
-                });
+          orientation: getOrgChart.RO_TOP,   // vertical (top → bottom)
+          enableZoom: true,
+          enablePan: true,
+          expandToLevel: 3,
+          levelSeparation: 80,
+          siblingSeparation: 40,
+          subtreeSeparation: 60,
 
-                let rootNodes = [];
-
-                employees.forEach(e => {
-                    if (e.reports_to && map[e.reports_to]) {
-                        map[e.reports_to].children.push(map[e.name]);
-                    } else {
-                        rootNodes.push(map[e.name]);
-                    }
-                });
-
-                // Render tree
-                const container = document.getElementById("horizontal-orgchart");
-                rootNodes.forEach(root => {
-                    container.appendChild(renderNode(root));
-                });
-            }
+          boxSize: { width: 240, height: 110 }
         });
-
-    }, 800);
+      }
+    });
+  }, 600);
 });
+
 
 // Recursive renderer
 function renderNode(node) {
