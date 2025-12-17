@@ -33,6 +33,9 @@ page_js = {
     "organizational-chart": "public/js/orgchart_horizontal.js"
 }
 
+app_include_css.append(
+    "/assets/business_theme_v14/css/orgchart_custom.css"
+)
 
 
 # Favicon
