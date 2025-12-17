@@ -1,73 +1,69 @@
-frappe.pages['organizational-chart'] = frappe.pages['organizational-chart'] || {};
+(function () {
 
-frappe.pages['organizational-chart'].on_page_show = function (wrapper) {
-    // Delay to let ERPNext finish its own rendering
-    setTimeout(() => {
-        apply_custom_org_chart(wrapper);
-    }, 300);
-};
+  function apply_org_chart_override() {
+    if (frappe.get_route_str() !== "organizational-chart") return;
 
-function apply_custom_org_chart(wrapper) {
-    const container = wrapper.querySelector(".get-org-chart");
+    const container = document.querySelector(".get-org-chart");
     if (!container) return;
 
-    // Prevent infinite re-render
     if (container.dataset.customized === "1") return;
     container.dataset.customized = "1";
 
-    if (typeof getOrgChart === "undefined") {
-        console.error("getOrgChart not loaded");
-        return;
-    }
+    if (typeof getOrgChart === "undefined") return;
 
-    // Fetch Employee hierarchy
     frappe.call({
-        method: "frappe.client.get_list",
-        args: {
-            doctype: "Employee",
-            fields: [
-                "name",
-                "employee_name",
-                "reports_to",
-                "designation",
-                "image"
-            ],
-            limit_page_length: 1000
-        },
-        callback(r) {
-            if (!r.message) return;
+      method: "frappe.client.get_list",
+      args: {
+        doctype: "Employee",
+        fields: [
+          "name",
+          "employee_name",
+          "reports_to",
+          "designation",
+          "image"
+        ],
+        limit_page_length: 1000
+      },
+      callback(r) {
+        if (!r.message) return;
 
-            const data = r.message.map(emp => ({
-                id: emp.name,
-                parentId: emp.reports_to || null,
-                name: emp.employee_name || emp.name,
-                title: emp.designation || "",
-                img: emp.image || ""
-            }));
+        const data = r.message.map(e => ({
+          id: e.name,
+          parentId: e.reports_to || null,
+          name: e.employee_name || e.name,
+          title: e.designation || "",
+          img: e.image || ""
+        }));
 
-            // Remove default ERPNext chart
-            container.innerHTML = "";
+        container.innerHTML = "";
 
-            // Render CUSTOM chart (VERTICAL)
-            new getOrgChart(container, {
-                dataSource: data,
-                primaryFields: ["name", "title"],
-                photoFields: ["img"],
+        new getOrgChart(container, {
+          dataSource: data,
+          primaryFields: ["name", "title"],
+          photoFields: ["img"],
 
-                orientation: getOrgChart.RO_TOP, // vertical
-                enableZoom: true,
-                enablePan: true,
-                expandToLevel: 3,
+          // choose ONE
+          orientation: getOrgChart.RO_TOP,   // vertical
+          // orientation: getOrgChart.RO_LEFT, // horizontal
 
-                levelSeparation: 80,
-                siblingSeparation: 40,
-                subtreeSeparation: 60,
+          enableZoom: true,
+          enablePan: true,
+          expandToLevel: 3,
 
-                boxSize: {
-                    width: 240,
-                    height: 110
-                }
-            });
-        }
+          boxSize: { width: 240, height: 110 }
+        });
+      }
     });
-}
+  }
+
+  // 🔁 Trigger on navigation
+  frappe.router.on("change", () => {
+    setTimeout(apply_org_chart_override, 400);
+  });
+
+  // 🔁 Trigger on hard refresh
+  document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(apply_org_chart_override, 800);
+  });
+
+})();
