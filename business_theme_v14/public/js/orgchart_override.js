@@ -65,5 +65,4 @@
   document.addEventListener("DOMContentLoaded", () => {
     setTimeout(apply_org_chart_override, 800);
   });
-
 })();
