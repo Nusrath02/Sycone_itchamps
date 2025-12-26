@@ -1,16 +1,20 @@
 (function () {
 
   function apply_org_chart_override() {
+    // Run only on Organizational Chart page
     if (frappe.get_route_str() !== "organizational-chart") return;
 
     const container = document.querySelector(".get-org-chart");
     if (!container) return;
 
+    // Prevent multiple re-renders
     if (container.dataset.customized === "1") return;
     container.dataset.customized = "1";
 
+    // Ensure library is loaded
     if (typeof getOrgChart === "undefined") return;
 
+    // Fetch employee data
     frappe.call({
       method: "frappe.client.get_list",
       args: {
@@ -27,6 +31,7 @@
       callback(r) {
         if (!r.message) return;
 
+        // Map data for getOrgChart
         const data = r.message.map(e => ({
           id: e.name,
           parentId: e.reports_to || null,
@@ -35,28 +40,32 @@
           img: e.image || ""
         }));
 
+        // Clear existing chart
         container.innerHTML = "";
 
+        // Render org chart (VERTICAL)
         new getOrgChart(container, {
           dataSource: data,
           primaryFields: ["name", "title"],
           photoFields: ["img"],
 
-          // choose ONE
-          orientation: getOrgChart.RO_TOP,   // vertical
-          // orientation: getOrgChart.RO_LEFT, // horizontal
+          // ✅ Vertical (Top → Bottom)
+          orientation: getOrgChart.RO_TOP,
 
           enableZoom: true,
           enablePan: true,
           expandToLevel: 3,
 
-          boxSize: { width: 240, height: 110 }
+          boxSize: {
+            width: 240,
+            height: 110
+          }
         });
       }
     });
   }
 
-  // 🔁 Trigger on navigation
+  // 🔁 Trigger on route change (SPA navigation)
   frappe.router.on("change", () => {
     setTimeout(apply_org_chart_override, 400);
   });
@@ -65,4 +74,5 @@
   document.addEventListener("DOMContentLoaded", () => {
     setTimeout(apply_org_chart_override, 800);
   });
+
 })();
