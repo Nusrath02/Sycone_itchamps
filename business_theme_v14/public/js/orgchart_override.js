@@ -1,20 +1,21 @@
 (function () {
 
-  function apply_org_chart_override() {
-    // Run only on Organizational Chart page
+  let orgChartRendered = false;
+
+  function render_vertical_org_chart() {
+    // Only on Organizational Chart page
     if (frappe.get_route_str() !== "organizational-chart") return;
 
     const container = document.querySelector(".get-org-chart");
     if (!container) return;
 
-    // Prevent multiple re-renders
-    if (container.dataset.customized === "1") return;
-    container.dataset.customized = "1";
+    // Stop if already rendered vertically
+    if (orgChartRendered) return;
 
-    // Ensure library is loaded
     if (typeof getOrgChart === "undefined") return;
 
-    // Fetch employee data
+    orgChartRendered = true;
+
     frappe.call({
       method: "frappe.client.get_list",
       args: {
@@ -31,7 +32,6 @@
       callback(r) {
         if (!r.message) return;
 
-        // Map data for getOrgChart
         const data = r.message.map(e => ({
           id: e.name,
           parentId: e.reports_to || null,
@@ -40,16 +40,16 @@
           img: e.image || ""
         }));
 
-        // Clear existing chart
+        // Clear any chart created by Frappe
         container.innerHTML = "";
 
-        // Render org chart (VERTICAL)
+        // FORCE vertical org chart
         new getOrgChart(container, {
           dataSource: data,
           primaryFields: ["name", "title"],
           photoFields: ["img"],
 
-          // ✅ Vertical (Top → Bottom)
+          // 🔒 ALWAYS vertical
           orientation: getOrgChart.RO_TOP,
 
           enableZoom: true,
@@ -65,14 +65,32 @@
     });
   }
 
-  // 🔁 Trigger on route change (SPA navigation)
+  // 🔁 Retry until Frappe finishes loading its chart
+  function wait_and_override() {
+    let attempts = 0;
+
+    const interval = setInterval(() => {
+      attempts++;
+
+      render_vertical_org_chart();
+
+      // stop after success or max retries
+      if (orgChartRendered || attempts > 15) {
+        clearInterval(interval);
+      }
+    }, 300);
+  }
+
+  // SPA navigation
   frappe.router.on("change", () => {
-    setTimeout(apply_org_chart_override, 400);
+    orgChartRendered = false;
+    wait_and_override();
   });
 
-  // 🔁 Trigger on hard refresh
+  // Hard refresh
   document.addEventListener("DOMContentLoaded", () => {
-    setTimeout(apply_org_chart_override, 800);
+    orgChartRendered = false;
+    wait_and_override();
   });
 
 })();
