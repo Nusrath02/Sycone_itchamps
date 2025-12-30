@@ -29,9 +29,9 @@ app_include_css = [
 app_include_js = "/assets/business_theme_v14/js/sycone_footer.js"
 
 
-# page_js = {
-#     "organizational-chart": "public/js/orgchart_horizontal.js"
-# }
+page_js = {
+    "organizational-chart": "public/js/orgchart_horizontal.js"
+}
 
 page_js = {
     "organizational-chart": "public/js/orgchart_override.js"
