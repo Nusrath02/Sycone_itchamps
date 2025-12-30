@@ -4965,3 +4965,16 @@ body[data-route="organizational-chart"] .get-org-chart {
     min-height: calc(100vh - 160px);
     height: auto !important;
 }
+
+
+/* FORCE vertical org chart */
+.hierarchy .level {
+    flex-direction: column !important;
+    align-items: center !important;
+}
+
+.hierarchy .node-children {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+}
