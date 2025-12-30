@@ -1,15 +1,16 @@
-frappe.pages["vertical-org-chart"].on_page_load = function (wrapper) {
-    const page = frappe.ui.make_app_page({
-        parent: wrapper,
-        title: "Vertical Organization Chart",
-        single_column: true
-    });
+frappe.pages["organizational-chart"] = frappe.pages["organizational-chart"] || {};
+
+frappe.pages["organizational-chart"].on_page_show = function (wrapper) {
+    console.log("Vertical Org Chart JS loaded");
+
+    $(wrapper).find(".page-body").empty();
 
     const container = $('<div class="vertical-org-container"></div>');
-    $(page.body).append(container);
+    $(wrapper).find(".page-body").append(container);
 
     loadOrgData(container);
 };
+
 
 function loadOrgData(container) {
     frappe.call({
