@@ -1,12 +1,10 @@
 (function () {
 
     function applyVerticalLayout() {
-        if (frappe.get_route_str() !== "organizational-chart") return;
-
         const hierarchy = document.querySelector(".hierarchy");
         if (!hierarchy) return;
 
-        console.log("✅ Forcing vertical org chart");
+        console.log("✅ Enforcing vertical org chart");
 
         document.querySelectorAll(".level").forEach(level => {
             level.style.display = "flex";
@@ -22,22 +20,24 @@
         });
     }
 
-    function waitForChart() {
+    function waitForChartAndApply() {
         let tries = 0;
         const interval = setInterval(() => {
-            const hierarchy = document.querySelector(".hierarchy");
-            if (hierarchy) {
+            if (document.querySelector(".hierarchy")) {
                 applyVerticalLayout();
                 clearInterval(interval);
             }
-            if (++tries > 25) clearInterval(interval);
+            if (++tries > 30) clearInterval(interval);
         }, 300);
     }
 
-    // Route navigation
-    frappe.router.on("change", waitForChart);
+    // 🔥 THIS IS THE IMPORTANT PART
+    frappe.pages["organizational-chart"] =
+        frappe.pages["organizational-chart"] || {};
 
-    // Full reload
-    window.addEventListener("load", waitForChart);
+    frappe.pages["organizational-chart"].on_page_show = function () {
+        console.log("📄 Org chart page shown");
+        waitForChartAndApply();
+    };
 
 })();
