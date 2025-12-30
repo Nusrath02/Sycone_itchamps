@@ -26,14 +26,11 @@ app_include_css = [
 
 
 # app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
-app_include_js = "/assets/business_theme_v14/js/sycone_footer.js"
-
-
-
-
 app_include_js = [
+    "/assets/business_theme_v14/js/sycone_footer.js",
     "/assets/sycone_itchamps/js/org_chart_vertical.js"
 ]
+
 
 
 # Favicon
