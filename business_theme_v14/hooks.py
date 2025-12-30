@@ -33,6 +33,10 @@ page_js = {
     "organizational-chart": "public/js/orgchart_horizontal.js"
 }
 
+app_include_js = [
+    "/assets/sycone_itchamps/js/org_chart_vertical.js"
+]
+
 
 # Favicon
 # Website settings
