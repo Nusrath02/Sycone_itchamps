@@ -24,6 +24,9 @@ app_include_css = [
     f"/assets/business_theme_v14/css/custom_theme.css?v={app_version}"
 ]
 
+app_include_css = [
+    "/assets/sycone_itchamps/css/vertical_org_chart.css"
+]
 
 # app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
 app_include_js = [
