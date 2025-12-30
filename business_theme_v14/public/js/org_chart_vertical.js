@@ -1,43 +1,80 @@
-(function () {
+frappe.pages["vertical-org-chart"].on_page_load = function (wrapper) {
+    const page = frappe.ui.make_app_page({
+        parent: wrapper,
+        title: "Vertical Organization Chart",
+        single_column: true
+    });
 
-    function applyVerticalLayout() {
-        const hierarchy = document.querySelector(".hierarchy");
-        if (!hierarchy) return;
+    const container = $('<div class="vertical-org-container"></div>');
+    $(page.body).append(container);
 
-        console.log("✅ Enforcing vertical org chart");
+    loadOrgData(container);
+};
 
-        document.querySelectorAll(".level").forEach(level => {
-            level.style.display = "flex";
-            level.style.flexDirection = "column";
-            level.style.alignItems = "center";
-            level.style.justifyContent = "flex-start";
-        });
+function loadOrgData(container) {
+    frappe.call({
+        method: "frappe.client.get_list",
+        args: {
+            doctype: "Employee",
+            fields: [
+                "name",
+                "employee_name",
+                "designation",
+                "reports_to",
+                "image"
+            ],
+            limit_page_length: 1000
+        },
+        callback(r) {
+            if (!r.message) return;
 
-        document.querySelectorAll(".node-children").forEach(ul => {
-            ul.style.display = "flex";
-            ul.style.flexDirection = "column";
-            ul.style.alignItems = "center";
-        });
-    }
+            const employees = r.message;
+            const tree = buildHierarchy(employees);
+            renderTree(tree, container);
+        }
+    });
+}
 
-    function waitForChartAndApply() {
-        let tries = 0;
-        const interval = setInterval(() => {
-            if (document.querySelector(".hierarchy")) {
-                applyVerticalLayout();
-                clearInterval(interval);
-            }
-            if (++tries > 30) clearInterval(interval);
-        }, 300);
-    }
+function buildHierarchy(list) {
+    const map = {};
+    const roots = [];
 
-    // 🔥 THIS IS THE IMPORTANT PART
-    frappe.pages["organizational-chart"] =
-        frappe.pages["organizational-chart"] || {};
+    list.forEach(emp => {
+        map[emp.name] = { ...emp, children: [] };
+    });
 
-    frappe.pages["organizational-chart"].on_page_show = function () {
-        console.log("📄 Org chart page shown");
-        waitForChartAndApply();
-    };
+    list.forEach(emp => {
+        if (emp.reports_to && map[emp.reports_to]) {
+            map[emp.reports_to].children.push(map[emp.name]);
+        } else {
+            roots.push(map[emp.name]);
+        }
+    });
 
-})();
+    return roots;
+}
+
+function renderTree(nodes, container) {
+    const ul = $('<ul class="org-tree"></ul>');
+
+    nodes.forEach(node => {
+        const li = $('<li></li>');
+
+        const card = $(`
+            <div class="org-card">
+                <div class="name">${node.employee_name || node.name}</div>
+                <div class="designation">${node.designation || ""}</div>
+            </div>
+        `);
+
+        li.append(card);
+
+        if (node.children.length) {
+            renderTree(node.children, li);
+        }
+
+        ul.append(li);
+    });
+
+    container.append(ul);
+}
