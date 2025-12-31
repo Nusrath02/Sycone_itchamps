@@ -11,7 +11,6 @@ frappe.pages["organizational-chart"].on_page_show = function (wrapper) {
     loadOrgData(container);
 };
 
-
 function loadOrgData(container) {
     frappe.call({
         method: "frappe.client.get_list",
