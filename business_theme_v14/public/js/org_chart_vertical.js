@@ -1,16 +1,18 @@
 (function () {
 
+    let applied = false; // GLOBAL guard (important)
+
     function applyVerticalOrgChart() {
         const defaultContainer = document.querySelector(".get-org-chart");
         if (!defaultContainer) return;
 
-        // Prevent infinite re-apply
-        if (defaultContainer.dataset.verticalApplied === "1") return;
-        defaultContainer.dataset.verticalApplied = "1";
+        if (applied) return;
+        applied = true;
 
         console.log("✅ Applying Vertical Org Chart");
 
         defaultContainer.innerHTML = "";
+
         const container = document.createElement("div");
         container.className = "vertical-org-container";
         defaultContainer.appendChild(container);
@@ -18,16 +20,16 @@
         loadOrgData($(container));
     }
 
-    // Watch for ERPNext re-render
-    function observeOrgChart() {
-        const pageBody = document.querySelector(".page-body");
-        if (!pageBody) return;
-
+    function waitForOrgChartAndApply() {
         const observer = new MutationObserver(() => {
-            applyVerticalOrgChart();
+            const orgChart = document.querySelector(".get-org-chart");
+            if (orgChart) {
+                observer.disconnect();
+                setTimeout(applyVerticalOrgChart, 300);
+            }
         });
 
-        observer.observe(pageBody, {
+        observer.observe(document.body, {
             childList: true,
             subtree: true
         });
@@ -38,10 +40,8 @@
 
         console.log("📍 Organizational Chart route detected");
 
-        setTimeout(() => {
-            applyVerticalOrgChart();
-            observeOrgChart();
-        }, 600);
+        applied = false; // reset on every visit
+        waitForOrgChartAndApply();
     });
 
 })();
