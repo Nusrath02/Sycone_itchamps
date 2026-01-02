@@ -1,27 +1,43 @@
-function renderTree(nodes, container) {
-    const ul = $('<ul class="org-tree"></ul>');
+(function () {
 
-    nodes.forEach(node => {
-        const li = $('<li></li>');
+    function replaceOrgChart() {
+        const orgChart = document.querySelector(".get-org-chart");
 
-        const card = $(`
-            <div class="org-card">
-                <div class="name">${node.employee_name || node.name}</div>
-                <div class="designation">${node.designation || ""}</div>
-            </div>
-        `);
-
-        li.append(card);
-
-        // ✅ THIS IS WHERE YOUR FIX GOES
-        if (node.children && node.children.length) {
-            const childUl = $('<ul></ul>');
-            renderTree(node.children, childUl);
-            li.append(childUl);
+        if (!orgChart) {
+            console.log("⏳ Waiting for org chart...");
+            return false;
         }
 
-        ul.append(li);
+        // Prevent double replace
+        if (orgChart.dataset.vertical === "1") return true;
+
+        console.log("✅ Replacing default org chart with vertical");
+
+        orgChart.dataset.vertical = "1";
+        orgChart.innerHTML = `
+            <div class="vertical-org-container">
+                <h3 style="margin-bottom:16px">Vertical Org Chart Loaded</h3>
+            </div>
+        `;
+
+        loadOrgData($(orgChart.querySelector(".vertical-org-container")));
+        return true;
+    }
+
+    function waitUntilRendered() {
+        const interval = setInterval(() => {
+            if (replaceOrgChart()) {
+                clearInterval(interval);
+            }
+        }, 300);
+    }
+
+    frappe.router.on("change", () => {
+        if (frappe.get_route_str() !== "organizational-chart") return;
+
+        console.log("📍 Organizational Chart route detected");
+
+        waitUntilRendered();
     });
 
-    container.append(ul);
-}
+})();
