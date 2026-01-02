@@ -1,3 +1,5 @@
+alert("ORG CHART JS LOADED");
+
 (function () {
 
     function replaceOrgChart() {
