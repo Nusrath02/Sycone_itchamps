@@ -1,47 +1,27 @@
-(function () {
+function renderTree(nodes, container) {
+    const ul = $('<ul class="org-tree"></ul>');
 
-    let applied = false; // GLOBAL guard (important)
+    nodes.forEach(node => {
+        const li = $('<li></li>');
 
-    function applyVerticalOrgChart() {
-        const defaultContainer = document.querySelector(".get-org-chart");
-        if (!defaultContainer) return;
+        const card = $(`
+            <div class="org-card">
+                <div class="name">${node.employee_name || node.name}</div>
+                <div class="designation">${node.designation || ""}</div>
+            </div>
+        `);
 
-        if (applied) return;
-        applied = true;
+        li.append(card);
 
-        console.log("✅ Applying Vertical Org Chart");
+        // ✅ THIS IS WHERE YOUR FIX GOES
+        if (node.children && node.children.length) {
+            const childUl = $('<ul></ul>');
+            renderTree(node.children, childUl);
+            li.append(childUl);
+        }
 
-        defaultContainer.innerHTML = "";
-
-        const container = document.createElement("div");
-        container.className = "vertical-org-container";
-        defaultContainer.appendChild(container);
-
-        loadOrgData($(container));
-    }
-
-    function waitForOrgChartAndApply() {
-        const observer = new MutationObserver(() => {
-            const orgChart = document.querySelector(".get-org-chart");
-            if (orgChart) {
-                observer.disconnect();
-                setTimeout(applyVerticalOrgChart, 300);
-            }
-        });
-
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
-    }
-
-    frappe.router.on("change", () => {
-        if (frappe.get_route_str() !== "organizational-chart") return;
-
-        console.log("📍 Organizational Chart route detected");
-
-        applied = false; // reset on every visit
-        waitForOrgChartAndApply();
+        ul.append(li);
     });
 
-})();
+    container.append(ul);
+}
