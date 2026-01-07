@@ -4978,3 +4978,37 @@ body[data-route="organizational-chart"] .get-org-chart {
     flex-direction: column !important;
     align-items: center !important;
 }
+
+/* ORG Chart */
+.custom-org-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.org-vertical {
+    list-style: none;
+    text-align: center;
+}
+
+.org-vertical li {
+    margin-top: 18px;
+}
+
+.org-node {
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    padding: 10px 16px;
+    min-width: 200px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.emp-name {
+    font-weight: 600;
+}
+
+.emp-desig {
+    font-size: 12px;
+    color: #64748b;
+}
