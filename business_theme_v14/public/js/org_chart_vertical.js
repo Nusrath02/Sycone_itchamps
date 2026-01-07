@@ -1,79 +1,114 @@
-frappe.pages["vertical-org-chart"] =
-    frappe.pages["vertical-org-chart"] || {};
+frappe.provide('frappe.ui');
 
-frappe.pages["vertical-org-chart"].on_page_load = function (wrapper) {
+frappe.ui.OrganizationalChartVertical = class OrganizationalChartVertical {
+    constructor(options) {
+        this.wrapper = options.wrapper;
+        this.page = options.page;
+        this.method = options.method;
+        this.company = options.company;
+        
+        this.setup_page();
+        this.load_chart();
+    }
 
-    const page = frappe.ui.make_app_page({
-        parent: wrapper,
-        title: "Custom Vertical Org Chart",
-        single_column: true
-    });
-
-    const container = $('<div class="custom-org-wrapper"></div>');
-    $(page.body).append(container);
-
-    frappe.call({
-        method: "frappe.client.get_list",
-        args: {
-            doctype: "Employee",
-            fields: [
-                "name",
-                "employee_name",
-                "designation",
-                "reports_to"
-            ],
-            limit_page_length: 1000
-        },
-        callback(r) {
-            if (!r.message) return;
-
-            const tree = buildHierarchy(r.message);
-            renderTree(tree, container);
-        }
-    });
-
-};
-
-
-function buildHierarchy(list) {
-    const map = {};
-    const roots = [];
-
-    list.forEach(emp => {
-        map[emp.name] = { ...emp, children: [] };
-    });
-
-    list.forEach(emp => {
-        if (emp.reports_to && map[emp.reports_to]) {
-            map[emp.reports_to].children.push(map[emp.name]);
-        } else {
-            roots.push(map[emp.name]);
-        }
-    });
-
-    return roots;
-}
-
-
-function renderTree(nodes, parent) {
-    const ul = $('<ul class="org-vertical"></ul>');
-
-    nodes.forEach(node => {
-        const li = $('<li></li>');
-
-        li.append(`
-            <div class="org-node">
-                <div class="emp-name">${node.employee_name}</div>
-                <div class="emp-desig">${node.designation || ""}</div>
+    setup_page() {
+        this.$wrapper = $(this.wrapper);
+        this.$wrapper.empty();
+        
+        this.$wrapper.append(`
+            <div class="org-chart-container">
+                <div class="org-chart-header">
+                    <h3>Organizational Chart</h3>
+                </div>
+                <div class="org-chart-body">
+                    <div class="org-chart-loader">
+                        <div class="text-center">
+                            <i class="fa fa-spinner fa-spin fa-2x"></i>
+                            <p class="text-muted">Loading organizational chart...</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         `);
+    }
 
-        if (node.children.length) {
-            renderTree(node.children, li);
+    load_chart() {
+        frappe.call({
+            method: this.method,
+            args: {
+                company: this.company
+            },
+            callback: (r) => {
+                if (r.message) {
+                    this.render_chart(r.message);
+                }
+            }
+        });
+    }
+
+    render_chart(data) {
+        const $body = this.$wrapper.find('.org-chart-body');
+        $body.empty();
+        
+        if (!data || data.length === 0) {
+            $body.append(`
+                <div class="text-center text-muted p-5">
+                    No organizational data found
+                </div>
+            `);
+            return;
         }
 
-        ul.append(li);
-    });
+        // Render vertical organizational chart
+        const html = this.build_hierarchy(data);
+        $body.append(html);
+    }
 
-    parent.append(ul);
-}
+    build_hierarchy(nodes) {
+        let html = '<div class="org-chart-vertical">';
+        
+        nodes.forEach(node => {
+            html += this.build_node(node);
+        });
+        
+        html += '</div>';
+        return html;
+    }
+
+    build_node(node) {
+        return `
+            <div class="org-node" data-employee="${node.id}">
+                <div class="org-node-card">
+                    <div class="org-node-header">
+                        ${node.image ? `<img src="${node.image}" class="org-node-image">` : 
+                          `<div class="org-node-avatar">${this.get_initials(node.name)}</div>`}
+                    </div>
+                    <div class="org-node-body">
+                        <div class="org-node-name">${node.name}</div>
+                        <div class="org-node-title">${node.designation || ''}</div>
+                        ${node.connections ? `<div class="org-node-connections">${node.connections} connections</div>` : ''}
+                    </div>
+                </div>
+                ${node.children && node.children.length > 0 ? this.build_children(node.children) : ''}
+            </div>
+        `;
+    }
+
+    build_children(children) {
+        let html = '<div class="org-children">';
+        children.forEach(child => {
+            html += this.build_node(child);
+        });
+        html += '</div>';
+        return html;
+    }
+
+    get_initials(name) {
+        if (!name) return '?';
+        const parts = name.split(' ');
+        if (parts.length >= 2) {
+            return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
+        }
+        return name.substring(0, 2).toUpperCase();
+    }
+};
