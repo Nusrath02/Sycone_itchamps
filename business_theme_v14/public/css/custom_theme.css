@@ -4984,89 +4984,14 @@ body[data-route="organizational-chart"] .get-org-chart {
 
 /* ORG Chart */
 
-/* ==================== ORGANIZATIONAL CHART: FULL EXPANSION FIX ==================== */
-
-/* Main container - allow full expansion */
-body[data-route="organizational-chart"] .layout-main-section.frappe-card {
-    min-height: calc(100vh - 120px) !important;
-    max-height: none !important;
-    height: auto !important;
-    overflow: visible !important;  /* ENABLE THIS - crucial for showing overflow */
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    padding: 20px !important;  /* Add some padding for breathing room */
-}
-
-/* Page wrapper - allow horizontal scroll if needed */
-body[data-route="organizational-chart"] .layout-main-section-wrapper {
-    overflow-x: auto !important;  /* Horizontal scroll for wide charts */
-    overflow-y: visible !important;
-    height: auto !important;
-    min-height: calc(100vh - 140px) !important;
-}
-
-/* Page body - expand to full content size */
-body[data-route="organizational-chart"] .page-body {
-    min-height: calc(100vh - 140px) !important;
-    height: auto !important;
+/* NUCLEAR OPTION - Force everything to be visible */
+body[data-route="organizational-chart"] * {
     overflow: visible !important;
-    width: 100% !important;
 }
 
-/* Org chart container - let it grow naturally */
-body[data-route="organizational-chart"] .get-org-chart,
-body[data-route="organizational-chart"] #hierarchy-chart-wrapper {
-    min-height: calc(100vh - 160px) !important;
-    height: auto !important;
-    width: max-content !important;  /* Expand width to fit all content */
-    min-width: 100% !important;
-    overflow: visible !important;
-    padding: 40px !important;  /* Extra padding to prevent cutoff */
-}
-
-/* Chart hierarchy wrapper */
-body[data-route="organizational-chart"] .hierarchy {
+body[data-route="organizational-chart"] .layout-main-section,
+body[data-route="organizational-chart"] .page-container,
+body[data-route="organizational-chart"] .frappe-card {
     width: max-content !important;
     min-width: 100% !important;
-    height: auto !important;
-    overflow: visible !important;
-    padding: 20px 0 !important;
-}
-
-/* Individual nodes - ensure they don't get cut off */
-body[data-route="organizational-chart"] .hierarchy .node-card,
-body[data-route="organizational-chart"] .hierarchy .node {
-    position: relative !important;
-    z-index: 1 !important;
-}
-
-/* Connectors/arrows - ensure they're visible */
-body[data-route="organizational-chart"] .hierarchy .connector,
-body[data-route="organizational-chart"] .hierarchy svg {
-    overflow: visible !important;
-    z-index: 0 !important;
-}
-
-/* Fix for content being cut off at edges */
-body[data-route="organizational-chart"] .container {
-    max-width: none !important;
-    overflow: visible !important;
-}
-
-/* Add smooth scrolling for horizontal overflow */
-body[data-route="organizational-chart"] .layout-main-section-wrapper::-webkit-scrollbar {
-    height: 8px !important;
-}
-
-body[data-route="organizational-chart"] .layout-main-section-wrapper::-webkit-scrollbar-track {
-    background: #f1f5f9 !important;
-}
-
-body[data-route="organizational-chart"] .layout-main-section-wrapper::-webkit-scrollbar-thumb {
-    background: #cbd5e1 !important;
-    border-radius: 10px !important;
-}
-
-body[data-route="organizational-chart"] .layout-main-section-wrapper::-webkit-scrollbar-thumb:hover {
-    background: #94a3b8 !important;
 }
