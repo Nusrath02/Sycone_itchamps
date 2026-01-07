@@ -1,18 +1,47 @@
-/* ======================================================
-   FRAPPE SIDEBAR DROPDOWN – FIXED & STABLE
-   ====================================================== */
+/* 1️⃣ Allow sidebar dropdown to overflow */
+.standard-sidebar-section,
+.sidebar-item-container,
+.desk-sidebar {
+    overflow: visible !important;
+}
 
-/* 1️⃣ Always show sidebar controls */
+/* 2️⃣ Force dropdown to show when NOT hidden */
+.sidebar-item-control .dropdown-list {
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    z-index: 9999;
+}
+
+/* 3️⃣ Override hidden ONLY when Frappe opens it */
+.sidebar-item-control .dropdown-list:not(.hidden) {
+    display: block !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* ===============================
+   ALWAYS SHOW SIDEBAR CONTROLS
+   =============================== */
+
 .sidebar-item-control {
     display: flex !important;
     align-items: center;
     gap: 6px;
     padding: 0 !important;
     background: transparent !important;
-    position: relative !important; /* anchor dropdown */
+    opacity: 1 !important;   /* 👈 ALWAYS VISIBLE */
 }
 
-/* 2️⃣ Buttons */
+/* Buttons (drag + menu) */
 .sidebar-item-control .btn {
     width: 24px !important;
     height: 24px !important;
@@ -27,69 +56,66 @@
     justify-content: center;
 }
 
-/* 3️⃣ Icon color */
+/* Icon color */
 .sidebar-item-control svg,
 .sidebar-item-control i {
     color: #000 !important;
     fill: #000 !important;
 }
 
-/* ======================================================
-   DROPDOWN VISIBILITY (IMPORTANT PART)
-   ====================================================== */
+/* ===============================
+   DROPDOWN – CLICK ONLY
+   =============================== */
 
-/* Default hidden (Frappe uses this) */
-.sidebar-item-control .dropdown-list.hidden {
+/* Hide dropdown by default */
+.sidebar-item-control .dropdown-list {
     display: none !important;
 }
 
-/* Show when NOT hidden */
-.sidebar-item-control .dropdown-list:not(.hidden) {
+/* Show only when Frappe adds `.show` */
+.sidebar-item-control .dropdown-list.show {
     display: block !important;
     position: absolute !important;
-    top: calc(100% + 6px) !important;
+    top: 100% !important;
     right: 0 !important;
-    z-index: 9999;
 
     min-width: 180px;
     padding: 6px 0;
-    background: #ffffff;
+
+    background: #fff;
     border-radius: 8px;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+    z-index: 9999;
 }
 
-/* ======================================================
-   DROPDOWN CONTENT
-   ====================================================== */
-
+/* Dropdown items */
 .sidebar-item-control .dropdown-list li,
 .sidebar-item-control .dropdown-list a {
     display: flex;
     align-items: center;
     gap: 10px;
+
     padding: 8px 14px !important;
     font-size: 14px;
     color: #1f2937;
     cursor: pointer;
 }
 
+/* Hover effect */
 .sidebar-item-control .dropdown-list li:hover,
 .sidebar-item-control .dropdown-list a:hover {
     background: #f3f4f6;
 }
 
-/* ======================================================
-   PREVENT CLIPPING & MOVEMENT
-   ====================================================== */
+/* ===============================
+   PREVENT SIDEBAR CLIPPING
+   =============================== */
 
 .sidebar-item-container,
 .standard-sidebar-section,
 .desk-sidebar {
     overflow: visible !important;
-}
-
-.desk-sidebar-item:hover {
-    transform: none !important;
 }
 
 
