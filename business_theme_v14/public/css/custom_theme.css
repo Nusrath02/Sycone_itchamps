@@ -5025,162 +5025,31 @@ div#driver-popover-item .driver-popover-footer button.driver-close-btn {
 
 /* Custom Sidebar Alignment Fixes */
 
-/* Fix sidebar item container alignment */
-.sidebar-item-container {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 0 !important;
-}
+/* Minimal CSS - Only for custom menu items, doesn't affect existing sidebar */
 
-/* Fix main sidebar item alignment */
-.desk-sidebar-item.standard-sidebar-item {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 8px 12px !important;
-    min-height: 40px !important;
-    width: 100% !important;
-}
-
-/* Fix item anchor (clickable area) alignment */
-.desk-sidebar-item .item-anchor {
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important;
-    flex: 1 !important;
-    text-decoration: none !important;
-    color: inherit !important;
-}
-
-/* Fix icon alignment */
-.sidebar-item-icon {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 20px !important;
-    height: 20px !important;
-    flex-shrink: 0 !important;
-}
-
-.sidebar-item-icon svg {
-    width: 20px !important;
-    height: 20px !important;
-}
-
-/* Fix label alignment */
-.sidebar-item-label {
-    display: flex !important;
-    align-items: center !important;
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-    white-space: nowrap !important;
-}
-
-/* Fix sidebar controls (drag, dropdown, settings) alignment */
-.sidebar-item-control {
-    display: flex !important;
-    align-items: center !important;
-    gap: 4px !important;
-    margin-left: auto !important;
-    opacity: 0 !important;
-    transition: opacity 0.2s !important;
-}
-
-/* Show controls on hover */
-.sidebar-item-container:hover .sidebar-item-control {
+/* Ensure custom menu item labels are visible */
+.sidebar-item-container[item-name="Employee"] .sidebar-item-label {
+    display: inline-block !important;
+    visibility: visible !important;
     opacity: 1 !important;
 }
 
-/* Fix drag handle button */
-.sidebar-item-control .drag-handle {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 4px !important;
-    background: transparent !important;
-    border: none !important;
-    cursor: grab !important;
+/* Ensure custom menu item icons are visible */
+.sidebar-item-container[item-name="Employee"] .sidebar-item-icon {
+    display: inline-block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
-.sidebar-item-control .drag-handle:active {
-    cursor: grabbing !important;
+/* Ensure proper hover effect for custom item */
+.sidebar-item-container[item-name="Employee"] .desk-sidebar-item:hover {
+    background-color: var(--bg-light-gray, #f5f5f5);
+    border-radius: 6px;
 }
 
-/* Fix collapse button alignment */
-.sidebar-item-control .collapse-btn {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 4px !important;
-    background: transparent !important;
-    border: none !important;
-    cursor: pointer !important;
+/* Ensure controls show on hover for custom item */
+.sidebar-item-container[item-name="Employee"]:hover .sidebar-item-control {
+    opacity: 1;
 }
 
-/* Fix settings dropdown button */
-.sidebar-item-control .setting-btn {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 4px !important;
-    background: transparent !important;
-    border: none !important;
-    cursor: pointer !important;
-}
-
-/* Fix button icons size */
-.sidebar-item-control button svg {
-    width: 16px !important;
-    height: 16px !important;
-}
-
-/* Fix nested container (child items) */
-.sidebar-child-item.nested-container {
-    padding-left: 32px !important;
-    display: none !important;
-}
-
-.sidebar-child-item.nested-container.show {
-    display: block !important;
-}
-
-/* Fix hover state */
-.desk-sidebar-item.standard-sidebar-item:hover {
-    background-color: var(--subtle-fg) !important;
-    border-radius: 6px !important;
-}
-
-/* Fix active state */
-.desk-sidebar-item.standard-sidebar-item.active {
-    background-color: var(--primary-light) !important;
-    border-radius: 6px !important;
-}
-
-/* Remove any extra padding/margin that might cause misalignment */
-.sidebar-item-container.is-draggable {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-/* Fix dropdown arrow alignment for expandable items */
-.sidebar-item-control .drop-icon {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 4px !important;
-    background: transparent !important;
-    border: none !important;
-    cursor: pointer !important;
-}
-
-/* Ensure proper spacing between items */
-.standard-sidebar-section.nested-container[data-title='Public'] > .sidebar-item-container {
-    margin-bottom: 2px !important;
-}
-
-/* Fix for small screen adjustments */
-@media (max-width: 768px) {
-    .sidebar-item-control {
-        opacity: 1 !important;
-    }
-}
+/* DO NOT add any global sidebar styles that could break existing items */
