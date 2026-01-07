@@ -1,3 +1,35 @@
+/* 1️⃣ Allow sidebar dropdown to overflow */
+.standard-sidebar-section,
+.sidebar-item-container,
+.desk-sidebar {
+    overflow: visible !important;
+}
+
+/* 2️⃣ Force dropdown to show when NOT hidden */
+.sidebar-item-control .dropdown-list {
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    z-index: 9999;
+}
+
+/* 3️⃣ Override hidden ONLY when Frappe opens it */
+.sidebar-item-control .dropdown-list:not(.hidden) {
+    display: block !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ===============================
    ALWAYS SHOW SIDEBAR CONTROLS
    =============================== */
