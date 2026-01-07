@@ -3657,6 +3657,13 @@ span.form-sidebar-items{
     color:white !important;
 
 }
+header.level.list-row-head.text-muted{
+    color:black !important;
+}
+ 
+use.like-icon {
+    stroke: black !important;
+}
 
 span.text-muted{
    color:black !important;
