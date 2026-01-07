@@ -4924,6 +4924,10 @@ use.like-icon {
     color: #000000;
     cursor: pointer;
 }
+
+.text-body, .text-muted, div#driver-popover-item .driver-popover-footer button.driver-close-btn {
+    color: #ffffff !important;
+}
 /* ----------------------  Stock sidebar text end --------------------------- */
 
 
