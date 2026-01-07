@@ -5024,34 +5024,3 @@ div#driver-popover-item .driver-popover-footer button.driver-close-btn {
 
 
 /* Custom Sidebar Alignment Fixes */
-/* Sidebar Container */
-.sidebar-item-container.is-draggable {
-    /* your styles */
-}
-
-[data-page-route="Workspaces"] .sidebar-item-container {
-    position: relative;
-    margin-left: -50px;
-}
-
-[data-page-route="Workspaces"] .standard-sidebar-item .sidebar-item-control > * {
-    align-self: center;
-    margin-left: -6px;
-    /* box-shadow: none; - commented out */
-}
-
-/* Icon Sizing */
-.icon-xs {
-    width: 12px;
-    height: 12px;
-}
-
-/* Sidebar Labels */
-.standard-sidebar .standard-sidebar-item .sidebar-item-label,
-.desk-sidebar .standard-sidebar-item .sidebar-item-label,
-.search-dialog .search-results .search-sidebar .standard-sidebar-item .sidebar-item-label {
-    min-width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-}
