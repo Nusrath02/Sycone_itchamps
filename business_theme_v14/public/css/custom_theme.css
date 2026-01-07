@@ -4995,6 +4995,14 @@ body[data-route="organizational-chart"] .frappe-card {
     width: max-content !important;
     min-width: 100% !important;
 }
+
+/* workspace req color */
+.sidebar-section a,
+.control-value a,
+.data-row a {
+    color: #000000 !important;
+}
+
 /* ORG Navbar */
 /* ==================== ORG CHART: PRECISE FIX ==================== */
 
