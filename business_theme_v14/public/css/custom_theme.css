@@ -1,3 +1,66 @@
+/* Allow sidebar item menu to overflow properly */
+.desk-sidebar,
+.standard-sidebar-section,
+.sidebar-item-container {
+    overflow: visible !important;
+}
+/* Lock dropdown position */
+.sidebar-item-container .dropdown-list {
+    position: absolute !important;
+    top: 100% !important;
+    left: 10px !important;
+    transform: none !important;
+}
+/* Make dropdown icons black */
+.sidebar-item-container .dropdown-list svg,
+.sidebar-item-container .dropdown-list i {
+    color: #000 !important;
+    fill: #000 !important;
+}
+/* Compact sidebar action menu */
+.sidebar-item-container .dropdown-list {
+    min-width: 140px !important;
+    padding: 4px 0 !important;
+    border-radius: 6px;
+}
+
+/* Compact menu items */
+.sidebar-item-container .dropdown-list li,
+.sidebar-item-container .dropdown-list a {
+    padding: 6px 10px !important;
+    font-size: 12px !important;
+    line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ==================== ITCHAMPS DASHBOARD THEME ==================== */
 /* ==================== NAVBAR STYLING ==================== */
