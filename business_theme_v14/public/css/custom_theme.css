@@ -5075,8 +5075,6 @@ body[data-route="organizational-chart"] .navbar .form-control,
 body[data-route="organizational-chart"] header .form-control,
 body[data-route="organizational-chart"] .navbar input[type="text"],
 body[data-route="organizational-chart"] header input[type="text"] {
-    max-width: 500px !important;  /* Set explicit max width */
-    width: 100% !important;
     flex-grow: 0 !important;      /* Don't let it grow */
     flex-shrink: 1 !important;    /* Allow it to shrink on small screens */
 }
