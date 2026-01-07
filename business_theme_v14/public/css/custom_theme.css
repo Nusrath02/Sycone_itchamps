@@ -3441,51 +3441,6 @@ body .tt-menu {
     cursor: pointer;
 }
 
-
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* remove the red/grey container background from Save Filter block */
 .sidebar-section.save-filter-section {
   background: transparent !important;
@@ -3525,9 +3480,6 @@ body .tt-menu {
     color: #fff !important;
     border-color: #2a5298 !important;
 }
-
-
-
 
 /* save filter text */
 
@@ -4902,8 +4854,12 @@ a {
 
 
 use.like-icon {
-    stroke: #ffffff;
+    stroke: #ffffff !important;
+    fill: #ffffff !important;
+    width: 18px !important;
+    height: 18px !important;
 }
+
 
 .text-body, .text-muted, div#driver-popover-item .driver-popover-footer button.driver-close-btn {
     color: #052a67 !important;
