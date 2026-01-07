@@ -4879,6 +4879,13 @@ use.like-icon {
 .text-body, .text-muted, div#driver-popover-item .driver-popover-footer button.driver-close-btn {
     color: #ffffff !important;
 }
+.text-body, 
+.text-muted, 
+.node-title.text-muted.ellipsis,
+.small.text-muted,
+div#driver-popover-item .driver-popover-footer button.driver-close-btn {
+    color: #fefefe !important;
+}
 /* ----------------------  Stock sidebar text end --------------------------- */
 
 
