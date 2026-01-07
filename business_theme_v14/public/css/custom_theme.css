@@ -5001,6 +5001,13 @@ use.like-icon {
     color: #ffffff;
     cursor: pointer;
 }
+
+.sidebar-section a, 
+.control-value a, 
+.data-row a, 
+.static-area.ellipsis a {
+    color: #000000 !important;
+}
 /* ----------------------  Stock sidebar text end --------------------------- */
 
 
