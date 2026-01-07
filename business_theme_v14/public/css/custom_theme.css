@@ -5008,6 +5008,10 @@ use.like-icon {
 .static-area.ellipsis a {
     color: #000000 !important;
 }
+.badge-link a {
+    color: #000000;
+    cursor: pointer;
+}
 /* ----------------------  Stock sidebar text end --------------------------- */
 
 
