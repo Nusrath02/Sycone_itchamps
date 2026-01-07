@@ -1,6 +1,16 @@
-col-lg-2 layout-side-section{
-    color:white !important;
+/* Make all text inside the side section white */
+.layout-side-section,
+.layout-side-section * {
+    color: #ffffff !important;
 }
+
+
+
+
+
+
+
+
 
 
 
