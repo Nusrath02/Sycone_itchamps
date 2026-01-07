@@ -5078,10 +5078,22 @@ body[data-route="organizational-chart"] .frappe-card {
 div#driver-popover-item .driver-popover-footer button.driver-close-btn {
     color: #ffffff !important;
 }
-body a {
-    color: #fcfcfc;
-    cursor: pointer;
+
+/* Sidebar links - white */
+.layout-side-section .sidebar-menu > li > a,
+.layout-side-section .sidebar-menu.user-actions a {
+    color: #ffffff !important;
+    font-weight: 700;
 }
+
+/* Main content links - black */
+.layout-main-section a,
+.page-body a,
+.form-dashboard a,
+.data-row a {
+    color: #000000 !important;
+}
+
 
 /* ORG Navbar */
 /* ==================== ORG CHART: PRECISE FIX ==================== */
