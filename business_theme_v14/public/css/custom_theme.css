@@ -5082,6 +5082,10 @@ body[data-route="organizational-chart"] .frappe-card {
 }
 
 /* workspace req color */
+.modified-by,
+.modified-by a {
+    color: #ffffff !important;
+}
 
 
 
