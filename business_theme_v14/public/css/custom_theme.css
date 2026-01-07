@@ -4957,6 +4957,39 @@ body {
 
 /* ORG Navbar */
 
+/* ==================== PROFILE DROPDOWN FIX ==================== */
+/* Fix profile dropdown to appear below the profile icon, aligned to the right */
+
+/* Target the profile dropdown menu */
+.navbar .dropdown-menu.dropdown-menu-right,
+.navbar-nav .dropdown-menu[aria-labelledby*="toolbar-user"],
+.navbar .nav-item.dropdown .dropdown-menu,
+header .dropdown-menu {
+    position: absolute !important;
+    right: 0 !important;
+    left: auto !important;
+    top: 100% !important;
+    transform: none !important;
+    margin-top: 8px !important;
+    min-width: 200px !important;
+    z-index: 1050 !important;
+}
+
+/* Ensure the parent dropdown container is positioned relatively */
+.navbar .nav-item.dropdown,
+.navbar-nav .dropdown {
+    position: relative !important;
+}
+
+/* Additional specificity for stubborn dropdowns */
+.navbar-expand .navbar-nav .dropdown-menu.show {
+    position: absolute !important;
+    right: 0 !important;
+    left: auto !important;
+    top: calc(100% + 4px) !important;
+    transform: none !important;
+}
+
 
 /* Org chat text */
 .text-body, 
