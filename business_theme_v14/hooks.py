@@ -35,6 +35,12 @@ page_js = {
     "*": "public/js/sycone_footer.js"  # Applies to all pages
 }
 
+# ADD THIS LINE - Include your custom sidebar JavaScript
+app_include_js = [
+    "/assets/business_theme_v14/js/custom_sidebar.js"
+]
+
+
 # Favicon
 # Website settings
 website_context = {
