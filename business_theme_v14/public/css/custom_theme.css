@@ -5082,32 +5082,7 @@ body[data-route="organizational-chart"] .frappe-card {
 }
 
 /* workspace req color */
-.sidebar-section a,
-.control-value a,
-.data-row a {
-    color: #000000 !important;
-}
 
-.text-body,
-.text-muted,
-div#driver-popover-item .driver-popover-footer button.driver-close-btn {
-    color: #00000 !important;
-}
-
-/* Sidebar links - white */
-.layout-side-section .sidebar-menu > li > a,
-.layout-side-section .sidebar-menu.user-actions a {
-    color: #ffffff !important;
-    font-weight: 700;
-}
-
-/* Main content links - black */
-.layout-main-section a,
-.page-body a,
-.form-dashboard a,
-.data-row a {
-    color: #ffffff !important;
-}
 
 
 /* ORG Navbar */
