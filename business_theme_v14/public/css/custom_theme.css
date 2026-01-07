@@ -4,6 +4,13 @@
     color: #ffffff !important;
 }
 
+/* Make all text inside the filter sidebar white */
+.list-sidebar.overlay-sidebar,
+.list-sidebar.overlay-sidebar * {
+    color: #ffffff !important;
+}
+
+
 
 
 
