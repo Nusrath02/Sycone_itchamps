@@ -5066,3 +5066,17 @@ body[data-route="organizational-chart"] .hierarchy {
     min-width: 100% !important;
     overflow: visible !important;
 }
+
+/* search bar */
+/* ===== KEEP NAVBAR ELEMENTS AT NORMAL WIDTH ===== */
+body[data-route="organizational-chart"] .navbar *,
+body[data-route="organizational-chart"] header * {
+    max-width: initial !important;
+}
+
+/* But allow navbar container to be full width */
+body[data-route="organizational-chart"] .navbar,
+body[data-route="organizational-chart"] header {
+    max-width: 100vw !important;
+    width: 100vw !important;
+}
