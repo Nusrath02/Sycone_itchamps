@@ -4998,3 +4998,8 @@ header .dropdown-menu {
 div#driver-popover-item .driver-popover-footer button.driver-close-btn {
     color: #0c0c0c !important;
 }
+
+.indicator-pill.yellow, .indicator-pill-right.yellow, .indicator-pill-round.yellow {
+    background: #060606;
+    color: #ffffff; /* Add this if you want white text */
+}
