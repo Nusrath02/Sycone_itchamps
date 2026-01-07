@@ -5024,111 +5024,34 @@ div#driver-popover-item .driver-popover-footer button.driver-close-btn {
 
 
 /* Custom Sidebar Alignment Fixes */
+/* Sidebar Container */
+.sidebar-item-container.is-draggable {
+    /* your styles */
+}
 
-/* Clean Sidebar Alignment - No Negative Margins */
-
-/* This version uses proper padding instead of negative margins */
-/* This is safer and more predictable */
-
-/* Main sidebar item styling - no negative margins */
-[data-page-route=Workspaces] .sidebar-item-container {
+[data-page-route="Workspaces"] .sidebar-item-container {
     position: relative;
-    margin-left: 0; /* No negative margin */
-    padding-left: 0; /* Clean start */
+    margin-left: -50px;
 }
 
-/* Properly align sidebar items with flexbox */
-[data-page-route=Workspaces] .desk-sidebar-item.standard-sidebar-item {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 8px 16px 8px 12px !important; /* Adjusted padding for better spacing */
-    min-height: 40px !important;
+[data-page-route="Workspaces"] .standard-sidebar-item .sidebar-item-control > * {
+    align-self: center;
+    margin-left: -6px;
+    /* box-shadow: none; - commented out */
 }
 
-/* Item anchor (clickable area) alignment */
-[data-page-route=Workspaces] .desk-sidebar-item .item-anchor {
-    display: flex !important;
-    align-items: center !important;
-    gap: 12px !important; /* Space between icon and label */
-    flex: 1 !important;
-    text-decoration: none !important;
+/* Icon Sizing */
+.icon-xs {
+    width: 12px;
+    height: 12px;
 }
 
-/* Icon container - perfectly centered */
-[data-page-route=Workspaces] .sidebar-item-icon {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 20px !important;
-    height: 20px !important;
-    flex-shrink: 0 !important;
-}
-
-/* Label styling */
-[data-page-route=Workspaces] .sidebar-item-label {
-    display: inline-block !important;
-    font-size: 14px !important;
-    line-height: 1.5 !important;
-    white-space: nowrap !important;
-}
-
-/* Control buttons container */
-[data-page-route=Workspaces] .sidebar-item-control {
-    display: flex !important;
-    align-items: center !important;
-    gap: 4px !important;
-    margin-left: auto !important;
-    opacity: 0 !important;
-    transition: opacity 0.2s ease !important;
-}
-
-/* Show controls on hover */
-[data-page-route=Workspaces] .sidebar-item-container:hover .sidebar-item-control {
-    opacity: 1 !important;
-}
-
-/* Individual control buttons */
-[data-page-route=Workspaces] .sidebar-item-control > * {
-    align-self: center !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    padding: 4px !important;
-    background: transparent !important;
-    border: none !important;
-}
-
-/* Button icons */
-[data-page-route=Workspaces] .sidebar-item-control button svg {
-    width: 16px !important;
-    height: 16px !important;
-}
-
-/* Hover effect on sidebar items */
-[data-page-route=Workspaces] .desk-sidebar-item.standard-sidebar-item:hover {
-    background-color: rgba(255, 255, 255, 0.1) !important;
-    border-radius: 6px !important;
-}
-
-/* Active/selected state */
-[data-page-route=Workspaces] .desk-sidebar-item.standard-sidebar-item.selected {
-    background-color: rgba(255, 255, 255, 0.15) !important;
-    border-radius: 6px !important;
-}
-
-/* Remove default margins that might interfere */
-[data-page-route=Workspaces] .sidebar-item-container.is-draggable {
-    padding: 0 !important;
-    margin-bottom: 2px !important;
-}
-
-/* Fix nested/child items if they exist */
-[data-page-route=Workspaces] .sidebar-child-item.nested-container {
-    padding-left: 32px !important;
-}
-
-/* Ensure proper spacing in the PUBLIC section */
-[data-page-route=Workspaces] .standard-sidebar-section[data-title="Public"] .sidebar-item-container {
-    margin-bottom: 2px !important;
+/* Sidebar Labels */
+.standard-sidebar .standard-sidebar-item .sidebar-item-label,
+.desk-sidebar .standard-sidebar-item .sidebar-item-label,
+.search-dialog .search-results .search-sidebar .standard-sidebar-item .sidebar-item-label {
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
