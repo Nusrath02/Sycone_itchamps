@@ -1,0 +1,15 @@
+.org-vertical {
+    list-style: none;
+    text-align: center;
+}
+
+.org-vertical li {
+    margin-top: 20px;
+}
+
+.node {
+    border: 1px solid #d1d5db;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: white;
+}
