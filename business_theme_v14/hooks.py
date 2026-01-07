@@ -30,7 +30,10 @@ app_include_js = [
     "/assets/business_theme_v14/js/sycone_footer.js",
 ]
 
-
+# Add this new hook for after page load
+page_js = {
+    "*": "public/js/sycone_footer.js"  # Applies to all pages
+}
 
 # Favicon
 # Website settings
