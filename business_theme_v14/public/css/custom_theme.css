@@ -5003,6 +5003,12 @@ body[data-route="organizational-chart"] .frappe-card {
     color: #000000 !important;
 }
 
+.text-body,
+.text-muted,
+div#driver-popover-item .driver-popover-footer button.driver-close-btn {
+    color: #ffffff !important;
+}
+
 /* ORG Navbar */
 /* ==================== ORG CHART: PRECISE FIX ==================== */
 
