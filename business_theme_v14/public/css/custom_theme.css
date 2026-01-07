@@ -18,18 +18,6 @@
     display: block !important;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
 /* ===============================
    ALWAYS SHOW SIDEBAR CONTROLS
    =============================== */
@@ -5018,6 +5006,9 @@ use.like-icon {
     color: #052a67 !important;
 }
 
+.created-by {
+    color: #ffffff !important;
+}
 /*  Stock sidebar text end */
 
 
