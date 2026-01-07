@@ -474,7 +474,6 @@ li.nav-item.dropdown .dropdown-menu,
 .dropdown-menu[aria-labelledby*="notification"],
 .dropdown-menu.show {
     position: absolute !important;
-    left: -235px !important;
     right: auto !important;
 }
 
