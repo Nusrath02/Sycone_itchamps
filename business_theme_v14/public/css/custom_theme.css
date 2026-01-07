@@ -5083,3 +5083,11 @@ body[data-route="organizational-chart"] .navbar .container-fluid {
     display: flex !important;
     justify-content: space-between !important;
 }
+
+/* Org chat text */
+.text-body, 
+.text-muted, 
+.node-title.text-muted.ellipsis,
+div#driver-popover-item .driver-popover-footer button.driver-close-btn {
+    color: #0c0c0c !important;
+}
