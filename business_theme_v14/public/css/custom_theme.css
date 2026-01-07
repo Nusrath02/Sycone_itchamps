@@ -5068,15 +5068,38 @@ body[data-route="organizational-chart"] .hierarchy {
 }
 
 /* search bar */
-/* ===== KEEP NAVBAR ELEMENTS AT NORMAL WIDTH ===== */
-body[data-route="organizational-chart"] .navbar *,
-body[data-route="organizational-chart"] header * {
-    max-width: initial !important;
+/* ==================== ORG CHART: KEEP SEARCH BAR NORMAL WIDTH ==================== */
+
+/* Target search bar input field specifically */
+body[data-route="organizational-chart"] .navbar .form-control,
+body[data-route="organizational-chart"] header .form-control,
+body[data-route="organizational-chart"] .navbar input[type="text"],
+body[data-route="organizational-chart"] header input[type="text"] {
+    max-width: 500px !important;  /* Set explicit max width */
+    width: 100% !important;
+    flex-grow: 0 !important;      /* Don't let it grow */
+    flex-shrink: 1 !important;    /* Allow it to shrink on small screens */
 }
 
-/* But allow navbar container to be full width */
+/* Keep the search container from expanding */
+body[data-route="organizational-chart"] .navbar .form-group,
+body[data-route="organizational-chart"] header .form-group {
+    max-width: 500px !important;
+    flex-grow: 0 !important;
+}
+
+/* Ensure navbar stays full width */
 body[data-route="organizational-chart"] .navbar,
 body[data-route="organizational-chart"] header {
     max-width: 100vw !important;
     width: 100vw !important;
+}
+
+/* Navbar container normal */
+body[data-route="organizational-chart"] .navbar .container,
+body[data-route="organizational-chart"] .navbar .container-fluid {
+    max-width: 100vw !important;
+    width: 100% !important;
+    display: flex !important;
+    justify-content: space-between !important;
 }
