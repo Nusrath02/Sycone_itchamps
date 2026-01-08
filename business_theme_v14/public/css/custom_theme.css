@@ -1,11 +1,9 @@
-.setting-btn {
-  position: relative !important;
-}
-
-.dropdown-list {
-  position: absolute !important;
-  top: 100% !important;
-  left: 0 !important;
+/* Hide dropdown by default */
+div.dropdown-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
   margin-top: 4px;
   background: white;
   border: 1px solid #ddd;
@@ -13,42 +11,58 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
   min-width: 180px;
   z-index: 9999;
-  display: none;
+  padding: 4px 0;
 }
 
-.dropdown-list.show {
+/* Show dropdown when it has 'show' class */
+div.dropdown-list.show {
   display: block !important;
 }
 
-.dropdown-item {
-  padding: 8px 12px;
+/* Style for dropdown items */
+.dropdown-list .dropdown-item {
+  padding: 8px 16px;
   cursor: pointer;
-  color: #000 !important; /* Black text */
+  color: #000 !important;
   font-size: 14px;
+  white-space: nowrap;
 }
 
-.dropdown-item:hover {
-  background-color: #f5f5f5;
+.dropdown-list .dropdown-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Ensure parent has relative positioning */
+.setting-btn.dropdown-btn {
+  position: relative !important;
 }
 
 
 
 
 
-/* 🔒 Scope ONLY to Role field inside grid */
+/* ✅ Only Role field inside grid */
 .grid-row [data-fieldname="role"] {
     overflow: visible !important;
 }
 
-/* Anchor awesomplete only for Role */
+/* Control wrapper must allow overflow */
+.grid-row [data-fieldname="role"] .control-input,
+.grid-row [data-fieldname="role"] .control-value {
+    overflow: visible !important;
+    position: relative !important;
+}
+
+/* Anchor awesomplete correctly */
 .grid-row [data-fieldname="role"] .awesomplete {
     position: relative !important;
 }
 
-/* Role dropdown positioning */
+/* 🔥 Move dropdown OUTSIDE the input */
 .grid-row [data-fieldname="role"] .awesomplete > ul {
     position: absolute !important;
-    top: calc(100% + 6px) !important;   /* OUTSIDE input */
+    top: 100% !important;      /* BELOW the input */
+    margin-top: 6px !important;
     left: 0 !important;
 
     z-index: 100000 !important;
@@ -58,14 +72,15 @@
 
     background: #ffffff !important;
     border-radius: 6px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Prevent dropdown squeezing inside input */
+/* Ensure input stays normal */
 .grid-row [data-fieldname="role"] input {
     position: relative !important;
     z-index: 1;
 }
+
 
 
 
