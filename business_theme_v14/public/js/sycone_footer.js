@@ -1,3 +1,21 @@
+function toggleDropdown(event) {
+  event.stopPropagation(); // Prevent event bubbling
+  
+  const dropdown = event.currentTarget.parentElement.querySelector('.dropdown-list');
+  dropdown.classList.toggle('show');
+}
+
+// Close dropdown when clicking outside
+document.addEventListener('click', function(event) {
+  const dropdowns = document.querySelectorAll('.dropdown-list.show');
+  dropdowns.forEach(dropdown => {
+    dropdown.classList.remove('show');
+  });
+});
+
+
+
+
 // sycone_footer.js - Improved version
 function createSyconEFooter() {
     // Remove existing footer first
