@@ -2728,8 +2728,6 @@ header * {
 
 .dropdown-menu.group-by-dropdown.show,
 .dropdown-menu.list-stats-dropdown.show {
-  position: absolute !important;     /* lock to parent field */
-  top: calc(100% + 6px) !important;  /* small gap below trigger */
   left: 0 !important;
   right: auto !important;
   margin-top: 4px !important;
@@ -2743,8 +2741,6 @@ header * {
   min-width: 160px !important;       /* compact popup */
   max-width: 220px !important;       
  max-height: 120px !important;      
-/*     height: 140px !important;  */
-/*   overflow-y: auto !important; */
     overflow: hidden !important; 
   background: #ffffff !important;
   border: 1px solid #d1d5db !important;
@@ -5020,3 +5016,43 @@ div#driver-popover-item .driver-popover-footer button.driver-close-btn {
 
 
 /* Custom Alignment Fixes */
+
+/* ==================== FIX ALL AWESOMPLETE DROPDOWNS ==================== */
+
+/* Target ALL awesomplete lists (including _29, _1, etc.) */
+ul[id^="awesomplete_list"] {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    max-height: 200px !important;      /* LIMIT HEIGHT - adjust as needed */
+    overflow-y: auto !important;       /* ENABLE SCROLLING */
+    overflow-x: hidden !important;
+    width: 100% !important;
+    background: #ffffff !important;    /* WHITE background */
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+    z-index: 9999 !important;
+    margin: 0 !important;
+    padding: 4px 0 !important;
+}
+
+/* Items inside ALL awesomplete dropdowns */
+ul[id^="awesomplete_list"] li {
+    padding: 6px 10px !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    color: #000 !important;
+    background: transparent !important;
+}
+
+/* Hover state for ALL awesomplete items */
+ul[id^="awesomplete_list"] li:hover,
+ul[id^="awesomplete_list"] li[aria-selected="true"] {
+    background: #2563eb !important;
+    color: #fff !important;
+}
