@@ -5047,6 +5047,7 @@ div.link-field.ui-front {
 
 /* 3. STYLE DROPDOWN ONLY WHEN IT HAS CONTENT (Let JS control visibility) */
 ul[id^="awesomplete_list"] {
+    position: absolute !important;
     top: 100% !important;
     left: 0 !important;
     right: auto !important;
@@ -5068,7 +5069,7 @@ ul[id^="awesomplete_list"] {
 
 /* 4. ONLY SHOW WHEN IT HAS LIST ITEMS (awesomplete adds items dynamically) */
 ul[id^="awesomplete_list"]:not(:empty) {
-    display: block !important;
+   
     visibility: visible !important;
     opacity: 1 !important;
 }
