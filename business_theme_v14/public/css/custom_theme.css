@@ -2817,11 +2817,9 @@ header * {
 
 /* 🚫 Kill sidebar right + bottom lines completely */
 .list-sidebar.overlay-sidebar {
-    border: none !important;
-    border-right: none !important;
-    border-bottom: none !important;
-    box-shadow: none !important;
-    outline: none !important;
+ position: relative !important;
+    isolation: auto !important;
+    transform: none !important;
 }
 
 
@@ -4970,6 +4968,8 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
 [data-page-route="Workspaces"] .standard-sidebar-item,
 [data-page-route="Workspaces"] .desk-sidebar-item {
     position: relative !important;
+    z-index: 1 !important;
+    isolation: auto !important;
 }
 
 /* ==================== WORKSPACE SIDEBAR CONTROL BUTTONS ==================== */
@@ -4995,7 +4995,7 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
     border-radius: 6px !important;
     padding: 6px !important;
     width: 150px !important;
-    z-index: 999999 !important;
+    z-index: 2147483647 !important;
     margin: 0 !important;
     left: 70px;
      isolation: isolate !important;  /* Create separate stacking context */
@@ -5057,8 +5057,8 @@ div#driver-popover-item .driver-popover-footer button:not(.btn-md):not(.btn-lg) 
 /* When dropdown is open, lift entire sidebar item above everything */
 [data-page-route="Workspaces"] .standard-sidebar-item:has(.dropdown-list),
 [data-page-route="Workspaces"] .desk-sidebar-item:has(.dropdown-list) {
-    z-index: 999999 !important;
-    position: relative !important;
+    z-index: 99999 !important;
+    isolation: isolate !important;
 }
 
 /* Only raise the item that has the open dropdown */
