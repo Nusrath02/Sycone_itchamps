@@ -1,13 +1,33 @@
+/* Allow the dropdown to overflow from the nested container */
 .sidebar-child-item.nested-container {
   overflow: visible !important;
 }
-div.sidebar-child-item.nested-container {
+
+/* Allow overflow from the sidebar item container */
+.sidebar-item-container.is-draggable {
   overflow: visible !important;
 }
+
+/* Ensure the dropdown has proper positioning */
 .dropdown-list {
   position: absolute;
-  z-index: 1000;
-  /* other styles */
+  z-index: 9999;
+  top: 100%;
+  left: 0;
+}
+
+/* Target the HR parent container specifically */
+div.sidebar-item-container.is-draggable[item-parent="HR"] {
+  overflow: visible !important;
+}
+
+div.sidebar-item-container.is-draggable[item-parent="HR"] .nested-container {
+  overflow: visible !important;
+}
+
+/* Ensure all nested containers allow overflow */
+.nested-container {
+  overflow: visible !important;
 }
 
 
