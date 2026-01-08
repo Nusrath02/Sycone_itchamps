@@ -24,22 +24,10 @@ app_include_css = [
     f"/assets/business_theme_v14/css/custom_theme.css?v={app_version}"
 ]
 
-
-# app_include_js = "/assets/business_theme_v14/js/business_theme_v14.js"
 app_include_js = [
     "/assets/business_theme_v14/js/sycone_footer.js",
-]
-
-# Add this new hook for after page load
-page_js = {
-    "*": "public/js/sycone_footer.js"  # Applies to all pages
-}
-
-# ADD THIS LINE - Include your custom sidebar JavaScript
-app_include_js = [
     "/assets/business_theme_v14/js/custom_sidebar.js"
 ]
-
 
 # Favicon
 # Website settings
