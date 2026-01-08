@@ -1,12 +1,4 @@
-.sidebar-item-control {
-    width: 200px; /* Adjust this value as needed */
-    max-width: 250px;
-}
 
-/* If you want to make it even smaller */
-div[class*="sidebar-item-control"] {
-    width: 180px !important;
-}
 
 
 
