@@ -5019,40 +5019,94 @@ div#driver-popover-item .driver-popover-footer button.driver-close-btn {
 
 /* ==================== FIX ALL AWESOMPLETE DROPDOWNS ==================== */
 
-/* Target ALL awesomplete lists (including _29, _1, etc.) */
+/* ==================== FIX AWESOMPLETE DROPDOWN VISIBILITY ==================== */
+
+/* 1. FORCE PARENT CONTAINERS TO SHOW OVERFLOW */
+.frappe-control,
+.form-group,
+.input-with-feedback,
+.link-field,
+[data-fieldtype="Link"],
+.grid-row,
+.data-row,
+table.table,
+.form-layout,
+.form-page,
+.layout-main,
+.page-content {
+    overflow: visible !important;
+}
+
+/* 2. MAKE INPUT CONTAINER RELATIVE FOR DROPDOWN POSITIONING */
+.awesomplete,
+.frappe-control.input-max-width,
+div.link-field.ui-front {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* 3. STYLE ALL AWESOMPLETE DROPDOWNS */
 ul[id^="awesomplete_list"] {
     position: absolute !important;
     top: 100% !important;
     left: 0 !important;
-    max-height: 200px !important;      /* LIMIT HEIGHT - adjust as needed */
-    overflow-y: auto !important;       /* ENABLE SCROLLING */
+    right: auto !important;
+    max-height: 200px !important;
+    overflow-y: auto !important;
     overflow-x: hidden !important;
     width: 100% !important;
-    background: #ffffff !important;    /* WHITE background */
+    min-width: 200px !important;
+    background: #ffffff !important;
     border: 1px solid #d1d5db !important;
     border-radius: 6px !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
-    z-index: 9999 !important;
-    margin: 0 !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    z-index: 99999 !important;
+    margin: 2px 0 0 0 !important;
     padding: 4px 0 !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
-/* Items inside ALL awesomplete dropdowns */
+/* 4. DROPDOWN ITEMS */
 ul[id^="awesomplete_list"] li {
-    padding: 6px 10px !important;
+    padding: 8px 12px !important;
     font-size: 13px !important;
     line-height: 1.4 !important;
     cursor: pointer !important;
     white-space: nowrap !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
-    color: #000 !important;
+    color: #1f2937 !important;
     background: transparent !important;
+    list-style: none !important;
+    display: block !important;
 }
 
-/* Hover state for ALL awesomplete items */
+/* 5. HOVER STATE */
 ul[id^="awesomplete_list"] li:hover,
 ul[id^="awesomplete_list"] li[aria-selected="true"] {
     background: #2563eb !important;
-    color: #fff !important;
+    color: #ffffff !important;
+}
+
+/* 6. HIDE EMPTY/LOADING STATE GRACEFULLY */
+ul[id^="awesomplete_list"]:empty {
+    display: none !important;
+}
+
+/* 7. FIX FOR TABLES AND GRIDS */
+.grid-body,
+.grid-row,
+.data-row,
+.form-grid {
+    overflow: visible !important;
+}
+
+/* 8. WORKSPACE SPECIFIC FIX */
+.page-container,
+.workspace,
+#page-Workspace,
+.frappe-card {
+    overflow: visible !important;
 }
