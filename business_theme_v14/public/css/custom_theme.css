@@ -5078,13 +5078,33 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
     overflow: visible !important;
 }
 
+/* ==================== WORKSPACE SIDEBAR ITEM CONTROLS ==================== */
+
+[data-page-route="Workspaces"] .standard-sidebar-item .sidebar-item-control > * {
+    align-self: center !important;
+    margin-left: 3px !important;
+    box-shadow: none !important;
+}
+
+/* ==================== WORKSPACE SIDEBAR CONTROL BUTTONS ==================== */
+
+[data-page-route="Workspaces"] .desk-sidebar .standard-sidebar-section.show-control .desk-sidebar-item.standard-sidebar-item:hover .setting-btn,
+[data-page-route="Workspaces"] .desk-sidebar .standard-sidebar-section.show-control .desk-sidebar-item.standard-sidebar-item:hover .duplicate-page,
+[data-page-route="Workspaces"] .desk-sidebar .standard-sidebar-section.show-control .desk-sidebar-item.standard-sidebar-item:hover .unhide-workspace-btn,
+[data-page-route="Workspaces"] .desk-sidebar .standard-sidebar-section.show-control .desk-sidebar-item.standard-sidebar-item.selected .setting-btn,
+[data-page-route="Workspaces"] .desk-sidebar .standard-sidebar-section.show-control .desk-sidebar-item.standard-sidebar-item.selected .duplicate-page,
+[data-page-route="Workspaces"] .desk-sidebar .standard-sidebar-section.show-control .desk-sidebar-item.standard-sidebar-item.selected .unhide-workspace-btn {
+    display: inline-block !important;
+    margin-right: 8px !important;
+}
+
+
 /* Position the dropdown list correctly */
 [data-page-route="Workspaces"] .standard-sidebar-item .sidebar-item-control .dropdown-list,
 [data-page-route="Workspaces"] .sidebar-item-container .dropdown-list {
     position: absolute !important;
     top: 100% !important;  /* Position below the button */
     right: 0 !important;   /* Align to right edge of button */
-    left: auto !important;
     margin-top: 4px !important;
     z-index: 9999 !important;
     background: #ffffff !important;
@@ -5117,4 +5137,32 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
 [data-page-route="Workspaces"] .sidebar-item-control .btn {
     position: relative !important;
     z-index: 1 !important;
+}
+/* ==================== WORKSPACE SETTINGS DROPDOWN ==================== */
+
+[data-page-route="Workspaces"] .dropdown-list {
+    position: absolute !important;
+    background-color: var(--fg-color) !important;
+    box-shadow: var(--shadow-base) !important;
+    border-radius: var(--border-radius-sm) !important;
+    padding: 6px !important;
+    /* top: 30px; */  /* Removed - let it position automatically */
+    top: 100% !important;  /* Position below the button */
+    right: 0 !important;
+    width: 150px !important;
+    z-index: 9999 !important;  /* Changed from 1 to 9999 for proper visibility */
+    margin-top: 4px !important;  /* Small gap below button */
+}
+
+/* ==================== BUTTON SIZING ==================== */
+
+.btn:not(.btn-md):not(.btn-lg), 
+div#driver-popover-item .driver-popover-footer button:not(.btn-md):not(.btn-lg) {
+    padding: 4px 8px !important;
+}
+
+/* Dropdown items */
+[data-page-route="Workspaces"] .dropdown-list .dropdown-item:hover {
+    background: #f3f4f6 !important;
+    color: #1f2937 !important;
 }
