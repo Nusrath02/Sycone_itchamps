@@ -4997,6 +4997,8 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
     width: 150px !important;
     z-index: 999999 !important;
     margin: 0 !important;
+    left: 70px;
+     isolation: isolate !important;  /* Create separate stacking context */
 }
 
 /* Dropdown items */
@@ -5042,6 +5044,7 @@ div#driver-popover-item .driver-popover-footer button:not(.btn-md):not(.btn-lg) 
 [data-page-route="Workspaces"] .standard-sidebar-item,
 [data-page-route="Workspaces"] .desk-sidebar-item {
     position: relative !important;
+    z-index: 1 !important;  /* Low z-index for normal items */
 }
 
 /* Style control buttons */
@@ -5056,4 +5059,10 @@ div#driver-popover-item .driver-popover-footer button:not(.btn-md):not(.btn-lg) 
 [data-page-route="Workspaces"] .desk-sidebar-item:has(.dropdown-list) {
     z-index: 999999 !important;
     position: relative !important;
+}
+
+/* Only raise the item that has the open dropdown */
+[data-page-route="Workspaces"] .standard-sidebar-item:has(.dropdown-list),
+[data-page-route="Workspaces"] .desk-sidebar-item:has(.dropdown-list) {
+    z-index: 999998 !important;  /* Just below dropdown */
 }
