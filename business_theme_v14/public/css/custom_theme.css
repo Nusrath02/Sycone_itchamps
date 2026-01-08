@@ -32,41 +32,39 @@
 
 
 
-/* 1️⃣ Allow sidebar containers to overflow */
-.desk-sidebar,
-.standard-sidebar-section,
-.sidebar-item-container,
-.sidebar-item-control {
-    overflow: visible !important;
+/* Reduce sidebar control container size */
+.desk-sidebar .sidebar-item-control {
+    width: auto !important;
+    padding: 0 4px !important;
+    gap: 4px;
+    align-items: center;
 }
 
-/* 2️⃣ Fix dropdown positioning */
-.standard-sidebar-item .dropdown-list {
-    position: absolute !important;
-    top: 100% !important;        /* appears below 3 dots */
-    right: 0 !important;
-    left: auto !important;
-
-    z-index: 9999 !important;
-    min-width: 160px;
+/* Shrink drag handle button */
+.desk-sidebar .drag-handle {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    padding: 0 !important;
+    font-size: 12px;
 }
 
-/* 3️⃣ Prevent parent transform issues */
-.standard-sidebar-item {
-    transform: none !important;
+/* Shrink settings (three dots) button */
+.desk-sidebar .setting-btn {
+    width: 20px !important;
+    height: 20px !important;
+    min-width: 20px !important;
+    padding: 0 !important;
 }
 
-/* 4️⃣ Ensure dropdown is above everything */
-.dropdown-list {
-    z-index: 9999 !important;
+/* Optional: center icons perfectly */
+.desk-sidebar .drag-handle,
+.desk-sidebar .setting-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* 5️⃣ Optional – visual polish */
-.dropdown-list {
-    background: #fff;
-    border-radius: 6px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
 
 
 
