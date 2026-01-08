@@ -120,7 +120,7 @@
 /* Base dropdown style */
 .desk-sidebar .dropdown-list {
     position: absolute !important;
-    top: 2px !important;      /* below settings */
+    top: 28px !important;      /* below settings */
     right: 0 !important;
     left: auto !important;
 
@@ -140,6 +140,43 @@
 .desk-sidebar .dropdown-list:not(.hidden) {
     display: block !important;
 }
+/* Allow dropdowns to escape sidebar scroll */
+.desk-sidebar {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+}
+
+/* IMPORTANT: allow visible overflow for dropdown container */
+.desk-sidebar .standard-sidebar-item,
+.desk-sidebar .sidebar-item-control {
+    overflow: visible !important;
+}
+/* Absolute dropdown positioning */
+.desk-sidebar .sidebar-item-control {
+    position: relative !important;
+}
+
+/* Dropdown visible & fixed */
+.desk-sidebar .dropdown-list {
+    position: absolute !important;
+    top: 30px !important;        /* below ⋮ */
+    right: 0 !important;
+    left: auto !important;
+
+    z-index: 10000 !important;
+    background: #fff;
+
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    border-radius: 8px;
+}
+.desk-sidebar .dropdown-list.hidden {
+    display: none !important;
+}
+
+.desk-sidebar .dropdown-list:not(.hidden) {
+    display: block !important;
+}
+
 
 
 
