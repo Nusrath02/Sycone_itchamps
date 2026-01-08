@@ -5070,6 +5070,8 @@ div#driver-popover-item .driver-popover-footer button.driver-close-btn {
     background: #060606;
     color: #ffffff; /* Add this if you want white text */
 }
-
+.sidebar-item .label-area {
+    color: #ffffff !important;
+}
 
 /* Custom Sidebar Alignment Fixes */
