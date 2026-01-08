@@ -1,39 +1,41 @@
-/* 1️⃣ Allow dropdown to escape grid footer */
+/* 🔥 Allow grid to show dropdowns */
+.form-grid,
+.grid-body,
+.grid-row,
 .grid-footer,
-.grid-footer * {
+.form-column,
+.section-body,
+.tab-content {
     overflow: visible !important;
 }
 
-/* 2️⃣ Anchor grid buttons */
-.grid-buttons {
+/* 🔥 Anchor awesomplete correctly */
+.awesomplete {
     position: relative !important;
-    overflow: visible !important;
 }
 
-/* 3️⃣ Target Add Row dropdown */
-.grid-buttons .dropdown-menu {
+/* 🔥 Role field dropdown */
+.awesomplete > ul {
     position: absolute !important;
-    top: calc(100% + 6px) !important; /* BELOW Add Row */
+    top: calc(100% + 4px) !important;  /* below input */
     left: 0 !important;
 
-    z-index: 99999 !important;
-    display: block;
+    z-index: 100000 !important;
 
     max-height: 260px;
     overflow-y: auto;
 
-    background: #ffffff;
+    background: #ffffff !important;
     border-radius: 6px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
 }
 
-/* 4️⃣ Safety for Frappe grids */
-.form-grid,
-.grid-body,
-.grid-row,
-.form-column {
+/* 🔥 Safety for grid inputs */
+.grid-row input,
+.grid-row .control-input {
     overflow: visible !important;
 }
+
 
 
 
