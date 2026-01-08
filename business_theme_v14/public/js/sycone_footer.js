@@ -1,11 +1,7 @@
-// sycone_footer.js
-// Simpler, more reliable approach
-
+// sycone_footer.js - Improved version
 function createSyconEFooter() {
-    // Remove existing footer
-    if ($('.sycone-custom-footer').length) {
-        $('.sycone-custom-footer').remove();
-    }
+    // Remove existing footer first
+    $('.sycone-custom-footer').remove();
     
     const footerHTML = `
         <div class="sycone-custom-footer">
@@ -21,28 +17,24 @@ function createSyconEFooter() {
         </div>
     `;
     
+    // Append to body
     $('body').append(footerHTML);
-    console.log("SYConE footer created"); // Debug log
+    console.log("✅ SYConE footer created");
 }
 
-// Multiple initialization attempts
+// Initialize footer when DOM is ready
 $(document).ready(function() {
-    setTimeout(createSyconEFooter, 100);
+    createSyconEFooter();
 });
 
-// Frappe ready
+// Re-create on Frappe page changes
 if (typeof frappe !== 'undefined') {
     frappe.ready(function() {
         createSyconEFooter();
     });
+    
+    // Handle SPA navigation
+    frappe.router.on('change', function() {
+        setTimeout(createSyconEFooter, 100);
+    });
 }
-
-// Window load fallback
-window.addEventListener('load', function() {
-    setTimeout(createSyconEFooter, 300);
-});
-
-// Route change (for SPA navigation)
-frappe.router.on('change', function() {
-    setTimeout(createSyconEFooter, 100);
-});
