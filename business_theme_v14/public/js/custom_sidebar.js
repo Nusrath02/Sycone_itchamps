@@ -14,10 +14,12 @@ $(document).ready(function () {
     };
 
     // Create the custom Employee menu item
+    // FIXED: Changed href to /app/employee/view/list?status=Active
+    // This opens the employee LIST directly, not the workspace
     const createEmployeeMenuItem = () => `
         <div class="sidebar-item-container is-draggable" item-parent="" item-name="Employee" item-public="1" item-is-hidden="0">
             <div class="desk-sidebar-item standard-sidebar-item">
-                <a href="/app/employee?status=Active" class="item-anchor" title="Employee">
+                <a href="/app/employee/view/list?status=Active" class="item-anchor" title="Employee">
                     <span class="sidebar-item-icon" item-icon="users">
                         <svg class="icon icon-md" aria-hidden="true">
                             <use href="#icon-users"></use>
@@ -49,7 +51,7 @@ $(document).ready(function () {
                 // Add the Employee menu item to the public section
                 $publicSection.append(createEmployeeMenuItem());
                 
-                console.log('Employee menu item added to sidebar');
+                console.log('Employee menu item added to sidebar - opens employee list');
             }
         });
     };
