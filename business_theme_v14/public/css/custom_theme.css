@@ -1,3 +1,55 @@
+/* 1️⃣ Allow overflow everywhere needed */
+.desk-sidebar,
+.standard-sidebar-section,
+.sidebar-item-container,
+.sidebar-item-control,
+.form-section,
+.form-column {
+    overflow: visible !important;
+}
+
+/* 2️⃣ Anchor the dropdown correctly */
+.awesomplete {
+    position: relative !important;
+}
+
+/* 3️⃣ Force dropdown to appear */
+.awesomplete > ul {
+    position: absolute !important;
+    top: calc(100% + 4px) !important; /* BELOW input */
+    left: 0 !important;
+    right: auto !important;
+
+    z-index: 99999 !important;
+    max-height: 240px;
+    overflow-y: auto;
+
+    background: #ffffff !important;
+    border: 1px solid #d1d8dd;
+    border-radius: 6px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* 4️⃣ Prevent hidden transforms */
+.awesomplete > ul[hidden] {
+    display: none !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* dopdown */
+
 /* Make all text inside the side section white */
 .layout-side-section,
 .layout-side-section * {
