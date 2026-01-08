@@ -1,4 +1,5 @@
 frappe.provide('frappe.desk');
+
 $(document).ready(function () {
     // Wait for sidebar to be fully loaded
     const waitForSidebar = (callback) => {
@@ -11,12 +12,12 @@ $(document).ready(function () {
         });
         sidebarObserver.observe(document.body, { childList: true, subtree: true });
     };
-    
+
     // Create the custom Employee menu item
     const createEmployeeMenuItem = () => `
         <div class="sidebar-item-container is-draggable" item-parent="" item-name="Employee" item-public="1" item-is-hidden="0">
             <div class="desk-sidebar-item standard-sidebar-item">
-                <a href="/app/employee/view/list?status=Active" class="item-anchor" title="Employee">
+                <a href="/app/employee?status=Active" class="item-anchor" title="Employee">
                     <span class="sidebar-item-icon" item-icon="users">
                         <svg class="icon icon-md" aria-hidden="true">
                             <use href="#icon-users"></use>
@@ -39,7 +40,7 @@ $(document).ready(function () {
             </div>
         </div>
     `;
-    
+
     // Add the Employee menu item to the sidebar
     const addEmployeeMenuItem = () => {
         waitForSidebar(($publicSection) => {
@@ -52,7 +53,7 @@ $(document).ready(function () {
             }
         });
     };
-    
+
     // Initialize
     addEmployeeMenuItem();
 });
