@@ -2932,23 +2932,7 @@ header * {
 /* hide */
 
 
-/* ====== FIXED POSITIONING FOR GROUP-BY + LIST-STATS POPUPS ====== */
-/* ===================== FILTER NAME INPUT ===================== */
-.input-with-feedback.form-control.input-xs {
-    background: #f3f4f6 !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 6px !important;
-    padding: 6px 10px !important;
-    font-size: 12px !important;
-    color: #111827 !important;
-    width: 100% !important;
-    margin-bottom: 8px !important;
-}
-.input-with-feedback.form-control.input-xs:focus {
-    border-color: #2563eb !important;
-    box-shadow: 0 0 0 2px rgba(37,99,235,0.15) !important;
-    background: #ffffff !important;
-}
+
 
 /* ===================== LAYOUT: STACK INPUT + ACTION ===================== */
 .save-filter-section .list-filters.list-link {
@@ -5036,46 +5020,3 @@ div#driver-popover-item .driver-popover-footer button.driver-close-btn {
 
 
 /* Custom Alignment Fixes */
-/* ==================== FIX AWESOMPLETE DROPDOWN SIZE ==================== */
-
-/* Target ALL awesomplete dropdowns globally */
-ul[id^="awesomplete_list"],
-ul.awesomplete > ul,
-.awesomplete > ul {
-    position: absolute !important;
-    top: 100% !important;
-    left: 0 !important;
-    max-height: 200px !important;      /* LIMIT HEIGHT */
-    overflow-y: auto !important;       /* ENABLE SCROLLING */
-    overflow-x: hidden !important;
-    width: 100% !important;
-    background: #ffffff !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 6px !important;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
-    z-index: 9999 !important;
-    margin: 0 !important;
-    padding: 4px 0 !important;
-}
-
-/* Individual items inside dropdown */
-ul[id^="awesomplete_list"] li,
-.awesomplete > ul > li {
-    padding: 6px 10px !important;
-    font-size: 13px !important;
-    line-height: 1.4 !important;
-    cursor: pointer !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-}
-
-/* Hover state */
-ul[id^="awesomplete_list"] li:hover,
-.awesomplete > ul > li:hover,
-ul[id^="awesomplete_list"] li[aria-selected="true"],
-.awesomplete > ul > li[aria-selected="true"] {
-    background: #2563eb !important;
-    color: #fff !important;
-}
-
