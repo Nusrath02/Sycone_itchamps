@@ -69,6 +69,53 @@
 
 
 
+/* Allow sidebar dropdowns to overflow */
+.desk-sidebar,
+.standard-sidebar-section,
+.sidebar-item-container,
+.sidebar-item-control {
+    overflow: visible !important;
+}
+/* Fix dropdown position */
+.desk-sidebar .sidebar-item-control {
+    position: relative;
+}
+
+.desk-sidebar .sidebar-item-control .dropdown-list {
+    position: absolute !important;
+    top: 28px !important;   /* appears BELOW settings */
+    right: 0 !important;
+    left: auto !important;
+
+    transform: none !important;
+    margin: 0 !important;
+
+    z-index: 9999 !important;
+}
+/* Prevent hover-based movement */
+.desk-sidebar .standard-sidebar-item:hover .dropdown-list {
+    transform: none !important;
+}
+/* Hide dropdown by default */
+.desk-sidebar .dropdown-list {
+    display: none;
+}
+
+/* Show ONLY when Frappe adds .show */
+.desk-sidebar .dropdown-list.show {
+    display: block !important;
+}
+.desk-sidebar .dropdown-list {
+    min-width: 140px;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+
+
+
+
+
 
 
 
