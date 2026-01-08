@@ -1,4 +1,11 @@
-
+div.sidebar-child-item.nested-container {
+  overflow: visible !important;
+}
+.dropdown-list {
+  position: absolute;
+  z-index: 1000;
+  /* other styles */
+}
 
 
 
