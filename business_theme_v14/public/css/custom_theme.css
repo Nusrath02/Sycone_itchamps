@@ -3408,22 +3408,7 @@ color: #ce040c !important;
   box-sizing: border-box !important;
 }
 
-/* ---------- if plugin appends dropdown to body (Select2 / choices), constrain it globally ---------- */
-body .select2-container--open .select2-dropdown,
-body .awesomplete,
-body .tt-menu {
-  max-height: 160px !important;
-  overflow-y: auto !important;
-  font-size: 13px !important;
-  z-index: 9999 !important;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.08) !important;
-}
 
-/* ---------- small visual tweak if you want the popup to overlap the next field slightly (optional) ---------- */
-.sidebar-section.filter-section .list-tags .awesomplete,
-.sidebar-section.filter-section .list-tags .ui-autocomplete {
-  margin-top: 6px !important;
-}
 
 
 /* === Make "Edit Filters" look exactly like other fields === */
