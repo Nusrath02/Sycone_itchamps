@@ -53,17 +53,27 @@ div.dropdown-list.show {
     position: relative !important;
 }
 
-/* Anchor awesomplete correctly */
-.grid-row [data-fieldname="role"] .awesomplete {
+/* ✅ Scope ONLY to Role field */
+.grid-row [data-fieldname="role"] .link-field.ui-front {
     position: relative !important;
+    overflow: visible !important;
 }
 
-/* 🔥 Move dropdown OUTSIDE the input */
+/* ✅ Keep input normal */
+.grid-row [data-fieldname="role"] input {
+    position: relative !important;
+    z-index: 1;
+}
+
+/* 🔥 FORCE dropdown to float BELOW the field */
 .grid-row [data-fieldname="role"] .awesomplete > ul {
     position: absolute !important;
-    top: 100% !important;      /* BELOW the input */
-    margin-top: 6px !important;
+
+    /* 👇 THIS is the key line */
+    top: calc(100% + 6px) !important;
+
     left: 0 !important;
+    right: auto !important;
 
     z-index: 100000 !important;
 
@@ -75,11 +85,11 @@ div.dropdown-list.show {
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Ensure input stays normal */
-.grid-row [data-fieldname="role"] input {
-    position: relative !important;
-    z-index: 1;
+/* ❌ Prevent awesomplete from sizing to input */
+.grid-row [data-fieldname="role"] .awesomplete {
+    position: static !important;
 }
+
 
 
 
