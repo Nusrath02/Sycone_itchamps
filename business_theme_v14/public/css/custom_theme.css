@@ -4033,12 +4033,8 @@ header .form-control:focus {
 .layout-side-section svg,
 .sidebar-item-icon,
 .octicon {
-    color: white !important;
-    stroke: white !important;
     fill: white !important;
-    width: 18px !important;
-    height: 18px !important;
-    margin-right: 8px !important;
+
 }
 
 /* Active navigation item */
@@ -5017,7 +5013,6 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
     border-radius: 6px !important;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
     min-width: 150px !important;
-    padding: 4px 0 !important;
 }
 
 /* Dropdown items styling */
