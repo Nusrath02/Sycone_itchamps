@@ -1,19 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const settingBtn = document.querySelector('.setting-btn');
-    const dropdown = settingBtn.closest('.sidebar-item-control').querySelector('.dropdown-list');
-    
-    settingBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        dropdown.classList.toggle('hidden');
-    });
-    
-    // Close dropdown when clicking outside
-    document.addEventListener('click', function(e) {
-        if (!settingBtn.closest('.sidebar-item-control').contains(e.target)) {
-            dropdown.classList.add('hidden');
-        }
-    });
-});
+
 
 
 
