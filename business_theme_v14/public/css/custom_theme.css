@@ -4965,29 +4965,12 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
 
 /* sidebar alignmnets */
 /* ==================== FIX SETTINGS DROPDOWN FOR SIDEBAR ITEMS ==================== */
-/* ==================== FIX SETTINGS DROPDOWN Z-INDEX ==================== */
+/* ==================== FIX SETTINGS DROPDOWN Z-INDEX - NUCLEAR FIX ==================== */
 
-/* Make sure sidebar allows dropdown to appear above */
+/* Make sure sidebar items are positioned */
 [data-page-route="Workspaces"] .standard-sidebar-item,
-[data-page-route="Workspaces"] .desk-sidebar-item,
-[data-page-route="Workspaces"] .sidebar-item-control {
+[data-page-route="Workspaces"] .desk-sidebar-item {
     position: relative !important;
-    z-index: 1 !important;
-    overflow: visible !important;
-}
-
-/* When dropdown is open, increase parent z-index */
-[data-page-route="Workspaces"] .standard-sidebar-item:has(.dropdown-list),
-[data-page-route="Workspaces"] .desk-sidebar-item:has(.dropdown-list) {
-    z-index: 99999 !important;
-}
-
-/* ==================== WORKSPACE SIDEBAR ITEM CONTROLS ==================== */
-
-[data-page-route="Workspaces"] .standard-sidebar-item .sidebar-item-control > * {
-    align-self: center !important;
-    margin-left: 3px !important;
-    box-shadow: none !important;
 }
 
 /* ==================== WORKSPACE SIDEBAR CONTROL BUTTONS ==================== */
@@ -5002,21 +4985,19 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
     margin-right: 8px !important;
 }
 
-/* ==================== DROPDOWN LIST STYLING ==================== */
+/* ==================== DROPDOWN - USE FIXED POSITIONING ==================== */
 
-/* Dropdown list - VERY HIGH z-index */
+/* Dropdown list - FIXED positioning to escape stacking context */
 [data-page-route="Workspaces"] .dropdown-list {
-    position: absolute !important;
+    position: fixed !important;  /* CHANGED FROM ABSOLUTE */
     background-color: #ffffff !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2) !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
     border: 1px solid #d1d5db !important;
     border-radius: 6px !important;
     padding: 6px !important;
-    top: 100% !important;
-    right: 0 !important;
     width: 150px !important;
-    z-index: 999999 !important;  /* EXTREMELY HIGH */
-    margin-top: 4px !important;
+    z-index: 999999 !important;
+    margin: 0 !important;
 }
 
 /* Dropdown items */
@@ -5037,14 +5018,16 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
 /* Make sure sidebar doesn't cut off dropdown */
 .col-lg-2.layout-side-section,
 .list-sidebar.overlay-sidebar,
-[data-page-route="Workspaces"] .standard-sidebar {
-    overflow: visible !important;  /* CRITICAL */
+[data-page-route="Workspaces"] .standard-sidebar,
+[data-page-route="Workspaces"] .desk-sidebar {
+    overflow: visible !important;
+    position: relative !important;
 }
 
-/* Allow three-dot button to create stacking context */
-[data-page-route="Workspaces"] .sidebar-item-control button {
-    position: relative !important;
-    z-index: 1 !important;
+/* Kill any transforms that create stacking contexts */
+.list-sidebar.overlay-sidebar .standard-sidebar-item,
+.list-sidebar.overlay-sidebar .desk-sidebar-item {
+    transform: none !important;
 }
 
 /* ==================== BUTTON SIZING ==================== */
