@@ -1,48 +1,50 @@
-/* ==================== SETTINGS DROPDOWN FIX ==================== */
+/* ==================== SETTINGS DROPDOWN - POSITION BELOW BUTTON ==================== */
 
-/* Make the dropdown container position relative */
+/* Ensure settings button container allows positioning */
 .sidebar-item-control {
     position: relative !important;
 }
 
-/* Position dropdown to break out of container */
-.sidebar-item-control .dropdown-list {
-    position: fixed !important;  /* Changed from absolute to fixed */
+/* Force dropdown to appear below settings button, outside container */
+.sidebar-item-control .dropdown-list,
+.dropdown-list.show {
+    position: fixed !important;
     z-index: 10000 !important;
-    margin-top: 0 !important;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    background: white !important;
+    border: 1px solid #d1d5db !important;
     border-radius: 6px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
     min-width: 120px !important;
+    padding: 4px 0 !important;
 }
 
-/* Dropdown items */
+/* Dropdown items styling */
 .dropdown-list .dropdown-item {
     padding: 8px 12px !important;
-    color: white !important;
+    color: #374151 !important;
     font-size: 13px !important;
     cursor: pointer !important;
     background: transparent !important;
     border: none !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
 }
 
 .dropdown-list .dropdown-item:hover {
-    background: rgba(255, 255, 255, 0.15) !important;
-    color: white !important;
+    background: #f3f4f6 !important;
+    color: #1f2937 !important;
 }
 
-/* Ensure parent containers allow overflow */
+/* Ensure ALL parent containers don't clip the dropdown */
+.sidebar-item-container,
 .sidebar-item-container.is-draggable,
 .nested-container,
-.sidebar-child-item {
-    overflow: visible !important;
-    position: relative !important;
-}
-
-/* Force HR container specifically */
-div.sidebar-item-container.is-draggable[item-parent="HR"],
-div.sidebar-item-container.is-draggable[item-parent="HR"] .nested-container {
+.sidebar-child-item,
+.sidebar-child-item.nested-container,
+div[item-parent="HR"],
+.desk-sidebar-item,
+.standard-sidebar-item {
     overflow: visible !important;
 }
 
