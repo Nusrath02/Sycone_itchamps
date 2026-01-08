@@ -1,175 +1,32 @@
-/* Hide dropdown by default */
-div.dropdown-list {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  margin-top: 4px;
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  min-width: 180px;
-  z-index: 9999;
-  padding: 4px 0;
-}
-
-/* Show dropdown when it has 'show' class */
-div.dropdown-list.show {
-  display: block !important;
-}
-
-/* Style for dropdown items */
-.dropdown-list .dropdown-item {
-  padding: 8px 16px;
-  cursor: pointer;
-  color: #000 !important;
-  font-size: 14px;
-  white-space: nowrap;
-}
-
-.dropdown-list .dropdown-item:hover {
-  background-color: #f0f0f0;
-}
-
-/* Ensure parent has relative positioning */
-.setting-btn.dropdown-btn {
-  position: relative !important;
-}
-
-
-
-
-
-/* ✅ Only Role field inside grid */
-.grid-row [data-fieldname="role"] {
-    overflow: visible !important;
-}
-
-/* Control wrapper must allow overflow */
-.grid-row [data-fieldname="role"] .control-input,
-.grid-row [data-fieldname="role"] .control-value {
-    overflow: visible !important;
-    position: relative !important;
-}
-
-/* ✅ Scope ONLY to Role field */
+/* ✅ Only Role field */
 .grid-row [data-fieldname="role"] .link-field.ui-front {
-    position: relative !important;
     overflow: visible !important;
 }
 
-/* ✅ Keep input normal */
-.grid-row [data-fieldname="role"] input {
+/* ✅ Make awesomplete the positioning anchor */
+.grid-row [data-fieldname="role"] .awesomplete {
     position: relative !important;
-    z-index: 1;
 }
 
-/* 🔥 FORCE dropdown to float BELOW the field */
-.grid-row [data-fieldname="role"] .awesomplete > ul {
+/* 🔥 Force dropdown BELOW the input */
+.grid-row [data-fieldname="role"] ul[role="listbox"] {
     position: absolute !important;
-
-    /* 👇 THIS is the key line */
-    top: calc(100% + 6px) !important;
-
+    top: 100% !important;        /* this is the key */
     left: 0 !important;
-    right: auto !important;
 
+    margin-top: 6px !important;
+
+    width: 100% !important;
     z-index: 100000 !important;
 
-    max-height: 260px;
+    max-height: 300px;
     overflow-y: auto;
 
-    background: #ffffff !important;
+    background: #fff !important;
     border-radius: 6px;
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
 }
 
-/* ❌ Prevent awesomplete from sizing to input */
-.grid-row [data-fieldname="role"] .awesomplete {
-    position: static !important;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* dopdown */
-
-/* Make all text inside the side section white */
-.layout-side-section,
-.layout-side-section * {
-    color: #ffffff !important;
-}
-
-/* Make all text inside the filter sidebar white */
-.list-sidebar.overlay-sidebar,
-.list-sidebar.overlay-sidebar * {
-    color: #ffffff !important;
-}
-
-
-
-/* 🔥 Global sidebar text color */
-.layout-side-section,
-.list-sidebar,
-.list-sidebar.overlay-sidebar,
-.desk-sidebar {
-    color: #ffffff !important;
-}
-
-/* 🔥 Force all inner sidebar elements to white */
-.layout-side-section *,
-.list-sidebar *,
-.list-sidebar.overlay-sidebar *,
-.desk-sidebar * {
-    color: #ffffff !important;
-}
-
-
-
-
-
-/* Reduce sidebar control container size */
-.desk-sidebar .sidebar-item-control {
-    width: auto !important;
-    padding: 0 4px !important;
-    gap: 4px;
-    align-items: center;
-}
-
-/* Shrink drag handle button */
-.desk-sidebar .drag-handle {
-    width: 20px !important;
-    height: 20px !important;
-    min-width: 20px !important;
-    padding: 0 !important;
-    font-size: 12px;
-}
-
-/* Shrink settings (three dots) button */
-.desk-sidebar .setting-btn {
-    width: 20px !important;
-    height: 20px !important;
-    min-width: 20px !important;
-    padding: 0 !important;
-}
-
-/* Optional: center icons perfectly */
-.desk-sidebar .drag-handle,
-.desk-sidebar .setting-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 
 
