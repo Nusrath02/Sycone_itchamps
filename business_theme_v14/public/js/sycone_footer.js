@@ -1,17 +1,39 @@
-function toggleDropdown(event) {
-  event.stopPropagation(); // Prevent event bubbling
+// Add click event to settings button
+document.addEventListener('DOMContentLoaded', function() {
+  // Find all setting buttons
+  const settingButtons = document.querySelectorAll('.setting-btn .drag-handle');
   
-  const dropdown = event.currentTarget.parentElement.querySelector('.dropdown-list');
-  dropdown.classList.toggle('show');
-}
-
-// Close dropdown when clicking outside
-document.addEventListener('click', function(event) {
-  const dropdowns = document.querySelectorAll('.dropdown-list.show');
-  dropdowns.forEach(dropdown => {
-    dropdown.classList.remove('show');
+  settingButtons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.stopPropagation();
+      
+      // Find the dropdown in the same parent
+      const dropdown = this.closest('.setting-btn').querySelector('.dropdown-list');
+      
+      // Close all other dropdowns
+      document.querySelectorAll('.dropdown-list').forEach(dd => {
+        if (dd !== dropdown) {
+          dd.classList.remove('show');
+        }
+      });
+      
+      // Toggle this dropdown
+      dropdown.classList.toggle('show');
+    });
+  });
+  
+  // Close dropdown when clicking outside
+  document.addEventListener('click', function() {
+    document.querySelectorAll('.dropdown-list').forEach(dd => {
+      dd.classList.remove('show');
+    });
   });
 });
+
+function toggleSettingsDropdown(buttonElement) {
+  const dropdown = buttonElement.closest('.setting-btn').querySelector('.dropdown-list');
+  dropdown.classList.toggle('show');
+}
 
 
 
