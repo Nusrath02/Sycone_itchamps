@@ -2415,15 +2415,16 @@ header * {
     min-height: 0 !important;
     height: auto !important;
     align-self: flex-start !important;
-    max-height: 80vh !important;   /* reduced from             80vh → 70vh */
+    max-height: 80vh !important;
     overflow-y: auto !important;
-    overflow-x: hidden !important;
+    overflow-x: visible !important;  /* ← Changed from hidden to visible */
     -webkit-overflow-scrolling: touch !important;
     -ms-overflow-style: none !important;
     scrollbar-width: none !important;
-    padding: 8px !important;       /* added padding for spacing */
+    padding: 8px !important;
     padding-bottom: 0 !important;
     border-radius: 15px !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
 }
 
 /* Remove bottom margin/padding from inner elements */
@@ -5059,4 +5060,61 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
 #page-Workspace,
 .frappe-card {
     overflow: visible !important;
+}
+/* sidebar alignmnets */
+/* ==================== FIX SETTINGS DROPDOWN FOR SIDEBAR ITEMS ==================== */
+
+/* Allow dropdown to overflow from sidebar containers */
+[data-page-route="Workspaces"] .standard-sidebar-item,
+[data-page-route="Workspaces"] .sidebar-item-container,
+[data-page-route="Workspaces"] .desk-sidebar-item {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* Allow parent containers to show dropdown */
+[data-page-route="Workspaces"] .sidebar-item-control,
+[data-page-route="Workspaces"] .standard-sidebar {
+    overflow: visible !important;
+}
+
+/* Position the dropdown list correctly */
+[data-page-route="Workspaces"] .standard-sidebar-item .sidebar-item-control .dropdown-list,
+[data-page-route="Workspaces"] .sidebar-item-container .dropdown-list {
+    position: absolute !important;
+    top: 100% !important;  /* Position below the button */
+    right: 0 !important;   /* Align to right edge of button */
+    left: auto !important;
+    margin-top: 4px !important;
+    z-index: 9999 !important;
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
+    min-width: 150px !important;
+    padding: 4px 0 !important;
+}
+
+/* Dropdown items styling */
+[data-page-route="Workspaces"] .dropdown-list .dropdown-item {
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+    color: #374151 !important;
+    background: transparent !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+[data-page-route="Workspaces"] .dropdown-list .dropdown-item:hover {
+    background: #f3f4f6 !important;
+    color: #1f2937 !important;
+}
+
+/* Three-dot button styling */
+[data-page-route="Workspaces"] .sidebar-item-control button,
+[data-page-route="Workspaces"] .sidebar-item-control .btn {
+    position: relative !important;
+    z-index: 1 !important;
 }
