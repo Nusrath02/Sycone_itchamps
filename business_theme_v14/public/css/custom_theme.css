@@ -1,3 +1,39 @@
+/* 1️⃣ Allow dropdown to escape grid footer */
+.grid-footer,
+.grid-footer * {
+    overflow: visible !important;
+}
+
+/* 2️⃣ Anchor grid buttons */
+.grid-buttons {
+    position: relative !important;
+    overflow: visible !important;
+}
+
+/* 3️⃣ Target Add Row dropdown */
+.grid-buttons .dropdown-menu {
+    position: absolute !important;
+    top: calc(100% + 6px) !important; /* BELOW Add Row */
+    left: 0 !important;
+
+    z-index: 99999 !important;
+    display: block;
+
+    max-height: 260px;
+    overflow-y: auto;
+
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+}
+
+/* 4️⃣ Safety for Frappe grids */
+.form-grid,
+.grid-body,
+.grid-row,
+.form-column {
+    overflow: visible !important;
+}
 
 
 
