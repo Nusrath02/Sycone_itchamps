@@ -120,7 +120,7 @@
 /* Base dropdown style */
 .desk-sidebar .dropdown-list {
     position: absolute !important;
-    top: 28px !important;      /* below settings */
+    top: 2px !important;      /* below settings */
     right: 0 !important;
     left: auto !important;
 
