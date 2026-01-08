@@ -1,52 +1,8 @@
 /* ==================== SETTINGS DROPDOWN - POSITION BELOW BUTTON ==================== */
 
-/* Ensure settings button container allows positioning */
-.sidebar-item-control {
-    position: relative !important;
-}
 
-/* Force dropdown to appear below settings button, outside container */
-.sidebar-item-control .dropdown-list,
-.dropdown-list.show {
-    position: fixed !important;
-    z-index: 10000 !important;
-    background: white !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 6px !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    min-width: 120px !important;
-    padding: 4px 0 !important;
-}
 
-/* Dropdown items styling */
-.dropdown-list .dropdown-item {
-    padding: 8px 12px !important;
-    color: #374151 !important;
-    font-size: 13px !important;
-    cursor: pointer !important;
-    background: transparent !important;
-    border: none !important;
-    display: block !important;
-    width: 100% !important;
-    text-align: left !important;
-}
 
-.dropdown-list .dropdown-item:hover {
-    background: #f3f4f6 !important;
-    color: #1f2937 !important;
-}
-
-/* Ensure ALL parent containers don't clip the dropdown */
-.sidebar-item-container,
-.sidebar-item-container.is-draggable,
-.nested-container,
-.sidebar-child-item,
-.sidebar-child-item.nested-container,
-div[item-parent="HR"],
-.desk-sidebar-item,
-.standard-sidebar-item {
-    overflow: visible !important;
-}
 
 
 
@@ -4810,20 +4766,7 @@ div#driver-popover-item .driver-popover-footer button.driver-next-btn:hover {
 
 /* ==================== SIDEBAR ITEMS STYLING ==================== */
 
-/* Sidebar menu items - set background to #2a5298 */
-.standard-sidebar-item {
-    background: #2a5298 !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
-    border-radius: 8px !important;
-    margin-bottom: 4px !important;
-    padding: 8px 12px !important;
-    transition: all 0.3s ease !important;
-    color: white !important;
-    text-decoration: none !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 8px !important;
-}
+
 
 /* Compact sidebar items */
 .list-sidebar.overlay-sidebar .standard-sidebar-item,
