@@ -1,30 +1,3 @@
-div.sidebar-child-item.nested-container {
-  overflow: visible !important;
-}
-.dropdown-list {
-  position: absolute;
-  z-index: 1000;
-  /* other styles */
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // sycone_footer.js - Improved version
 function createSyconEFooter() {
     // Remove existing footer first
