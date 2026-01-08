@@ -32,6 +32,47 @@
 
 
 
+/* 1️⃣ Allow sidebar containers to overflow */
+.desk-sidebar,
+.standard-sidebar-section,
+.sidebar-item-container,
+.sidebar-item-control {
+    overflow: visible !important;
+}
+
+/* 2️⃣ Fix dropdown positioning */
+.standard-sidebar-item .dropdown-list {
+    position: absolute !important;
+    top: 100% !important;        /* appears below 3 dots */
+    right: 0 !important;
+    left: auto !important;
+
+    z-index: 9999 !important;
+    min-width: 160px;
+}
+
+/* 3️⃣ Prevent parent transform issues */
+.standard-sidebar-item {
+    transform: none !important;
+}
+
+/* 4️⃣ Ensure dropdown is above everything */
+.dropdown-list {
+    z-index: 9999 !important;
+}
+
+/* 5️⃣ Optional – visual polish */
+.dropdown-list {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+
+
+
+
+
 
 
 
