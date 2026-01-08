@@ -5071,7 +5071,7 @@ div#driver-popover-item .driver-popover-footer button.driver-close-btn {
     color: #ffffff; /* Add this if you want white text */
 }
 /* White color for label-area elements - applies ONLY to class="label-area" */
-.label-area {
+.checkbox .label-area {
     color: #ffffff !important;
 }
 
