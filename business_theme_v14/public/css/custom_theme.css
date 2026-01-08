@@ -2465,17 +2465,7 @@ header * {
     pointer-events: none !important;
 }
 
-/* Sidebar items compact size */
-/* Ultra-compact sidebar items */
-.list-sidebar.overlay-sidebar .standard-sidebar-item,
-.list-sidebar.overlay-sidebar .sidebar-item,
-.list-sidebar .module-sidebar-item {
-    font-size: 8px !important;       /* very small text */
-    padding: 2px 5px !important;      /* minimal padding */
-    margin: 1px 0 !important;         /* tight spacing */
-    line-height: 1 !important;        /* no extra vertical space */
-    border-radius: 4px !important;    /* smaller rounde corners */
-}
+
 
 /* Ultra-compact icons */
 .list-sidebar.overlay-sidebar .sidebar-item .icon,
@@ -2493,7 +2483,6 @@ header * {
 .list-sidebar .module-sidebar-item:hover {
     background: #2a5298 !important;    /* brighter hover color for sidebar menu item */
     color: #fff !important;
-    transform: scale(1.02);
     border-radius: 10px !important;
 }
 
@@ -2501,7 +2490,6 @@ header * {
     font-size: 14px !important;
     padding: 2px 5px !important;
     margin: 1px 0 !important;
-    line-height: 1 !important;
     border-radius: 4px !important;
     background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
     color: white !important;
@@ -4706,18 +4694,6 @@ div#driver-popover-item .driver-popover-footer button.driver-next-btn:hover {
 
 
 
-/* Compact sidebar items */
-.list-sidebar.overlay-sidebar .standard-sidebar-item,
-.list-sidebar.overlay-sidebar .sidebar-item,
-.list-sidebar .module-sidebar-item {
-    font-size: 14px !important;
-    padding: 2px 5px !important;
-    margin: 1px 0 !important;
-    line-height: 1 !important;
-    border-radius: 4px !important;
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
-    color: white !important;
-}
 
 /* ==================== HOVER EFFECTS ==================== */
 
@@ -4732,15 +4708,6 @@ div#driver-popover-item .driver-popover-footer button.driver-next-btn:hover {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2) !important;
 }
 
-/* Compact sidebar item hover */
-.list-sidebar.overlay-sidebar .standard-sidebar-item:hover,
-.list-sidebar.overlay-sidebar .sidebar-item:hover,
-.list-sidebar .module-sidebar-item:hover {
-    background: rgba(255, 255, 255, 0.15) !important;
-    color: #fff !important;
-    transform: scale(1.02);
-    border-radius: 10px !important;
-}
 
 
 
