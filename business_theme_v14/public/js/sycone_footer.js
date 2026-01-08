@@ -1,3 +1,38 @@
+document.addEventListener("click", function (e) {
+    const btn = e.target.closest(".setting-btn");
+    if (!btn) return;
+
+    const dropdown = btn
+        .closest(".sidebar-item-control")
+        ?.querySelector(".dropdown-list");
+
+    if (!dropdown) return;
+
+    const rect = btn.getBoundingClientRect();
+
+    dropdown.style.top = rect.bottom + 6 + "px";
+    dropdown.style.left =
+        rect.right - dropdown.offsetWidth + "px";
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // sycone_footer.js
 // Simpler, more reliable approach
 
