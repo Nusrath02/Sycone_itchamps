@@ -1,40 +1,4 @@
-/* 🔥 Allow grid to show dropdowns */
-.form-grid,
-.grid-body,
-.grid-row,
-.grid-footer,
-.form-column,
-.section-body,
-.tab-content {
-    overflow: visible !important;
-}
 
-/* 🔥 Anchor awesomplete correctly */
-.awesomplete {
-    position: relative !important;
-}
-
-/* 🔥 Role field dropdown */
-.awesomplete > ul {
-    position: absolute !important;
-    top: calc(100% + 4px) !important;  /* below input */
-    left: 0 !important;
-
-    z-index: 100000 !important;
-
-    max-height: 260px;
-    overflow-y: auto;
-
-    background: #ffffff !important;
-    border-radius: 6px;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
-}
-
-/* 🔥 Safety for grid inputs */
-.grid-row input,
-.grid-row .control-input {
-    overflow: visible !important;
-}
 
 
 
