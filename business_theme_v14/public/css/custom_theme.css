@@ -111,6 +111,37 @@
     box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
+/* Sidebar dropdown - FINAL FIX */
+.desk-sidebar .sidebar-item-control {
+    position: relative;
+    overflow: visible !important;
+}
+
+/* Base dropdown style */
+.desk-sidebar .dropdown-list {
+    position: absolute !important;
+    top: 28px !important;      /* below settings */
+    right: 0 !important;
+    left: auto !important;
+
+    z-index: 9999 !important;
+    min-width: 140px;
+
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+}
+
+/* 🔥 THIS IS THE KEY LINE */
+.desk-sidebar .dropdown-list.hidden {
+    display: none !important;
+}
+
+/* When Frappe removes `hidden`, it shows automatically */
+.desk-sidebar .dropdown-list:not(.hidden) {
+    display: block !important;
+}
+
+
 
 
 
