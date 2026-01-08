@@ -4964,18 +4964,11 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
 /* ==================== FIX AWESOMPLETE DROPDOWNS - PROPER VISIBILITY end ==================== */
 
 /* sidebar alignmnets */
-/* ==================== FIX SETTINGS DROPDOWN - CORRECT POSITIONING ==================== */
+/* ==================== FIX SETTINGS DROPDOWN Z-INDEX - NUCLEAR FIX ==================== */
 
-/* Make sidebar items the positioning parent */
+/* Make sure sidebar items are positioned */
 [data-page-route="Workspaces"] .standard-sidebar-item,
 [data-page-route="Workspaces"] .desk-sidebar-item {
-    position: relative !important;
-}
-
-/* When dropdown is open, lift entire sidebar item above everything */
-[data-page-route="Workspaces"] .standard-sidebar-item:has(.dropdown-list),
-[data-page-route="Workspaces"] .desk-sidebar-item:has(.dropdown-list) {
-    z-index: 999999 !important;
     position: relative !important;
 }
 
@@ -4991,21 +4984,19 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
     margin-right: 8px !important;
 }
 
-/* ==================== DROPDOWN - POSITION RELATIVE TO BUTTON ==================== */
+/* ==================== DROPDOWN - USE FIXED POSITIONING ==================== */
 
-/* Dropdown list - ABSOLUTE positioning relative to parent */
+/* Dropdown list - FIXED positioning to escape stacking context */
 [data-page-route="Workspaces"] .dropdown-list {
-    position: absolute !important;  /* BACK TO ABSOLUTE */
+    position: fixed !important;  /* CHANGED FROM ABSOLUTE */
     background-color: #ffffff !important;
     box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
     border: 1px solid #d1d5db !important;
     border-radius: 6px !important;
     padding: 6px !important;
-    top: 100% !important;  /* Below the parent */
-    right: 0 !important;   /* Aligned to right edge */
     width: 150px !important;
     z-index: 999999 !important;
-    margin-top: 4px !important;
+    margin: 0 !important;
 }
 
 /* Dropdown items */
@@ -5023,13 +5014,19 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
     color: #1f2937 !important;
 }
 
-/* CRITICAL: Allow overflow on ALL parent containers */
+/* Make sure sidebar doesn't cut off dropdown */
 .col-lg-2.layout-side-section,
 .list-sidebar.overlay-sidebar,
 [data-page-route="Workspaces"] .standard-sidebar,
-[data-page-route="Workspaces"] .desk-sidebar,
-[data-page-route="Workspaces"] .standard-sidebar-section {
+[data-page-route="Workspaces"] .desk-sidebar {
     overflow: visible !important;
+    position: relative !important;
+}
+
+/* Kill any transforms that create stacking contexts */
+.list-sidebar.overlay-sidebar .standard-sidebar-item,
+.list-sidebar.overlay-sidebar .desk-sidebar-item {
+    transform: none !important;
 }
 
 /* ==================== BUTTON SIZING ==================== */
@@ -5037,4 +5034,26 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
 .btn:not(.btn-md):not(.btn-lg), 
 div#driver-popover-item .driver-popover-footer button:not(.btn-md):not(.btn-lg) {
     padding: 4px 8px !important;
+}
+
+/* ==================== FIX SETTINGS DROPDOWN - CORRECT POSITIONING ==================== */
+
+/* Make sidebar items the positioning parent */
+[data-page-route="Workspaces"] .standard-sidebar-item,
+[data-page-route="Workspaces"] .desk-sidebar-item {
+    position: relative !important;
+}
+
+/* Style control buttons */
+[data-page-route="Workspaces"] .standard-sidebar-item .sidebar-item-control > * {
+    align-self: center !important;
+    margin-left: 3px !important;
+    box-shadow: none !important;
+}
+
+/* When dropdown is open, lift entire sidebar item above everything */
+[data-page-route="Workspaces"] .standard-sidebar-item:has(.dropdown-list),
+[data-page-route="Workspaces"] .desk-sidebar-item:has(.dropdown-list) {
+    z-index: 999999 !important;
+    position: relative !important;
 }
