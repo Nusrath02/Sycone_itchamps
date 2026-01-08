@@ -3695,42 +3695,9 @@ span.text-muted{
     color: white !important;
 }
 
-#awesomplete_list_1 {
-  background:linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
-  color: #000000 !important; /* black text */
-  border-radius: 6px;
-}
+
  
- 
-/* Base list background */
-#awesomplete_list_1 {
-  background-color: #cce5ff !important; /* light blue background */
-  color: #000 !important;
-  border-radius: 6px;
-}
- 
-/* Remove always-on highlight from first item  */
-#awesomplete_list_1 li[aria-selected="true"] {
-   background-color: rgba(255, 255, 255, 0.15) !important;
-}
- 
-/* Normal text */
-#awesomplete_list_1 li {
-  color: #000 !important;
-  background-color: transparent !important;
-}
- 
-/* Hover highlight */
-#awesomplete_list_1 li:hover {
-  background-color: rgba(255, 255, 255, 0.15) !important;
-  color: #000 !important;
-}
-#awesomplete_list_1,
-#awesomplete_list_1 li,
-#awesomplete_list_1 li a,
-#awesomplete_list_1 span {
-  color: white !important; /* force black text */
-}
+
 
 .widget.links-widget-box .widget-head .widget-label .widget-title {
        font-size: 14px !important;
