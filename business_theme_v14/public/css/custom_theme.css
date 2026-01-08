@@ -178,6 +178,24 @@
 }
 
 
+.desk-sidebar .dropdown-list {
+    position: fixed !important;
+    z-index: 10000 !important;
+    min-width: 140px;
+    border-radius: 8px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.desk-sidebar .dropdown-list.hidden {
+    display: none !important;
+}
+
+.desk-sidebar .dropdown-list:not(.hidden) {
+    display: block !important;
+}
+
+
+
 
 
 
