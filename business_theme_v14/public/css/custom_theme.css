@@ -1,33 +1,49 @@
-/* Allow the dropdown to overflow from the nested container */
-.sidebar-child-item.nested-container {
-  overflow: visible !important;
+/* ==================== SETTINGS DROPDOWN FIX ==================== */
+
+/* Make the dropdown container position relative */
+.sidebar-item-control {
+    position: relative !important;
 }
 
-/* Allow overflow from the sidebar item container */
-.sidebar-item-container.is-draggable {
-  overflow: visible !important;
+/* Position dropdown to break out of container */
+.sidebar-item-control .dropdown-list {
+    position: fixed !important;  /* Changed from absolute to fixed */
+    z-index: 10000 !important;
+    margin-top: 0 !important;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #4facfe 100%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 6px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    min-width: 120px !important;
 }
 
-/* Ensure the dropdown has proper positioning */
-.dropdown-list {
-  position: absolute;
-  z-index: 9999;
-  top: 100%;
-  left: 0;
+/* Dropdown items */
+.dropdown-list .dropdown-item {
+    padding: 8px 12px !important;
+    color: white !important;
+    font-size: 13px !important;
+    cursor: pointer !important;
+    background: transparent !important;
+    border: none !important;
 }
 
-/* Target the HR parent container specifically */
-div.sidebar-item-container.is-draggable[item-parent="HR"] {
-  overflow: visible !important;
+.dropdown-list .dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.15) !important;
+    color: white !important;
 }
 
+/* Ensure parent containers allow overflow */
+.sidebar-item-container.is-draggable,
+.nested-container,
+.sidebar-child-item {
+    overflow: visible !important;
+    position: relative !important;
+}
+
+/* Force HR container specifically */
+div.sidebar-item-container.is-draggable[item-parent="HR"],
 div.sidebar-item-container.is-draggable[item-parent="HR"] .nested-container {
-  overflow: visible !important;
-}
-
-/* Ensure all nested containers allow overflow */
-.nested-container {
-  overflow: visible !important;
+    overflow: visible !important;
 }
 
 
