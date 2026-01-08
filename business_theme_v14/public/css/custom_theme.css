@@ -5047,7 +5047,6 @@ div.link-field.ui-front {
 
 /* 3. STYLE DROPDOWN ONLY WHEN IT HAS CONTENT (Let JS control visibility) */
 ul[id^="awesomplete_list"] {
-    position: absolute !important;
     top: 100% !important;
     left: 0 !important;
     right: auto !important;
