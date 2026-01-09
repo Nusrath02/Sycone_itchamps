@@ -2532,10 +2532,24 @@ header * {
     border: none !important;
     padding: 0 0 12px 0 !important;
     width: 180px !important;
-    max-height: 20vh !important;  /* smaller sidebar height */
-    overflow-y: auto !important;
+    max-height: none !important;  /* ← CHANGED */
+    overflow: visible !important;  /* ← CHANGED */
     box-shadow: none !important;
     margin-bottom: 16px !important;
+}
+
+
+
+
+
+/* Dropdown appears ABOVE container */
+.dropdown-menu.group-by-dropdown.show {
+    position: absolute !important;
+    bottom: 100% !important;
+    top: auto !important;
+    margin-bottom: 6px !important;
+    left: 0 !important;
+    z-index: 999999 !important;
 }
 
 /* Hide scrollbar */
