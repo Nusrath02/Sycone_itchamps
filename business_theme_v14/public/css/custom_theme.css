@@ -4877,175 +4877,113 @@ div#driver-popover-item .driver-popover-footer button.driver-close-btn {
 
 /* ==================== FIX AWESOMPLETE DROPDOWNS - PROPER VISIBILITY ==================== */
 
-/* 1. FORCE PARENT CONTAINERS TO SHOW OVERFLOW */
-.frappe-control,
-.form-group,
-.input-with-feedback,
-.link-field,
-[data-fieldtype="Link"],
-.grid-row,
-.data-row,
-table.table,
-.form-layout,
-.form-page,
-.layout-main,
-.page-content {
-    overflow: visible !important;
-}
+/* ==================== SETTINGS DROPDOWN - WORKS GLOBALLY ==================== */
 
-/* 2. MAKE INPUT CONTAINER RELATIVE FOR DROPDOWN POSITIONING */
-.awesomplete,
-.frappe-control.input-max-width,
-div.link-field.ui-front {
+/* 1. Make ALL sidebar items positioning containers */
+.standard-sidebar-item,
+.desk-sidebar-item,
+.list-sidebar .sidebar-item,
+.sidebar-menu li {
     position: relative !important;
-    overflow: visible !important;
 }
 
-/* 3. STYLE DROPDOWN ONLY WHEN IT HAS CONTENT (Let JS control visibility) */
-ul[id^="awesomplete_list"] {
+/* 2. Show control buttons on hover */
+.desk-sidebar .show-control .standard-sidebar-item:hover .setting-btn,
+.desk-sidebar .show-control .standard-sidebar-item:hover .duplicate-page,
+.desk-sidebar .show-control .standard-sidebar-item.selected .setting-btn,
+.desk-sidebar .show-control .standard-sidebar-item.selected .duplicate-page,
+.standard-sidebar-item:hover .sidebar-item-control,
+.sidebar-item:hover .sidebar-item-control {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* 3. When dropdown exists, boost z-index */
+.standard-sidebar-item:has(.dropdown-list),
+.desk-sidebar-item:has(.dropdown-list),
+.sidebar-item:has(.dropdown-list) {
+    z-index: 999999 !important;
+    position: relative !important;
+    isolation: isolate !important;
+}
+
+/* 4. THE DROPDOWN - positioned below button */
+.dropdown-list {
+    /* Position */
     position: absolute !important;
     top: 100% !important;
-    left: 0 !important;
-    right: auto !important;
-    max-height: 200px !important;
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
-    width: 100% !important;
-    min-width: 200px !important;
+    right: 0 !important;
+    left: auto !important;
+    margin-top: 4px !important;
+    
+    /* Size */
+    width: 150px !important;
+    min-width: 150px !important;
+    max-width: 200px !important;
+    
+    /* Appearance */
     background: #ffffff !important;
     border: 1px solid #d1d5db !important;
     border-radius: 6px !important;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important;
-    z-index: 99999 !important;
-    margin: 2px 0 0 0 !important;
-    padding: 4px 0 !important;
-    list-style: none !important;
-    /* DON'T force display:block - let JavaScript control it! */
-}
-
-/* 4. ONLY SHOW WHEN IT HAS LIST ITEMS (awesomplete adds items dynamically) */
-ul[id^="awesomplete_list"]:not(:empty) {
-   
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+    padding: 6px !important;
+    
+    /* Display */
+    display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
-}
-
-/* 5. HIDE WHEN EMPTY */
-ul[id^="awesomplete_list"]:empty {
-    display: none !important;
-    visibility: hidden !important;
-}
-
-/* 6. DROPDOWN ITEMS */
-ul[id^="awesomplete_list"] li {
-    padding: 8px 12px !important;
-    font-size: 13px !important;
-    line-height: 1.4 !important;
-    cursor: pointer !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    color: #1f2937 !important;
-    background: transparent !important;
-    list-style: none !important;
-    display: block !important;
-}
-
-/* 7. HOVER & SELECTED STATE */
-ul[id^="awesomplete_list"] li:hover,
-ul[id^="awesomplete_list"] li[aria-selected="true"] {
-    background: #2563eb !important;
-    color: #ffffff !important;
-}
-
-/* 8. FIX FOR TABLES AND GRIDS */
-.grid-body,
-.grid-row,
-.data-row,
-.form-grid {
-    overflow: visible !important;
-}
-
-/* 9. WORKSPACE SPECIFIC FIX */
-.page-container,
-.workspace,
-#page-Workspace,
-.frappe-card {
-    overflow: visible !important;
-}
-/* ==================== FIX AWESOMPLETE DROPDOWNS - PROPER VISIBILITY end ==================== */
-
-/* sidebar alignmnets */
-/* ==================== FIX SETTINGS DROPDOWN - CORRECT POSITIONING ==================== */
-
-/* Make sidebar items the positioning parent */
-[data-page-route="Workspaces"] .standard-sidebar-item,
-[data-page-route="Workspaces"] .desk-sidebar-item {
-    position: relative !important;
-}
-
-/* When dropdown is open, lift entire sidebar item above everything */
-[data-page-route="Workspaces"] .standard-sidebar-item:has(.dropdown-list),
-[data-page-route="Workspaces"] .desk-sidebar-item:has(.dropdown-list) {
+    
+    /* Stacking */
     z-index: 999999 !important;
-    position: relative !important;
+    
+    /* Prevent inheritance */
+    overflow: visible !important;
+    transform: none !important;
 }
 
-/* ==================== WORKSPACE SIDEBAR CONTROL BUTTONS ==================== */
-
-[data-page-route="Workspaces"] .desk-sidebar .standard-sidebar-section.show-control .desk-sidebar-item.standard-sidebar-item:hover .setting-btn,
-[data-page-route="Workspaces"] .desk-sidebar .standard-sidebar-section.show-control .desk-sidebar-item.standard-sidebar-item:hover .duplicate-page,
-[data-page-route="Workspaces"] .desk-sidebar .standard-sidebar-section.show-control .desk-sidebar-item.standard-sidebar-item:hover .unhide-workspace-btn,
-[data-page-route="Workspaces"] .desk-sidebar .standard-sidebar-section.show-control .desk-sidebar-item.standard-sidebar-item.selected .setting-btn,
-[data-page-route="Workspaces"] .desk-sidebar .standard-sidebar-section.show-control .desk-sidebar-item.standard-sidebar-item.selected .duplicate-page,
-[data-page-route="Workspaces"] .desk-sidebar .standard-sidebar-section.show-control .desk-sidebar-item.standard-sidebar-item.selected .unhide-workspace-btn {
-    display: inline-block !important;
-    margin-right: 8px !important;
-}
-
-/* ==================== DROPDOWN - POSITION RELATIVE TO BUTTON ==================== */
-
-/* Dropdown list - ABSOLUTE positioning relative to parent */
-[data-page-route="Workspaces"] .dropdown-list {
-    position: absolute !important;  /* BACK TO ABSOLUTE */
-    background-color: #ffffff !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 6px !important;
-    padding: 6px !important;
-    top: 100% !important;  /* Below the parent */
-    right: 0 !important;   /* Aligned to right edge */
-    width: 150px !important;
-    z-index: 999999 !important;
-    margin-top: 4px !important;
-}
-
-/* Dropdown items */
-[data-page-route="Workspaces"] .dropdown-list .dropdown-item {
+/* 5. Dropdown items */
+.dropdown-list .dropdown-item {
     padding: 8px 12px !important;
     font-size: 13px !important;
     color: #374151 !important;
-    cursor: pointer !important;
+    background: transparent !important;
+    border: none !important;
     border-radius: 4px !important;
+    cursor: pointer !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
     transition: background 0.2s ease !important;
 }
 
-[data-page-route="Workspaces"] .dropdown-list .dropdown-item:hover {
+.dropdown-list .dropdown-item:hover {
     background: #f3f4f6 !important;
     color: #1f2937 !important;
 }
 
-/* CRITICAL: Allow overflow on ALL parent containers */
+/* 6. CRITICAL: Allow overflow on ALL sidebar containers */
 .col-lg-2.layout-side-section,
+.list-sidebar,
 .list-sidebar.overlay-sidebar,
-[data-page-route="Workspaces"] .standard-sidebar,
-[data-page-route="Workspaces"] .desk-sidebar,
-[data-page-route="Workspaces"] .standard-sidebar-section {
+.standard-sidebar,
+.desk-sidebar,
+.standard-sidebar-section,
+.sidebar-section,
+.sidebar-menu {
     overflow: visible !important;
 }
-/* ==================== BUTTON SIZING ==================== */
 
-.btn:not(.btn-md):not(.btn-lg), 
-div#driver-popover-item .driver-popover-footer button:not(.btn-md):not(.btn-lg) {
-    padding: 4px 8px !important;
+/* 7. Reset any transform that might break positioning */
+.list-sidebar.overlay-sidebar {
+    transform: none !important;
 }
+
+/* 8. Ensure sidebar items don't clip content */
+.standard-sidebar-item,
+.desk-sidebar-item,
+.sidebar-item {
+    overflow: visible !important;
+}
+/* ==================== FIX AWESOMPLETE DROPDOWNS - PROPER VISIBILITY end ==================== */
+
