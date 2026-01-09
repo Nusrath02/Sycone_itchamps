@@ -4987,4 +4987,68 @@ div#driver-popover-item .driver-popover-footer button.driver-close-btn {
     overflow: visible !important;
 }
 /* ==================== FIX AWESOMPLETE DROPDOWNS - PROPER VISIBILITY end ==================== */
+/* ==================== FIX DROPDOWN CONTENT ==================== */
 
+/* Hide drag handle when dropdown is open */
+.standard-sidebar-item.has-dropdown .drag-handle,
+.sidebar-item-control .drag-handle {
+    display: none !important;
+}
+
+/* Ensure dropdown shows above drag handle */
+.dropdown-list {
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    left: auto !important;
+    margin-top: 4px !important;
+    width: 150px !important;
+    background: #ffffff !important;
+    border: 1px solid #d1d5db !important;
+    border-radius: 6px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
+    padding: 6px !important;
+    z-index: 999999 !important;
+}
+
+/* Style the actual dropdown menu items */
+.dropdown-list > div,
+.dropdown-list > a {
+    padding: 8px 12px !important;
+    font-size: 13px !important;
+    color: #374151 !important;
+    background: transparent !important;
+    border: none !important;
+    cursor: pointer !important;
+    display: block !important;
+    text-decoration: none !important;
+}
+
+.dropdown-list > div:hover,
+.dropdown-list > a:hover {
+    background: #f3f4f6 !important;
+    color: #1f2937 !important;
+}
+
+/* Hide the "Drag" tooltip/text */
+.sidebar-item-control [title="Drag"],
+button[title="Drag"],
+.drag-handle {
+    visibility: hidden !important;
+    position: absolute !important;
+    pointer-events: none !important;
+}
+
+/* Show settings button but hide drag when dropdown open */
+.sidebar-item-control {
+    display: flex !important;
+    gap: 4px !important;
+}
+
+.sidebar-item-control .btn:not(.setting-btn) {
+    display: none !important;
+}
+
+.sidebar-item-control .setting-btn {
+    display: block !important;
+}
