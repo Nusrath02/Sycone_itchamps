@@ -5053,17 +5053,7 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
 div#driver-popover-item .driver-popover-footer button:not(.btn-md):not(.btn-lg) {
     padding: 4px 8px !important;
 }
-/* Force hide drag button completely */
-.sidebar-item-control button:first-child,
-.sidebar-item-control .btn:first-child {
-    display: none !important;
-}
 
-/* Show only settings (second button) */
-.sidebar-item-control button:last-child,
-.sidebar-item-control .btn:last-child {
-    display: flex !important;
-}
 
 /*  */
 
