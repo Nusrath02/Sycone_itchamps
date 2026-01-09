@@ -5064,3 +5064,6 @@ div#driver-popover-item .driver-popover-footer button:not(.btn-md):not(.btn-lg) 
 .sidebar-item-control .btn:last-child {
     display: flex !important;
 }
+[data-page-route=Workspaces] .standard-sidebar-item .sidebar-item-control .dropdown-list {
+    top: 42px;
+}
