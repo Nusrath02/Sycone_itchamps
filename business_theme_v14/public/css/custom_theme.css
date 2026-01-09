@@ -5043,7 +5043,6 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
 [data-page-route="Workspaces"] .standard-sidebar-section {
     overflow: visible !important;
 }
-
 /* ==================== BUTTON SIZING ==================== */
 
 .btn:not(.btn-md):not(.btn-lg), 
