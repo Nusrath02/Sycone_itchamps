@@ -1,14 +1,35 @@
 /* ==================== SETTINGS DROPDOWN - POSITION BELOW BUTTON ==================== */
 
-/* Make ALL text inside the sidebar white */
-.list-sidebar.overlay-sidebar,
-.list-sidebar.overlay-sidebar * {
-    color: #ffffff !important;
+
+.sidebar-item-control {
+    display: flex !important;
+    align-items: center;
+    gap: 6px;
+    padding: 0 !important;
+    background: transparent !important;
+    opacity: 1 !important;   /* 👈 ALWAYS VISIBLE */
 }
-.list-sidebar.overlay-sidebar svg,
-.list-sidebar.overlay-sidebar i {
-    fill: #ffffff !important;
-    color: #ffffff !important;
+
+/* Buttons (drag + menu) */
+.sidebar-item-control .btn {
+    width: 24px !important;
+    height: 24px !important;
+    padding: 0 !important;
+    min-width: unset !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon color */
+.sidebar-item-control svg,
+.sidebar-item-control i {
+    color: #000 !important;
+    fill: #000 !important;
 }
 
 
