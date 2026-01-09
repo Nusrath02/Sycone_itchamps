@@ -1,20 +1,4 @@
-/* 🔥 Global sidebar text color */
-.layout-side-section,
-.list-sidebar,
-.list-sidebar.overlay-sidebar,
-.desk-sidebar {
-    color: #ffffff !important;
-}
-
-
-/* 🔥 Force all inner sidebar elements to white */
-.layout-side-section *,
-.list-sidebar *,
-.list-sidebar.overlay-sidebar *,
-.desk-sidebar * {
-    color: #ffffff !important;
-}
-
+/* ==================== SETTINGS DROPDOWN - POSITION BELOW BUTTON ==================== */
 
 
 
@@ -2532,24 +2516,10 @@ header * {
     border: none !important;
     padding: 0 0 12px 0 !important;
     width: 180px !important;
-    max-height: none !important;  /* ← CHANGED */
-    overflow: visible !important;  /* ← CHANGED */
+    max-height: 20vh !important;  /* smaller sidebar height */
+    overflow-y: auto !important;
     box-shadow: none !important;
     margin-bottom: 16px !important;
-}
-
-
-
-
-
-/* Dropdown appears ABOVE container */
-.dropdown-menu.group-by-dropdown.show {
-    position: absolute !important;
-    bottom: 100% !important;
-    top: auto !important;
-    margin-bottom: 6px !important;
-    left: 0 !important;
-    z-index: 999999 !important;
 }
 
 /* Hide scrollbar */
@@ -4893,8 +4863,6 @@ div#driver-popover-item .driver-popover-footer button.driver-close-btn {
 
 /* ==================== FIX AWESOMPLETE DROPDOWNS - PROPER VISIBILITY ==================== */
 
-/* ==================== FIX AWESOMPLETE DROPDOWNS - PROPER VISIBILITY ==================== */
-
 /* 1. FORCE PARENT CONTAINERS TO SHOW OVERFLOW */
 .frappe-control,
 .form-group,
@@ -4994,19 +4962,14 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
 /* ==================== FIX AWESOMPLETE DROPDOWNS - PROPER VISIBILITY end ==================== */
 
 /* sidebar alignmnets */
-/* ==================== FIX SETTINGS DROPDOWN - CORRECT POSITIONING ==================== */
+/* ==================== FIX SETTINGS DROPDOWN Z-INDEX - NUCLEAR FIX ==================== */
 
-/* Make sidebar items the positioning parent */
+/* Make sure sidebar items are positioned */
 [data-page-route="Workspaces"] .standard-sidebar-item,
 [data-page-route="Workspaces"] .desk-sidebar-item {
     position: relative !important;
-}
-
-/* When dropdown is open, lift entire sidebar item above everything */
-[data-page-route="Workspaces"] .standard-sidebar-item:has(.dropdown-list),
-[data-page-route="Workspaces"] .desk-sidebar-item:has(.dropdown-list) {
-    z-index: 999999 !important;
-    position: relative !important;
+    z-index: 1 !important;
+    isolation: auto !important;
 }
 
 /* ==================== WORKSPACE SIDEBAR CONTROL BUTTONS ==================== */
@@ -5021,46 +4984,44 @@ ul[id^="awesomplete_list"] li[aria-selected="true"] {
     margin-right: 8px !important;
 }
 
-/* ==================== DROPDOWN - POSITION RELATIVE TO BUTTON ==================== */
+/* ==================== DROPDOWN - USE FIXED POSITIONING ==================== */
 
-/* Dropdown list - ABSOLUTE positioning relative to parent */
+/* Dropdown with highest z-index */
 [data-page-route="Workspaces"] .dropdown-list {
-    position: absolute !important;  /* BACK TO ABSOLUTE */
+    position: fixed !important;
     background-color: #ffffff !important;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.3) !important;
-    border: 1px solid #d1d5db !important;
-    border-radius: 6px !important;
-    padding: 6px !important;
-    top: 100% !important;  /* Below the parent */
-    right: 0 !important;   /* Aligned to right edge */
-    width: 150px !important;
-    z-index: 999999 !important;
-    margin-top: 4px !important;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.4) !important;
+    border: 2px solid #2563eb !important;
+    border-radius: 8px !important;
+    padding: 8px !important;
+    width: 160px !important;
+    z-index: 2147483647 !important;
+    isolation: isolate !important;
+    pointer-events: auto !important;
 }
 
 /* Dropdown items */
 [data-page-route="Workspaces"] .dropdown-list .dropdown-item {
-    padding: 8px 12px !important;
-    font-size: 13px !important;
+    padding: 10px 14px !important;
+    font-size: 14px !important;
     color: #374151 !important;
     cursor: pointer !important;
-    border-radius: 4px !important;
-    transition: background 0.2s ease !important;
+    border-radius: 6px !important;
+    transition: background 0.15s ease !important;
 }
 
 [data-page-route="Workspaces"] .dropdown-list .dropdown-item:hover {
-    background: #f3f4f6 !important;
-    color: #1f2937 !important;
+    background: #eff6ff !important;
+    color: #1e40af !important;
 }
 
-/* CRITICAL: Allow overflow on ALL parent containers */
-.col-lg-2.layout-side-section,
-.list-sidebar.overlay-sidebar,
-[data-page-route="Workspaces"] .standard-sidebar,
-[data-page-route="Workspaces"] .desk-sidebar,
-[data-page-route="Workspaces"] .standard-sidebar-section {
-    overflow: visible !important;
+
+/* Kill any transforms that create stacking contexts */
+.list-sidebar.overlay-sidebar .standard-sidebar-item,
+.list-sidebar.overlay-sidebar .desk-sidebar-item {
+    transform: none !important;
 }
+
 /* ==================== BUTTON SIZING ==================== */
 
 .btn:not(.btn-md):not(.btn-lg), 
@@ -5068,6 +5029,34 @@ div#driver-popover-item .driver-popover-footer button:not(.btn-md):not(.btn-lg) 
     padding: 4px 8px !important;
 }
 
+/* ==================== FIX SETTINGS DROPDOWN - CORRECT POSITIONING ==================== */
 
-/*  */
+/* Make sidebar items the positioning parent */
+[data-page-route="Workspaces"] .standard-sidebar-item,
+[data-page-route="Workspaces"] .desk-sidebar-item {
+    z-index: 1 !important;  /* Low z-index for normal items */
+    position: relative !important;
+    overflow: visible !important;  /* ← THE KEY FIX */
+}
 
+/* Control buttons */
+[data-page-route="Workspaces"] .standard-sidebar-item .sidebar-item-control > *,
+[data-page-route="Workspaces"] .desk-sidebar-item .sidebar-item-control > * {
+    align-self: center !important;
+    margin-left: 3px !important;
+    box-shadow: none !important;
+}
+
+/* When dropdown is open, lift entire sidebar item above everything */
+[data-page-route="Workspaces"] .standard-sidebar-item:has(.dropdown-list),
+[data-page-route="Workspaces"] .desk-sidebar-item:has(.dropdown-list) {
+    z-index: 999998 !important;
+    overflow: visible !important;
+    isolation: isolate !important;
+}
+
+/* Only raise the item that has the open dropdown */
+[data-page-route="Workspaces"] .standard-sidebar-item:has(.dropdown-list),
+[data-page-route="Workspaces"] .desk-sidebar-item:has(.dropdown-list) {
+    z-index: 999998 !important;  /* Just below dropdown */
+}
