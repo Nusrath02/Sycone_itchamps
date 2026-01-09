@@ -1,5 +1,15 @@
 /* ==================== SETTINGS DROPDOWN - POSITION BELOW BUTTON ==================== */
 
+/* Make ALL text inside the sidebar white */
+.list-sidebar.overlay-sidebar,
+.list-sidebar.overlay-sidebar * {
+    color: #ffffff !important;
+}
+.list-sidebar.overlay-sidebar svg,
+.list-sidebar.overlay-sidebar i {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+}
 
 
 
