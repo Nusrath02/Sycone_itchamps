@@ -1,22 +1,45 @@
-/* Make ALL text inside the sidebar white */
+/* 🔥 Global sidebar text color */
+.layout-side-section,
+.list-sidebar,
 .list-sidebar.overlay-sidebar,
-.list-sidebar.overlay-sidebar * {
-    color: #ffffff !important;
-}
-.list-sidebar.overlay-sidebar svg,
-.list-sidebar.overlay-sidebar i {
-    fill: #ffffff !important;
-    color: #ffffff !important;
-}
-.list-sidebar.overlay-sidebar input,
-.list-sidebar.overlay-sidebar select,
-.list-sidebar.overlay-sidebar textarea {
+.desk-sidebar {
     color: #ffffff !important;
 }
 
-.list-sidebar.overlay-sidebar input::placeholder {
-    color: rgba(255,255,255,0.6) !important;
+/* 🔥 Force all inner sidebar elements to white */
+.layout-side-section *,
+.list-sidebar *,
+.list-sidebar.overlay-sidebar *,
+.desk-sidebar * {
+    color: #ffffff !important;
 }
+/* Inputs & placeholders inside sidebar */
+.layout-side-section input,
+.layout-side-section select,
+.layout-side-section textarea,
+.list-sidebar input,
+.list-sidebar select,
+.list-sidebar textarea {
+    color: #ffffff !important;
+}
+
+.layout-side-section input::placeholder,
+.list-sidebar input::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+.layout-side-section a:hover,
+.list-sidebar a:hover,
+.list-sidebar .btn:hover {
+    color: #eaeaea !important;
+}
+.layout-side-section svg,
+.list-sidebar svg,
+.layout-side-section i,
+.list-sidebar i {
+    fill: #ffffff !important;
+    color: #ffffff !important;
+}
+
 
 
 
