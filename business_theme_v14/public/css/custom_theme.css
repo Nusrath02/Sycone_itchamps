@@ -1,7 +1,4 @@
-#navbar-breadcrumbs > li:last-child > a::before {
-    content: none !important;
-    display: none !important;
-}
+
 
 
 .user-profile-sidebar .profile-details .user-stats-item .stat-value{
