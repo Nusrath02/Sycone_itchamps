@@ -2594,3 +2594,8 @@ ul[id^="awesomplete_list"] {
     }
 }
 /* side image size alignmnet  end */
+
+/* ORG chart text color */
+.text-body, .text-muted, .node-title.text-muted.ellipsis, .small.text-muted, div#driver-popover-item .driver-popover-footer button.driver-close-btn {
+    color: #21417b  !important;
+}
