@@ -311,7 +311,7 @@ a.list-tag-preview{
 /* Create custom footer container - sticks to bottom */
 .sycone-custom-footer {
     position: relative !important;  /* Changed from relative to fixed */
-    bottom: 0;
+    bottom: -100px;
     left: 0;
     right: 0;
     width: 100%;
