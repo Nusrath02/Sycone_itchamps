@@ -649,7 +649,7 @@ use.like-icon {
 
 #navbar-breadcrumbs > li > a::before {
     content: "\f105";
-    color: #ffffff;
+    color: rgb(5, 42, 103) !important;
 }
 
 /* Dynamic icons for all ERPNext modules */
