@@ -2600,3 +2600,14 @@ ul[id^="awesomplete_list"] {
 .text-body, .text-muted, .node-title.text-muted.ellipsis, .small.text-muted, div#driver-popover-item .driver-popover-footer button.driver-close-btn {
     color: #21417b  !important;
 }
+/* text color of the tab white */
+.level-item {
+    font-weight: var(--weight-medium);
+    color: #ffffff;
+    align-items: center;
+    display: flex;
+    flex-basis: auto;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+}
